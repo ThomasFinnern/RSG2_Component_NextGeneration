@@ -60,7 +60,7 @@
 
 
 		<field
-			name			= "descr"
+			name			= "description"
 			type			= "editor"
 			label           = "COM_RSG2_DESCRIPTION"
 			description     = ""

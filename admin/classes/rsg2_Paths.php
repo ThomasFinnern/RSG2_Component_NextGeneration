@@ -186,7 +186,7 @@ if(JFolder::exists(JPATH_ROOT.'/pfad/zum/verzeichnis'))
 
 if( JFolder::delete(JPATH_ROOT.DS.'pfad'.DS.'zum'.DS.'ordner') )
 {
-   echo 'Der Ordner wurde gelï¿½scht';
+   echo 'Der Ordner wurde gelöscht';
 }
 
 jimport( 'joomla.filesystem.file' );
