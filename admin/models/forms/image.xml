@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id$ -->
 <form>
-	<fieldset>	
+	<fieldset name ="image">	
 		<field
 			name			= "id"
 			type			= "hidden"
 		/>
 
 		<field
-			name			= "name"
+			name			= "title"
 			type			= "text"
 			label           = "COM_RSG2_NAME"
 			description     = ""
@@ -32,24 +32,37 @@
 			type			= "user"
 			label           = "COM_RSG2_OWNER"
 			description     = ""
-			filter			= "unset"
 		/>
 
 
-
 		<field
-			name			= "alias"
+			name			= "name"
 			type			= "text"
 			label           = "COM_RSG2_FILENAME"
 			description     = ""
 			maxlength       = "250"
 			filter          = ""
 			size            = "60"
+			class			= "readonly"
+			readonly		= "true"			
 		/>
 
+        <!--field
+			name			= "gallery_id"
+			type			= "number"
+			label           = "COM_RSG2_GALLERY"
+			filter          = "integer"
+        /-->
+
+        <field
+			name			= "gallery_id"
+			type			= "list"
+			label           = "COM_RSG2_GALLERY"
+			filter          = "integer"
+        />
 
 		<field
-			name			= "permissios"
+			name			= "permissions"
 			type			= "text"
 			label           = "COM_RSG2_PERMISSIONS"
 			description     = ""
@@ -58,27 +71,38 @@
 			readonly		= "true"			
 		/>
 
-
 		<field
 			name			= "description"
 			type			= "editor"
 			label           = "COM_RSG2_DESCRIPTION"
 			description     = ""
 			width 			= "30%"
-			height 			= "20"
-			rows 			= "5"
-			cols   			= "10"			
+			height 			= "150"
 			filter          = "safehtml"
 			class			= "span5"
 		/>
-
-
 
 		<field
 			name			= "ordering"
 			type			= "text"
 			label           = "COM_RSG2_ORDERING"
 		/>
+
+		<field
+			name            = "published"
+			type            = "list"
+			class           = "chzn-color-state"
+			id              = "published"
+			label           = "JSTATUS"
+			description     = "JFIELD_PUBLISHED_DESC"
+			size            = "1"
+			default         = "1"
+			filter          = "integer"
+		>
+			<option value="1" >JPUBLISHED</option>
+			<option value="0" >JUNPUBLISHED</option>
+			<option value="-2">JTRASHED</option>
+		</field>	
 
 <!-- ==================================================================== -->
 
@@ -132,7 +156,7 @@
                 />
 
         <field
-                name			= "comments"
+                name			= "gallery_id"
                 type			= ""
                 label           = ""
                 />
@@ -215,6 +239,12 @@
 			label           = ""
 		/ -->
 
-
     </fieldset>
+	
+	<!-- fieldset 
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+	-->
+	
 </form>
