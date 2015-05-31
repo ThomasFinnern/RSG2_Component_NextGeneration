@@ -42,13 +42,11 @@ class Rsg2ViewImage extends JViewLegacy
         // Disable main menu
         JFactory::getApplication()->input ->set ('hidemainmenu', true);
 
-        // Toolbar
-		
-		$item=$this->item;
-		if($item->id == 0) {
-			JToolBarHelper::title(JText::_('COM_RSG2_CREATE_IMAGE'));
+        // Title		
+		if($this->item->id > 0) {
+			JToolBarHelper::title(JText::_('COM_RSG2_EDIT_IMAGE', 'generic.png' ));
 		} else {
-			JToolBarHelper::title(JText::_('COM_RSG2_EDIT_IMAGE'));
+			JToolBarHelper::title(JText::_('COM_RSG2_CREATE_IMAGE'), 'generic.png' );
 		}		
 		
 		/*
@@ -60,12 +58,12 @@ class Rsg2ViewImage extends JViewLegacy
 		JToolBarHelper::apply('image.apply', 'JTOOLBAR_APPLY');
         JToolBarHelper::save('image.save', 'JTOOLBAR_SAVE');
         //JToolBarHelper::save2copy('image.save2copy');
-        JToolBarHelper::save2new('image.save2new');
+        //JToolBarHelper::save2new('image.save2new');
         JToolBarHelper::spacer();
-		if($item->id == 0) {
-			JToolBarHelper::cancel('image.cancel', 'JTOOLBAR_CANCEL');
-		} else {
+		if($this->item->id >0) {
 			JToolBarHelper::cancel('image.cancel', 'JTOOLBAR_CLOSE');
+		} else {
+			JToolBarHelper::cancel('image.cancel', 'JTOOLBAR_CANCEL');
 		}		
 	}
 

@@ -15,15 +15,38 @@ JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');
 
+$script = "
+	Joomla.submitbutton = function(task) {
+		if (document.formvalidator.isValid(document.id('adminForm'))) {
+			// Basic validation ok (input name required):
+			// Validate gallery_id
+			if (document.adminForm.gallery_id.value <= 0){ //'document'+form name+input name+'value'
+				alert('<?php echo JText::_('COM_RSGALLERY2_YOU_MUST_SELECT_A_GALLERY');?>');
+				return;
+			}
+			Joomla.submitform(task, document.getElementById('adminForm'));
+		} else {
+			if (document.adminForm.title.value == ''){
+				alert('<?php echo JText::_('COM_RSGALLERY2_PLEASE_PROVIDE_A_VALID_IMAGE_TITLE');?>');
+				return;
+			}
+		}
+	}
+";
+$doc = JFactory::getDocument();
+$doc->addScriptDeclaration($script);
+
 ?>
+
 <form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=image&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm"  class="form-validate">
 
 	<div class="width-60 fltlft">
 		<fieldset class="adminform">
-			<legend>
+		
+			<!-- legend>
 				<?php echo JText::_( 'COM_RSG2_IMAGE' ); ?>
 				<?php echo $this->item->id ? JText::_('COM_RSG2_EDIT') : JText::_('COM_RSG2_NEW');?>
-			</legend>
+			</legend -->
 					
 			<!-- tr>
 				<td align="right">
