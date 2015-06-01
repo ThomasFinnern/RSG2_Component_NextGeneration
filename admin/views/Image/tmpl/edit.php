@@ -49,59 +49,57 @@ $doc->addScriptDeclaration($script);
 
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'edit',
             empty($this->item->id) ? JText::_('COM_RSG2_NEW', true) : JText::_('COM_RSG2_EDIT', true)); ?>
-        <div class="row-fluid">
-            <div class="span6">
-                <div class="row-fluid form-horizontal-desktop">
-                    <div class="Xadminformlist">
-                        <?php foreach($this->form->getFieldset() as $field):
-                            // echo $field->name.': "' . json_encode($field) . '""';
-                            switch ($field->name)
-                            {
-                                case 'jform[published]':
-                                    echo 'field: ' . json_encode($field);
-                                    echo 'input: ' . html_entity_decode(json_encode($field->input));
-                                    break;
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="row-fluid form-horizontal-desktop">
+						<?php foreach($this->form->getFieldset() as $field):
+							// echo $field->name.': "' . json_encode($field) . '""';
+							switch ($field->name)
+							{
+								case 'jform[published]':
+									echo 'field: ' . json_encode($field);
+									echo 'input: ' . html_entity_decode(json_encode($field->input));
+									break;
 
-                                // Standard field output
-                                default:
-                                    ?>
-                                    <div class="control-group">
-                                            <div class="control-label">
-                                                <?php echo $field->label; ?>
-                                        </div>
-                                        <div class="controls">
-                                            <?php echo $field->input; ?>
-                                        </div>
-                                    </div>
-                                    <?php
-                                break;
+								// Standard field output
+								default:
+									?>
+									<div class="control-group">
+											<div class="control-label">
+												<?php echo $field->label; ?>
+										</div>
+										<div class="controls">
+											<?php echo $field->input; ?>
+										</div>
+									</div>
+									<?php
+								break;
 
-                            }
-                            ?>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="span3">
-                <h4><?php echo JText::_('COM_RSG2_ITEM_PREVIEW')?></h4>
-                        ToDo: Item preview<br>
+							}
+							?>
+						<?php endforeach; ?>
+					</div>
+				</div>
+				<div class="span3">
+					<h4><?php echo JText::_('COM_RSG2_ITEM_PREVIEW')?></h4>
+							ToDo: Item preview<br>
 
-                <h4><?php echo JText::_('COM_RSG2_PARAMETERS')?></h4>
-                        ToDo: paramter not known<br>
+					<h4><?php echo JText::_('COM_RSG2_PARAMETERS')?></h4>
+							ToDo: paramter not known<br>
 
-                <h4><?php echo JText::_('COM_RSG2_LINKS_TO_IMAGE')?></h4>
-                        ToDo: Links
-            </div>
-        </div>
+					<h4><?php echo JText::_('COM_RSG2_LINKS_TO_IMAGE')?></h4>
+							ToDo: Links
+				</div>
+			</div>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
 
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'misc', JText::_('ACL', true)); ?>
-        <div class="row-fluid form-horizontal-desktop">
-            <div class="form-vertical">
-                <?php echo $this->form->renderField('misc'); ?>
-                Test 4
-            </div>
-        </div>
+			<div class="row-fluid form-horizontal-desktop">
+				<div class="form-vertical">
+					<?php echo $this->form->renderField('misc'); ?>
+					Test 4
+				</div>
+			</div>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
