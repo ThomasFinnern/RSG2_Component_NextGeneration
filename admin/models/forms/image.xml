@@ -47,19 +47,17 @@
 			readonly		= "true"			
 		/>
 
-        <!--field
-			name			= "gallery_id"
-			type			= "number"
-			label           = "COM_RSG2_GALLERY"
-			filter          = "integer"
-        /-->
-
         <field
 			name			= "gallery_id"
-			type			= "list"
+			type			= "GalleryList"
 			label           = "COM_RSG2_GALLERY"
 			filter          = "integer"
-        />
+			height 			= "450"
+			size			= "10"
+        >
+			<option value="-1" >COM_RSG2_SELECT_GALLERY</option>
+			<option value="0" >COM_RSG2_TOP_GALLERY</option>
+		</field>	
 
 		<field
 			name			= "permissions"
@@ -80,20 +78,25 @@
 			height 			= "150"
 			filter          = "safehtml"
 			class			= "span5"
+			size			= "10"
 		/>
 
 		<field
 			name			= "ordering"
-			type			= "text"
+			type			= "RsgOrderingList"
 			label           = "COM_RSG2_ORDERING"
-		/>
-
+			filter          = "integer"
+			size			= "1"
+		>
+			<option value   = "0" >JGLOBAL_NEWITEMSLAST_DESC</option>
+		</field>	
+			
 		<field
 			name            = "published"
 			type            = "radio"
 			class           = "btn-group"
 			id              = "published"
-			label           = "COM_LANGUAGES_FIELD_PUBLISHED_DESC"
+			label           = "JSTATUS"
 			description     = "JFIELD_PUBLISHED_DESC"
 			size            = "1"
 			default         = "1"
@@ -101,7 +104,7 @@
 		>
 			<option value="1" >JPUBLISHED</option>
 			<option value="0" >JUNPUBLISHED</option>
-			<option value="-2">JTRASHED</option>
+			<option value="-2">JTRASHED</option>			
 		</field>	
 
 <!-- ==================================================================== -->

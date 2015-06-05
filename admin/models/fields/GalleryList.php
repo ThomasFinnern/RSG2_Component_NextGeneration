@@ -8,12 +8,8 @@ class JFormFieldGalleryList extends JFormFieldList {
 
     protected $type = 'GalleryList';
 
-    // getLabel() left out
-
-    // public function getInput() {
-	
 	/**
-	 * Method to get the field options.
+	 * Method to get the field options. -> List of galleries
 	 *
 	 * @return  array  The field option objects
 	 *
@@ -23,7 +19,6 @@ class JFormFieldGalleryList extends JFormFieldList {
 	{
 		$options = array();
 
-		$db = JFactory::getDbo();
 		// $user = JFactory::getUser();
 		$db		= JFactory::getDbo();
 		$query	= $db->getQuery(true)
@@ -46,8 +41,6 @@ class JFormFieldGalleryList extends JFormFieldList {
 		// Merge any additional options in the XML definition.
 		// $options[] = JHtml::_('select.option', $key, $value);
 		$options = array_merge(parent::getOptions(), $options);
-
-		
 		
 		return $options;
     }
