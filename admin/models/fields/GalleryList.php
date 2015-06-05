@@ -1,23 +1,54 @@
 <?php
 // Check to ensure this file is included in Joomla!
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-jimport('joomla.form.formfield');
+JFormHelper::loadFieldClass('list');
 
-class JFormFieldGalleryList extends JFormField {
+class JFormFieldGalleryList extends JFormFieldList {
 
     protected $type = 'GalleryList';
 
     // getLabel() left out
 
-    public function getInput() {
+    // public function getInput() {
 	
-// ToDo: Fill out for gallery list ...
+	/**
+	 * Method to get the field options.
+	 *
+	 * @return  array  The field option objects
+	 *
+	 * @since   1.6
+	 */
+	protected function getOptions()
+	{
+		$options = array();
 
-            return '<select id="'.$this->id.'" name="'.$this->name.'">'.
-                   '<option value="1" >New York</option>'.
-                   '<option value="2" >Chicago</option>'.
-                   '<option value="3" >San Francisco</option>'.
-                   '</select>';
+		$db = JFactory::getDbo();
+		// $user = JFactory::getUser();
+		$db		= JFactory::getDbo();
+		$query	= $db->getQuery(true)
+			->select('id As value, name As text')
+			->from('#__rsgallery2_galleries AS a')
+			->order('a.name');
+
+		// Get the options.
+		$db->setQuery($query);
+
+		try
+		{
+			$options = $db->loadObjectList();
+		}
+		catch (RuntimeException $e)
+		{
+			JError::raiseWarning(500, $e->getMessage());
+		}
+		
+		// Merge any additional options in the XML definition.
+		// $options[] = JHtml::_('select.option', $key, $value);
+		$options = array_merge(parent::getOptions(), $options);
+
+		
+		
+		return $options;
     }
 }
