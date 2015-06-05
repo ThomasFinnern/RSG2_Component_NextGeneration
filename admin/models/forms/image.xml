@@ -90,10 +90,10 @@
 
 		<field
 			name            = "published"
-			type            = "list"
-			class           = "chzn-color-state"
+			type            = "radio"
+			class           = "btn-group"
 			id              = "published"
-			label           = "JSTATUS"
+			label           = "COM_LANGUAGES_FIELD_PUBLISHED_DESC"
 			description     = "JFIELD_PUBLISHED_DESC"
 			size            = "1"
 			default         = "1"
