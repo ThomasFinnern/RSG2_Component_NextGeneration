@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Id$ -->
 <form>
-	<fieldset name ="gallery_1st_col">	
+	<fieldset name='gallery' addfieldpath="/administrator/components/com_rsg2/models/fields">
 		<field
 			name			= "id"
 			type			= "hidden"
@@ -34,11 +33,29 @@
 			description     = ""
 			filter			= "unset"
 		/>
-		<field
+		<!-- field
 			name			= "access"
 			type			= "accesslevel"
 			label           = "JFIELD_ACCESS_LABEL"
+			class			= "span12 small" />
+		/-->
+
+		<!-- ToDo: Permissions - - >
+		<field
+			name			= "permissios"
+			type			= "accesslevel"
+			label           = "COM_RSG2_PERMISSIONS"
+		<field
+			name			= "permissios"
+			type			= "text"
+			label           = "COM_RSG2_PERMISSIONS"
+			description     = ""
+			filter			= "unset"
+			class			= "readonly"
+			readonly		= "true"			
 		/>
+		/ -->
+
 		
 		<field
 			name			= "description"
@@ -50,62 +67,27 @@
 			rows 			= "5"
 			cols   			= "10"			
 			filter          = "safehtml"
-			class			= "span6 small"
+			class			= "span5"
 		/>
 
-        <field
+        <!-- ==================================================================== -->
+
+        <!--field
 			name			= "parent"
-			type			= "ParentGalleryList"
+			type			= "text"
 			label           = "COM_RSG2_PARENT_ITEM"
-			filter          = "integer"
-			height 			= "450"
-			size			= "10"
-        >
-			<!--option value="-1" >COM_RSG2_SELECT_GALLERY</option-->
-			<option value="0" >COM_RSG2_TOP_GALLERY</option>
-		</field>	
+		/>
 
 		<field
 			name			= "thumb_id"
-			type			= "RsgGalleryThumbList"
+			type			= "text"
 			label           = "COM_RSG2_GALLERY_THUMBNAIL"
-			filter			= "integer"
-			size			= "1"
-        >
-			<!--option value="-1" >COM_RSG2_SELECT_GALLERY</option-->
-			<option value="0" >- Random thumbnail -</option>
-		</field>	
-
-		<field
-			name			= "ordering"
-			type			= "RsgGalleryOrderingList"
-			label           = "COM_RSG2_ORDERING"
-			filter          = "integer"
-			size			= "1"
-		>
-			<option value   = "0" >JOPTION_ORDER_FIRST</option>
-			<!--option value   = "99999" >JOPTION_ORDER_LAST</option-->
-		</field>	
-			
-		<field
-			name            = "published"
-			type            = "radio"
-			class           = "btn-group"
-			id              = "published"
-			label           = "JSTATUS"
-			description     = "JFIELD_PUBLISHED_DESC"
-			size            = "1"
-			default         = "1"
-			filter          = "integer"
-		>
-			<option value="1" >JPUBLISHED</option>
-			<option value="0" >JUNPUBLISHED</option>
-			<option value="-2">JTRASHED</option>			
-		</field>	
+			filter			= "unset"
+			class			= "readonly"
+			readonly		= "true"
+		/>
 
 
-        <!-- ==================================================================== -->
-		<!--
 		<field
 			name			= "ordering"
 			type			= "text"
@@ -122,9 +104,6 @@
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>		
 		</field>
-    </fieldset>	
-	
-	<fieldset name ="gallery_2nd_col">	
 
 		<field
 			name			= "checked_out"
@@ -239,6 +218,7 @@
             type			= ""
             label           = ""
     	/ -->
+
 
 	</fieldset>	
 </form>
