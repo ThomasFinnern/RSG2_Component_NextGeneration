@@ -9,29 +9,33 @@
 */
 defined('_JEXEC') or die;
 
-// Include the JLog class.
-jimport('joomla.log.log');
+$Rsg2DebugActive = false; // ToDo: $rsgConfig->get('debug');
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
 
-/// Get the date for log file name
-$date = JFactory::getDate()->format('Y-m-d');
+	// Get the date for log file name
+	$date = JFactory::getDate()->format('Y-m-d');
 
-// Add the logger.
-JLog::addLogger(
-     // Pass an array of configuration options
-    array(
-            // Set the name of the log file
-            //'text_file' => substr($application->scope, 4) . ".log.php",
-            'text_file' => 'rsg2ctrl.log.'.$date.'.php',
+	// Add the logger.
+	JLog::addLogger(
+		// Pass an array of configuration options
+		array(
+				// Set the name of the log file
+				//'text_file' => substr($application->scope, 4) . ".log.php",
+				'text_file' => 'rsgallery2.adm.log.'.$date.'.php',
 
-            // (optional) you can change the directory
-            'text_file_path' => 'logs'
-     ),
-	  JLog::ALL ^ JLog::DEBUG // leave out db messages
-);
+				// (optional) you can change the directory
+				'text_file_path' => 'logs'
+		),
+		JLog::ALL ^ JLog::DEBUG // leave out db messages
+	);
+	
+	// start logging...
+	JLog::add('Start rsgallery2.php in admin: debug active in RSGallery2'); //, JLog::DEBUG);
+}
 
-// start logging...
-// identify active file
-JLog::add('==> base.rsg2.php ');
 
 // import joomla controller library
 jimport('joomla.application.component.controller');
@@ -46,34 +50,25 @@ if (!$canManage) {
 $controller	= JControllerLegacy::getInstance('Rsg2');
 $input = JFactory::getApplication()->input; 
 $task = $input->get('task');
-//JLog::add('Rsg2.php Task :"' + $task + '"');
-JLog::add('  base.rsg2.task: ', $task);
-
 $controller->execute($task);
 $controller->redirect();
 
-/*
-	function galleries()
-	{
-		JLog::add('==> root/rsg2.php/function galleries');
-		$this->setRedirect('index.php?option=com_rsg2&view=galleries');
-		$this->redirect();
-	}	
+if($Rsg2DebugActive)
+{
+	//$Delim = "\n";
+	$Delim = " ";
+    // show active task
+    $DebTxt = "==> base.rsg2.php".$Delim ."----------".$Delim;
+    $DebTxt = $DebTxt . "\$task: $task".$Delim;
+    $DebTxt = $DebTxt . "\$option: $option".$Delim;
+    //$DebTxt = $DebTxt . "\$catid: $catid".$Delim;
+    //$DebTxt = $DebTxt . "\$firstCid: $firstCid".$Delim;
+    $DebTxt = $DebTxt . "\$id: $id".$Delim;
+    //$DebTxt = $DebTxt . "\$rsgOption: $rsgOption".$Delim;
 
-	function ClearRsg2DbItems ()
-	{
-		JLog::add('==> root/rsg2.php/function ClearRsg2DbItems');
-		$this->setRedirect('index.php?option=com_rsg2&view=galleries');
-		$this->redirect();
-	}
+    JLog::add($DebTxt); //, JLog::DEBUG);
+}
 
-	function TestTask ()
-	{
-		JLog::add('==> root/rsg2.php/function TestTask');
-		$this->setRedirect('index.php?option=com_rsg2&view=galleries');
-		$this->redirect();
-	}
-*/
 
 
 

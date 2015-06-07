@@ -1,11 +1,17 @@
 <?php
 defined('_JEXEC') or die;
 
-// Include the JLog class.
-jimport('joomla.log.log');
+global $Rsg2DebugActive;
 
-// identify active file
-JLog::add('==> ctrl.image.php ');
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
+
+	// identify active file
+	JLog::add('==> ctrl.image.php ');
+}
+
 
 
 

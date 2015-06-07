@@ -1,4 +1,7 @@
 <?php
+
+Todo: deprecated -> remove
+
 /**
 * This file handles the used paths for rsg2
 * @version $Id: img.utils.php 1090 2012-07-09 18:52:20Z mirjam $
@@ -12,8 +15,13 @@
 // no direct access
 defined('_JEXEC') or die;
 
-// Include the JLog class.
-jimport('joomla.log.log');
+global $Rsg2DebugActive;
+
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
+}
 
 jimport( 'joomla.filesystem.folder' );
 // jimport( 'joomla.filesystem.path');
@@ -140,31 +148,46 @@ class rsg2_Paths
 
 	public function createRsg2ImagePaths ()
 	{
-		JLog::Add ('createRsg2ImagePaths: ' );
+		if($Rsg2DebugActive)
+		{
+			JLog::Add ('createRsg2ImagePaths: ' );	
+		}
 		
         $count = 0;
         
         foreach (allPaths() as $dir) {			
-			JLog::Add ('Create dir: ' . $dir);
+			if($Rsg2DebugActive)
+			{
+				JLog::Add ('Create dir: ' . $dir);	
+			}
 			// if (file_exists(JPATH_SITE.$dir) && is_dir(JPATH_SITE.$dir)) {
 			if (JFolder::exists($dir)) {
 				// Dir already exists, next
 				// ToDo: raise message 
 				// $this->writeInstallMsg(JText::sprintf('COM_RSG2_ALREADY_EXISTS', $dir),"ok");
-				JLog::Add (' - Directory existed: ' . $dir);
+				if($Rsg2DebugActive)
+				{
+					JLog::Add (' - Directory existed: ' . $dir);	
+				}
 			}
 			else {
 				// if(@mkdir(JPATH_SITE.$dir, 0777)) {
 				if(JFolder::create ($dir, 0777)) {
 					// $this->writeInstallMsg(JText::sprintf('COM_RSG2_FOLDER_IS_CREATED', $dir),"ok");
 					// ToDO: raise message 
-					JLog::Add ('Directory created: ' . $dir);
+					if($Rsg2DebugActive)
+					{
+						JLog::Add ('Directory created: ' . $dir);	
+					}
 					$count++;
 				}
 				else {
 					// ToDO: raise message 
 					//$this->writeInstallMsg(JText::sprintf('COM_RSG2_FOLDER_COULD_NOT_BE_CREATED', $dir),"error");
-					JLog::Add ('Error creating directory: ' . $dir);
+					if($Rsg2DebugActive)
+					{
+						JLog::Add ('Error creating directory: ' . $dir);	
+					}
 				}
 			}
         }
@@ -204,13 +227,19 @@ JFile::copy( 'my_file.txt', 'new_folder/my_file.txt' );
 	
 	public function deleteRsg2ImagePaths ()
 	{
-		JLog::Add ('createRsg2ImagePaths: ' );
+		if($Rsg2DebugActive)
+		{
+			JLog::Add ('createRsg2ImagePaths: ' );	
+		}
 
 		imgBasePath = $this->galleryBasePath;
 		if (JFolder::exists(imgBasePath)) {
 			if (!JFolder::delete (imgBasePath)
 			{
-				JLog::Add ('Error creating directory: ' . imgBasePath);
+				if($Rsg2DebugActive)
+				{
+					JLog::Add ('Error creating directory: ' . imgBasePath);	
+				}
 			}
 		}
 		
@@ -229,7 +258,10 @@ JFile::copy( 'my_file.txt', 'new_folder/my_file.txt' );
      * /
     function deleteGalleryDir($target, $exceptions, $output=false) {
     
-		JLog::add('rsgInstall: deleteGalleryDir: ' + $target);
+		if($Rsg2DebugActive)
+		{
+			JLog::add('rsgInstall: deleteGalleryDir: ' + $target);	
+		}
 		
 		if (file_exists($target) && is_dir($target))
 		{
@@ -276,19 +308,28 @@ JFile::copy( 'my_file.txt', 'new_folder/my_file.txt' );
 	
 	function createIndexHtmlFilesInImagePaths ()
 	{
-		JLog::Add ('Create IndexHtmlFiles: ');
+		if($Rsg2DebugActive)
+		{
+			JLog::Add ('Create IndexHtmlFiles: ');	
+		}
 
 		foreach (allPaths() as $dir) {			
 			if (JFolder::exists($dir)) {
 				filePathName = $dir . DS . 'index.html'; 
 				if (!JFile::exists(filePathName))
 				{
-					JLog::Add ('Create IndexHtmlFiles: ' . $dir);
+					if($Rsg2DebugActive)
+					{
+						JLog::Add ('Create IndexHtmlFiles: ' . $dir);	
+					}
 
 					$buffer = '';	//needed: Cannot pass parameter 2 [of JFile::write()] by reference...
 					if (!JFile::write(filePathName, buffer))
 					{
-						JLog::Add ('Error create IndexHtmlFile: ' . $dir);
+						if($Rsg2DebugActive)
+						{
+							JLog::Add ('Error create IndexHtmlFile: ' . $dir);	
+						}
 					
 					}
 				}
@@ -305,7 +346,10 @@ JFile::copy( 'my_file.txt', 'new_folder/my_file.txt' );
 	
 	function IsExistingIndexHtmlFilesInImagePaths () // see writeWarningBox ...
 	{
-		JLog::Add ('Check IndexHtmlFiles: ');
+		if($Rsg2DebugActive)
+		{
+			JLog::Add ('Check IndexHtmlFiles: ');	
+		}
 
 		ErrFound = false;
 
@@ -314,7 +358,10 @@ JFile::copy( 'my_file.txt', 'new_folder/my_file.txt' );
 				filePathName = $dir . DS . 'index.html'; 
 				if (!JFile::exists(filePathName))
 				{
-					JLog::Add ('IndexHtmlFile does not exist: ' . $dir);
+					if($Rsg2DebugActive)
+					{
+						JLog::Add ('IndexHtmlFile does not exist: ' . $dir);	
+					}
 
 					ErrFound = True;
 				}

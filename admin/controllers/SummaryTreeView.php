@@ -1,11 +1,17 @@
 <?php
 defined('_JEXEC') or die;
 
-// Include the JLog class.
-jimport('joomla.log.log');
+global $Rsg2DebugActive;
 
-// identify active file
-JLog::add('==> ctrl.SummaryTreeView.php ');
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
+	
+	// identify active file
+	JLog::add('==> ctrl.SummaryTreeView.php ');
+}
+
 
 jimport('joomla.application.component.controlleradmin');
 
@@ -39,7 +45,10 @@ class Rsg2ControllerSummaryTreeView extends JControllerForm
     public function SaveAsJson ()
 	{
 // identify active file
-        JLog::add('   SaveAsJson');
+        if($Rsg2DebugActive)
+		{
+			JLog::add('   SaveAsJson');
+		}
 
         /* How to call function in model ....
                         // Get the input

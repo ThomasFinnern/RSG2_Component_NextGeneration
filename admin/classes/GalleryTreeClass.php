@@ -12,8 +12,19 @@
 // no direct access
 defined('_JEXEC') or die;
 
-// Include the JLog class.
-jimport('joomla.log.log');
+global $Rsg2DebugActive;
+
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
+
+	// identify active file
+	if($Rsg2DebugActive)
+	{
+		JLog::add('==> GalleryTreeClass.php ');	
+	}
+}
 
 // jimport( 'joomla.filesystem.path');
 
@@ -61,8 +72,11 @@ class GalleryTreeBranch
 	------------------------------------------------------------------------------------*/	
 	public function FillBranchFromGallery ($GalleryIn)
 	{
-		JLog::add('==> FillBranchFromGallery ' . $GalleryIn->id);
-
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> FillBranchFromGallery ' . $GalleryIn->id);
+		}
+		
 		// First level of galleries
 		$this->Gallery = $GalleryIn;
 		
@@ -75,18 +89,26 @@ class GalleryTreeBranch
 		{
 			$this->Images [] = array('Image' => $DbImage);
 		}
-
 		
-		JLog::add('Images: ' . count ($this->Images));
+		if($Rsg2DebugActive)
+		{
+			JLog::add('Images: ' . count ($this->Images));
+		}
 
 		$DbChildGalleries = $this->DbChildGalleries ($GalleryIn->id);
-		JLog::add('DbChildGalleries: ' . count ($DbChildGalleries));
-
+		if($Rsg2DebugActive)
+		{
+			JLog::add('DbChildGalleries: ' . count ($DbChildGalleries));
+		}
+		
 		// Assign branches to all found root galleries
 		foreach ($DbChildGalleries as $DbChildGallery)
 		{	
-			JLog::add('DbChildGalleries loop ');
-
+			if($Rsg2DebugActive)
+			{
+				JLog::add('DbChildGalleries loop ');
+			}
+			
 			$ActGalleryLeaf = new GalleryTreeBranch;
 			
 			// Call This function for child
@@ -160,19 +182,28 @@ class GalleryTree
 	------------------------------------------------------------------------------------*/	
 	public function FillRootGalleryTreeFromDB ()
 	{
-		JLog::add('==> FillRootGalleryTreeFromDB ');
-
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> FillRootGalleryTreeFromDB ');
+		}
+		
 		$this->RootGalleryLeafs = array (); // type of GalleryTreeBranch  ();
 			
 		// First level of galleries
 		$RootGalleries = $this->DbRootGalleries ();
 
-		JLog::add('RootGalleries: ' . count ($RootGalleries));
+		if($Rsg2DebugActive)
+		{
+			JLog::add('RootGalleries: ' . count ($RootGalleries));
+		}
 
 		// Assign branches to all found root galleries
 		foreach ($RootGalleries as $Gallery)
 		{	
-			JLog::add('==> FillRootGalleryTreeFromDB->' . $Gallery->name);
+			if($Rsg2DebugActive)
+			{
+				JLog::add('==> FillRootGalleryTreeFromDB->' . $Gallery->name);	
+			}
 			$ActGalleryLeaf = new GalleryTreeBranch;
 			
 			//--- $Gallery = array (); // one gallery data from DB ------------

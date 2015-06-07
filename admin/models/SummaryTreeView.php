@@ -12,10 +12,13 @@ require_once( JPATH_COMPONENT.DS.'helpers'.DS.'file.php' );
 JPATH_COMPONENT_ADMINISTRATOR
 */
 
+global $Rsg2DebugActive;
 
-// Include the JLog class.
-jimport('joomla.log.log');
-
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
+}
 
 // Include gallery tree classes
 require_once( dirname(__FILE__).'/../classes/GalleryTreeClass.php' );
@@ -124,12 +127,18 @@ class rsg2ModelSummaryTreeView extends  JModelForm
 	
 	public function getGalleryTree ()
 	{
-		JLog::add('==> getGalleryTree ');
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> getGalleryTree ');
+		}
 
 		$GalleryTree = new GalleryTree ();
 		$GalleryTree->FillRootGalleryTreeFromDB ();
 	
-		JLog::add('getGalleryTree leafs: ' . count ($GalleryTree->RootGalleryLeafs));
+		if($Rsg2DebugActive)
+		{
+			JLog::add('getGalleryTree leafs: ' . count ($GalleryTree->RootGalleryLeafs));
+		}
 
 	
 		return $GalleryTree;

@@ -1,14 +1,16 @@
-// Include the JLog class.
-jimport('joomla.log.log');
-
 <?php
 defined('_JEXEC') or die;
 
-// Include the JLog class.
-jimport('joomla.log.log');
+global $Rsg2DebugActive;
 
-// identify active file
-JLog::add('==> ctrl.galleries.php ');
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
+
+	// identify active file
+	JLog::add('==> ctrl.galleries.php ');
+}
 
 
 jimport('joomla.application.component.controlleradmin');

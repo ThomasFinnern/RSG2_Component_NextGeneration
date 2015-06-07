@@ -4,13 +4,17 @@ defined('_JEXEC') or die;
 // control center 
 // ToDo:: rename to rsg_control and use as default ...
 
-// Include the JLog class.
-jimport('joomla.log.log');
+global $Rsg2DebugActive;
 
-// identify active file
-JLog::add('==> ctrl.rsg2.php ');
-
-
+$Rsg2DebugActive = false; // ToDo: $rsgConfig->get('debug');
+if ($Rsg2DebugActive)
+{
+	// Include the JLog class.
+	jimport('joomla.log.log');
+	
+	// identify active file
+	JLog::add('==> ctrl.rsg2.php ');
+}
 
 jimport('joomla.application.component.controllerform');
 
@@ -19,14 +23,20 @@ class Rsg2ControllerRsg2 extends JControllerForm
 
 	function galleries()
 	{
-		JLog::add('==> rsg2.php/function galleries');
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> rsg2.php/function galleries');
+		}
 		//$this->setRedirect('index.php?option=com_rsg2&view=galleries');
 		//$this->redirect();
 	}	
 
 	function ClearRsg2DbItems ()
 	{
-		JLog::add('==> rsg2.php/function ClearRsg2DbItems');
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> rsg2.php/function ClearRsg2DbItems');
+		}
 		
 		$msg = 'Database entries are deleted. ';
 		// $app->redirect($link, $msg, $msgType='message');
@@ -81,7 +91,10 @@ SQL> insert into Employee(ID,  First_Name, Last_Name, Start_Date,               
 
 	function DeleteAllRsg2Images ()
 	{
-		JLog::add('==> rsg2.php/function DeleteAllRsg2Images');
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> rsg2.php/function DeleteAllRsg2Images');
+		}
 		
 		$msg = 'All RSG2 Images and thumbs are deleted. ';
 		// $app->redirect($link, $msg, $msgType='message');
@@ -94,7 +107,10 @@ SQL> insert into Employee(ID,  First_Name, Last_Name, Start_Date,               
 
 	function ConsolidateDatabase ()
 	{
-		JLog::add('==> rsg2.php/function ConsolidateDatabase');
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> rsg2.php/function ConsolidateDatabase');
+		}
 		
 		$msg = 'RSG2 database is consolidated. ';
 		// $app->redirect($link, $msg, $msgType='message');
@@ -108,7 +124,10 @@ SQL> insert into Employee(ID,  First_Name, Last_Name, Start_Date,               
 	
 	function RegenerateFromImages ()
 	{
-		JLog::add('==> rsg2.php/function RegenerateFromImages');
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> rsg2.php/function RegenerateFromImages');
+		}
 		
 		$msg = 'Regeneration from exiting image done. ';
 		// $app->redirect($link, $msg, $msgType='message');
@@ -122,7 +141,10 @@ SQL> insert into Employee(ID,  First_Name, Last_Name, Start_Date,               
 	
 	function OptimizeDatabase ()
 	{
-		JLog::add('==> rsg2.php/function OptimizeDatabase');
+		if($Rsg2DebugActive)
+		{
+			JLog::add('==> rsg2.php/function OptimizeDatabase');
+		}
 		
 		$msg = 'RSG2 database is reorganized. ';
 		// $app->redirect($link, $msg, $msgType='message');
