@@ -21,9 +21,6 @@ JHtml::_('behavior.formvalidator');
 
 <form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=gallery&layout=edit&id='.(int) $this->item->id); ?>" 
 	  method="post" name="adminForm" id="adminForm"  class="form-validate">
-<form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=image&layout=edit&id='.(int) $this->item->id); ?>"
-      method="post" name="adminForm" id="adminForm"  class="form-validate">
-
     <div class="form-horizontal">
         <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'edit')); ?>
 

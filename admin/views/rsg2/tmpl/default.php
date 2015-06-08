@@ -103,20 +103,20 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsgallery2/
                 <!--h4>Bootstrap in Joomla! 3.x</h4-->
                 <?php
                     if ( $canDo->get('core.admin') ){
-                        $link = 'index.php?option=COM_RSG2&rsgOption=config&task=showConfig';
+                        $link = 'index.php?option=com_rsg2&amp;view=config';
                         RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
                     }
 
-                    $link = 'index.php?option=COM_RSG2&rsgOption=galleries';
+                    $link = 'index.php?option=com_rsg2&amp;view=galleries';
                     RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
 
-                    $link = 'index.php?option=COM_RSG2&rsgOption=images&task=batchupload';
+                    $link = 'index.php?option=com_rsg2&amp;view=uploadBatch';
                     RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
 
-                    $link = 'index.php?option=COM_RSG2&rsgOption=images&task=upload';
+                    $link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
                     RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
 
-                    $link = 'index.php?option=COM_RSG2&rsgOption=images&task=view_images';
+                    $link = 'index.php?option=com_rsg2&amp;view=images';
                     RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
 
                     if ( $canDo->get('core.admin') ){
