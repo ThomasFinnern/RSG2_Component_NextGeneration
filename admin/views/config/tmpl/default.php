@@ -23,49 +23,32 @@ defined( '_JEXEC' ) or die; ?>
 			<!-- a href="#" data-toggle="tooltip" title="first tooltip">hover over me</a>
 			<span class="description hasTip" title="Test">?</span -->
 
-			<h5>Bootstrap tabs in Joomla! 3.0</h5>
-			<br />
-			<br />
-
-			<h3>Bootstrap tabs in Joomla! 3.1</h3>
-			
 			<?php // This renders the beginning of the tabs code. ?>
 			<?php echo JHtml::_('bootstrap.startTabSet', 'ID-Tabs-J31-Group', $this->tabsOptionsJ31);?>
 			
 			
 			<?php // Open the first tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab1_j31_id', JText::_('Konfiguration')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab1_j31_id', JText::_('COM_RSG2_GENERAL')); ?>
 			<!-- ?php echo $this->loadTemplate('config');?-->
 			<?php // This is the closing tag of the first tab ?>
 			<?php echo JHtml::_('bootstrap.endTab');?>
 			
 			
 			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab2_j31_id', JText::_('Bilder')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab2_j31_id', JText::_('COM_RSG2_IMAGES')); ?>
 			<!--?php echo $this->loadTemplate('images');?-->
 			<?php echo JHtml::_('bootstrap.endTab');?>
 			
 			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab3_j31_id', JText::_('Anzeige')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab3_j31_id', JText::_('COM_RSG2_DISPLAY')); ?>
 			<!--?php echo $this->loadTemplate('view');?-->
 			<?php echo JHtml::_('bootstrap.endTab');?>
 			
 			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab4_j31_id', JText::_('Meine Gallerien')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab4_j31_id', JText::_('COM_RSG2_MY_GALLERIES')); ?>
 			<!--?php echo $this->loadTemplate('mygalleries');?-->
 			<?php echo JHtml::_('bootstrap.endTab');?>
-			
-			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab5_j31_id', JText::_('Wartung')); ?>
-			<!--?php echo $this->loadTemplate('maintenance');?-->
-			<?php echo JHtml::_('bootstrap.endTab');?>
-			
-			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab6_j31_id', JText::_('Template')); ?>
-			<!--?php echo $this->loadTemplate('template');?-->
-			<?php echo JHtml::_('bootstrap.endTab');?>
-			
-			
+						
 			<?php // This renders the end part of the tabs code. ?>
 			<?php echo JHtml::_('bootstrap.endTabSet');?>
 		</div>

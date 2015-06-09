@@ -24,7 +24,7 @@ if ($Rsg2DebugActive)
 		array(
 				// Set the name of the log file
 				//'text_file' => substr($application->scope, 4) . ".log.php",
-				'text_file' => 'rsgallery2.adm.log.'.$date.'.php',
+				'text_file' => 'rsg2.adm.log.'.$date.'.php',
 
 				// (optional) you can change the directory
 				'text_file_path' => 'logs'
