@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fieldset name='general' addfieldpath="/administrator/components/com_rsg2/models/fields">
-		<field
-			name			= "id"
-			type			= "hidden"
-		/>
 
 		<field
-			name			= "name"
-			type			= "text"
-			label           = "COM_RSG2_NAME"
-			description     = ""
-			maxlength       = "250"
-			filter          = ""
-			size            = "60"
+			name			= "Version"
+			type			= "RsgConfigText"
+			label           = "COM_RSG2_VERSION"
 		/>
-
+		
+		<field
+			name			= "Einleitender Text"
+			type			= "RsgConfigText"
+			label           = "COM_RSG2_VERSION"
+		/>
+		
+		<field
+			name			= "Debug"
+			type			= "RsgConfigText"
+			label           = "COM_RSG2_VERSION"
+		/>
+		
+		<field
+			name			= "SEF"
+			type			= "RsgConfigText"
+			label           = "COM_RSG2_VERSION"
+		/>		
     </fieldset>	
 	
-	<fieldset name ="image">	
-
+	<fieldset name ="image">
 		<field
 			name			= "checked_out"
 			type			= "hidden"
@@ -31,11 +39,9 @@
 			type			= "hidden"
 			label           = ""
 		/>
-
     </fieldset>	
 	
 	<fieldset name ="display">	
-
 		<field
 			name			= "checked_out"
 			type			= "hidden"
@@ -47,11 +53,9 @@
 			type			= "hidden"
 			label           = ""
 		/>
-
     </fieldset>	
 	
 	<fieldset name ="mygalleries">	
-
 		<field
 			name			= "checked_out"
 			type			= "hidden"
@@ -63,8 +67,5 @@
 			type			= "hidden"
 			label           = ""
 		/>
-
     </fieldset>	
-	
-	</fieldset>	
 </form>

@@ -19,3 +19,4 @@ jimport('joomla.application.component.controllerform');
 class Rsg2ControllerConfig extends JControllerForm
 {
 }
+
