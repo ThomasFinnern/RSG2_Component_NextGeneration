@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
-	<fieldset name='gallery' addfieldpath="/administrator/components/com_rsg2/models/fields">
+	<fieldset name='general' addfieldpath="/administrator/components/com_rsg2/models/fields">
 		<field
 			name			= "id"
 			type			= "hidden"
@@ -16,94 +16,9 @@
 			size            = "60"
 		/>
 
-		<field
-			name			= "alias"
-			type			= "text"
-			label           = "COM_RSG2_ALIAS"
-			description     = ""
-			maxlength       = "250"
-			filter          = ""
-			size            = "60"
-		/>
-		
-		<field
-			name			= "uid"
-			type			= "user"
-			label           = "COM_RSG2_OWNER"
-			description     = ""
-			filter			= "unset"
-		/>
-		<!-- field
-			name			= "access"
-			type			= "accesslevel"
-			label           = "JFIELD_ACCESS_LABEL"
-			class			= "span12 small" />
-		/-->
-
-		<!-- ToDo: Permissions - - >
-		<field
-			name			= "permissios"
-			type			= "accesslevel"
-			label           = "COM_RSG2_PERMISSIONS"
-		<field
-			name			= "permissios"
-			type			= "text"
-			label           = "COM_RSG2_PERMISSIONS"
-			description     = ""
-			filter			= "unset"
-			class			= "readonly"
-			readonly		= "true"			
-		/>
-		/ -->
-
-		
-		<field
-			name			= "description"
-			type			= "editor"
-			label           = "COM_RSG2_DESCRIPTION"
-			description     = ""
-			width 			= "30%"
-			height 			= "20"
-			rows 			= "5"
-			cols   			= "10"			
-			filter          = "safehtml"
-			class			= "span5"
-		/>
-
-        <!-- ==================================================================== -->
-
-        <!--field
-			name			= "parent"
-			type			= "text"
-			label           = "COM_RSG2_PARENT_ITEM"
-		/>
-
-		<field
-			name			= "thumb_id"
-			type			= "text"
-			label           = "COM_RSG2_GALLERY_THUMBNAIL"
-			filter			= "unset"
-			class			= "readonly"
-			readonly		= "true"
-		/>
-
-
-		<field
-			name			= "ordering"
-			type			= "text"
-			label           = "COM_RSG2_ORDERING"
-		/>
-
-		<field
-			name			= "published"
-			type			= "radio"
-			label           = "COM_RSG2_PUBLISHED"
-			default			= "1" 
-			description     = ""
-		>
-			<option value="0">JNO</option>
-			<option value="1">JYES</option>		
-		</field>
+    </fieldset>	
+	
+	<fieldset name ="image">	
 
 		<field
 			name			= "checked_out"
@@ -117,108 +32,39 @@
 			label           = ""
 		/>
 
+    </fieldset>	
+	
+	<fieldset name ="display">	
+
 		<field
-			name			= "date"
+			name			= "checked_out"
 			type			= "hidden"
 			label           = ""
 		/>
 
 		<field
-			name			= "hits"
+			name			= "checked_out_time"
+			type			= "hidden"
+			label           = ""
+		/>
+
+    </fieldset>	
+	
+	<fieldset name ="mygalleries">	
+
+		<field
+			name			= "checked_out"
 			type			= "hidden"
 			label           = ""
 		/>
 
 		<field
-			name			= "params"
-			type			= "text"
+			name			= "checked_out_time"
+			type			= "hidden"
 			label           = ""
 		/>
 
-        <field
-            name			= "allowed"
-            type			= "hidden"
-            label           = ""
-        />
-
-        <field
-            name			= "asset_id"
-            type			= "hidden"
-            label           = ""
-        />
-
-        < field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-            />
-
-        <field
-            name			= ""
-            type			= ""
-            label           = ""
-    	/ -->
-
-
+    </fieldset>	
+	
 	</fieldset>	
 </form>

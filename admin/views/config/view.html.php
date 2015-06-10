@@ -45,7 +45,7 @@ class Rsg2ViewConfig extends JViewLegacy
 
 	protected function addToolbar ()
 	{
-        JToolBarHelper::title(JText::_('COM_RSG2_CONFIG'), 'generic.png');
+        JToolBarHelper::title(JText::_('COM_RSG2_CONFIGURATION'), 'generic.png');
 
         // Disable main menu
         JFactory::getApplication()->input ->set ('hidemainmenu', true);
@@ -56,11 +56,11 @@ class Rsg2ViewConfig extends JViewLegacy
         JToolBarHelper::spacer();
 		*/
 	
-		JToolBarHelper::apply('image.apply', 'JTOOLBAR_APPLY');
-        JToolBarHelper::save('image.save', 'JTOOLBAR_SAVE');
-        //JToolBarHelper::save2copy('image.save2copy');
-        //JToolBarHelper::save2new('image.save2new');
-		JToolBarHelper::cancel('image.cancel', 'JTOOLBAR_CANCEL');
+		JToolBarHelper::apply('config.apply', 'JTOOLBAR_APPLY');
+        JToolBarHelper::save('config.save', 'JTOOLBAR_SAVE');
+        //JToolBarHelper::save2copy('config.save2copy');
+        //JToolBarHelper::save2new('config.save2new');
+		JToolBarHelper::cancel('config.cancel', 'JTOOLBAR_CANCEL');
 	}
 
 	/*
@@ -69,9 +69,9 @@ class Rsg2ViewConfig extends JViewLegacy
 		Writes a custom option and task button for the button bar.
 
 			@param string $task The task to perform (picked up by the switch($task) blocks.
-			@param string $icon The image to display.
-			@param string $iconOver The image to display when moused over.
-			@param string $alt The alt text for the icon image.
+			@param string $icon The config to display.
+			@param string $iconOver The config to display when moused over.
+			@param string $alt The alt text for the icon config.
 			@param bool $listSelect True if required to check that a standard list item is checked. 
 
 		public static function custom($task = '', $icon = '', $iconOver = '', $alt = '', $listSelect = true)
@@ -95,7 +95,7 @@ class Rsg2ViewConfig extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_CONFIG'));
+            $document->setTitle(JText::_('COM_RSG2_CONFIGURATION'));
     }
 	
 }
