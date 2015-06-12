@@ -20,7 +20,7 @@ class rsg2ModelConfig extends  JModelAdmin
 	 * @return      JTable  A database object
 	 * @since       2.5
 	 */
-	public function getTable($type = 'Galleries', $prefix = 'rsg2Table', $config = array()) 
+	public function getTable($type = 'config', $prefix = 'rsg2Table', $config = array()) 
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -34,11 +34,9 @@ class rsg2ModelConfig extends  JModelAdmin
 	 */
 	public function getForm($data = array(), $loadData = true) 
 	{
-        $app = JFactory::getApplication();
-
 		$options = array('control' => 'jform', 'load_data' => $loadData);
 		// Get the form.
-		$form = $this->loadForm('galleries', 'gallery', $options);
+		$form = $this->loadForm('config', 'config', $options);
 		if (empty($form)) 
 		{
 			return false;
