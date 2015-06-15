@@ -4,25 +4,30 @@
 
 		<field
 			name			= "Version"
-			type			= "RsgConfigText"
+			type			= "text"
 			label           = "COM_RSG2_VERSION"
+			description     = ""
+			maxlength       = "250"
+			filter          = ""
+			size            = "60"
 		/>
 		
-		<field
+		
+		<!--field
 			name			= "Einleitender Text"
-			type			= "RsgConfigText"
+			type			= "text"
 			label           = "COM_RSG2_VERSION"
 		/>
 		
 		<field
 			name			= "Debug"
-			type			= "RsgConfigText"
+			type			= "text"
 			label           = "COM_RSG2_VERSION"
 		/>
 		
 		<field
 			name			= "SEF"
-			type			= "RsgConfigText"
+			type			= "text"
 			label           = "COM_RSG2_VERSION"
 		/>		
     </fieldset>	
@@ -30,13 +35,13 @@
 	<fieldset name ="image">
 		<field
 			name			= "checked_out"
-			type			= "hidden"
+			type			= "text"
 			label           = ""
 		/>
 
 		<field
 			name			= "checked_out_time"
-			type			= "hidden"
+			type			= "text"
 			label           = ""
 		/>
     </fieldset>	
@@ -44,13 +49,13 @@
 	<fieldset name ="display">	
 		<field
 			name			= "checked_out"
-			type			= "hidden"
+			type			= "text"
 			label           = ""
 		/>
 
 		<field
 			name			= "checked_out_time"
-			type			= "hidden"
+			type			= "text"
 			label           = ""
 		/>
     </fieldset>	
@@ -58,14 +63,16 @@
 	<fieldset name ="mygalleries">	
 		<field
 			name			= "checked_out"
-			type			= "hidden"
+			type			= "text"
 			label           = ""
 		/>
 
 		<field
 			name			= "checked_out_time"
-			type			= "hidden"
+			type			= "text"
 			label           = ""
-		/>
+		/-->
     </fieldset>	
 </form>
+
+
