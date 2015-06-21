@@ -22,8 +22,9 @@ class Rsg2Controller extends JControllerLegacy
     
     /**
      * display task
-     *
-     * @return void
+     * @param bool $cachable
+     * @param bool $urlparams
+     * @return $this
      */
 	public function display($cachable = false, $urlparams = false)
 	{

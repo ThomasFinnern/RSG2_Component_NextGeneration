@@ -97,10 +97,12 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsgallery2/
 	<div id="j-main-container">
 <?php endif;?>
 	
-<div class="clearfix"> </div>
-	<div class="span8">
-		<div class="row-fluid">
-				<div class="panel_area">
+		<div class="clearfix"> </div>
+			<div class="span8">
+				
+				<div class="container-fluid">
+					<div class="row">
+			
 					<!--h4>Bootstrap in Joomla! 3.x</h4-->
 					<?php
 						if ( $canDo->get('core.admin') ){
@@ -133,7 +135,8 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsgallery2/
 						}
 
 						// if debug is on, display advanced options
-						if( ($Rsg2DebugActive) AND ( $canDo->get('core.admin') ) ){ ?>
+						if( ($Rsg2DebugActive) AND ( $canDo->get('core.admin') ) ){ 
+					?>
 							<div id='rsg2-cpanelDebug'>
 								<div id='DangerZone'>
 									<h3>

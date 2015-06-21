@@ -14,13 +14,12 @@ class rsg2ModelConfig extends  JModelAdmin
 	/**
 	 * Returns a reference to a Table object, always creating it.
 	 *
-	 * @param       type    The table type to instantiate
-	 * @param       string  A prefix for the table class name. Optional.
-	 * @param       array   Configuration array for model. Optional.
-	 * @return      JTable  A database object
-	 * @since       2.5
+	 * @param string $type    The table type to instantiate
+	 * @param string $prefix  A prefix for the table class name. Optional.
+	 * @param array $config   Configuration array for model. Optional.
+	 * @return mixed     JTable  A database object
 	 */
-	public function getTable($type = 'config', $prefix = 'rsg2Table', $config = array()) 
+	public function getTable($type = 'config', $prefix = 'rsg2Table', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}

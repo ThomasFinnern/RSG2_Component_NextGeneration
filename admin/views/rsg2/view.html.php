@@ -26,18 +26,11 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		$this->form = $form;
 		// $this->item = $item;
 		
-		// Define tabs options for version of Joomla! 3.0
-        $this->tabsOptions = array(
-            "active" => "tab1_id" // It is the ID of the active tab.
-        );
-
         // Define tabs options for version of Joomla! 3.1
         $this->tabsOptionsJ31 = array(
             "active" => "tab1_j31_id" // It is the ID of the active tab.
         );
-        
-		
-	
+        	
 		$this->addToolbar ();
 		$this->sidebar = JHtmlSidebar::render ();
 

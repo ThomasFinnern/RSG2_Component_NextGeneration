@@ -27,8 +27,6 @@ class Rsg2ViewConfig extends JViewLegacy
             "active" => "tab1_j31_id" // It is the ID of the active tab.
         );
         
-		
-
         $this->addToolbar ();
 		$this->sidebar = JHtmlSidebar::render ();
 		
@@ -36,6 +34,8 @@ class Rsg2ViewConfig extends JViewLegacy
 		
 		// Set the document
 		$this->setDocument();		
+
+        return;
 	}
 
 	protected function addToolbar ()

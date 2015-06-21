@@ -60,7 +60,7 @@ if($Rsg2DebugActive)
     // show active task
     $DebTxt = "==> base.rsg2.php".$Delim ."----------".$Delim;
     $DebTxt = $DebTxt . "\$task: $task".$Delim;
-    $DebTxt = $DebTxt . "\$option: $option".$Delim;
+    //$DebTxt = $DebTxt . "\$option: $option".$Delim;
     //$DebTxt = $DebTxt . "\$catid: $catid".$Delim;
     //$DebTxt = $DebTxt . "\$firstCid: $firstCid".$Delim;
     $DebTxt = $DebTxt . "\$id: $id".$Delim;
