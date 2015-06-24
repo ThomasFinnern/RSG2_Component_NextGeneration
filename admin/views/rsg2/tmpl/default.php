@@ -13,15 +13,17 @@ global $Rsg2DebugActive;
   */
 function RsgButton( $link, $image, $text ) {
 	?>
-	<div class="debug_icon_container>
-        <div class="rsgicon">
-            <a href="<?php echo $link; ?>">
-                <div class="iconimage">
-                    <?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>
-                </div>
-                <?php echo $text; ?>
-            </a>
-        </div>
+	<div class="span2">
+		<div class="debug_icon_container">
+			<div class="rsg2icon">
+				<a href="<?php echo $link; ?>">
+					<div class="iconimage">
+						<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>
+					</div>
+					<?php echo $text; ?>
+				</a>
+			</div>
+		</div>
 	</div>
 	<?php
 }
@@ -35,14 +37,16 @@ function RsgButton( $link, $image, $text ) {
   */
 function RsgDebugButton($Id, $link, $image, $text ) {
 	?>
-	<div class="debug_icon_container">
-		<div class="debugicon">
-			<a href="<?php echo $link; ?>" class="<?php echo $Id; ?>">
-				<div class="iconimage">
-					<?php echo JHtml::image('administrator/components/com_rsg2/images/'.$image, $text); ?>
-				</div>
-				<?php echo $text; ?>
-			</a>
+	<div class="span2">
+		<div class="debug_icon_container">
+			<div class="debugicon">
+				<a href="<?php echo $link; ?>" class="<?php echo $Id; ?>">
+					<div class="iconimage">
+						<?php echo JHtml::image('administrator/components/com_rsg2/images/'.$image, $text); ?>
+					</div>
+					<?php echo $text; ?>
+				</a>
+			</div>
 		</div>
 	</div>
 	<?php
@@ -99,78 +103,79 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsgallery2/
 	
 		<div class="clearfix"> </div>
 			<div class="span8">
-				
-				<div class="container-fluid">
-					<div class="row">
 			
-					<!--h4>Bootstrap in Joomla! 3.x</h4-->
-					<?php
-						if ( $canDo->get('core.admin') ){
-							$link = 'index.php?option=com_rsg2&amp;view=config';
-							RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
-						}
+				<!--div class="container-fluid" -->
+				
+					<div class="row-fluid">
+						<?php
+							if ( $canDo->get('core.admin') ){
+								$link = 'index.php?option=com_rsg2&amp;view=config';
+								RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
+							}
 
-						$link = 'index.php?option=com_rsg2&amp;view=galleries';
-						RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
+							$link = 'index.php?option=com_rsg2&amp;view=galleries';
+							RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
 
-						$link = 'index.php?option=com_rsg2&amp;view=uploadBatch';
-						RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
+							$link = 'index.php?option=com_rsg2&amp;view=uploadBatch';
+							RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
 
-						$link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
-						RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
+							$link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
+							RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
 
-						$link = 'index.php?option=com_rsg2&amp;view=images';
-						RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
+							$link = 'index.php?option=com_rsg2&amp;view=images';
+							RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
 
-						if ( $canDo->get('core.admin') ){
-							/*
-							$link = 'index.php?option=COM_RSG2&task=consolidate_db';
-							RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
-							*/
-							$link = 'index.php?option=COM_RSG2&rsgOption=maintenance';
-							RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
+							if ( $canDo->get('core.admin') ){
+									/*
+									$link = 'index.php?option=COM_RSG2&task=consolidate_db';
+									RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
+									*/
+									$link = 'index.php?option=COM_RSG2&rsgOption=maintenance';
+									RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
 
-							$link = 'index.php?option=COM_RSG2&rsgOption=installer';
-							RsgButton( $link, 'template.png', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
-						}
+										$link = 'index.php?option=COM_RSG2&rsgOption=installer';
+										RsgButton( $link, 'template.png', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
+							} 
 
-						// if debug is on, display advanced options
-						if( ($Rsg2DebugActive) AND ( $canDo->get('core.admin') ) ){ 
-					?>
+							// if debug is on, display advanced options
+							if( ($Rsg2DebugActive) AND ( $canDo->get('core.admin') ) ){ 
+						?>
 							<div id='rsg2-cpanelDebug'>
 								<div id='DangerZone'>
 									<h3>
 										<?php echo JText::_('COM_RSG2_DANGER_ZONE');?>
 									</h3>
-								</div>
-								<br/>
-								<div id='rsg2-DebugHeader'>
-									<strong>
-										<?php echo JText::_('COM_RSG2_C_DEBUG_ON');?>
-									</strong>
-								</div>
+									<br/>
+									<div id='rsg2-DebugHeader'>
+										<strong>
+											<?php echo JText::_('COM_RSG2_C_DEBUG_ON');?>
+										</strong>
+									</div>
 								<?php
-								$link = 'index.php?option=COM_RSG2&task=purgeEverything';
-								RsgDebugButton( 'purgeEverything', $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') );
+									$link = 'index.php?option=COM_RSG2&task=purgeEverything';
+									RsgDebugButton( 'purgeEverything', $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') );
 
-								$link = 'index.php?option=COM_RSG2&task=reallyUninstall';
-								RsgDebugButton( 'reallyUninstall', $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') );
+									$link = 'index.php?option=COM_RSG2&task=reallyUninstall';
+									RsgDebugButton( 'reallyUninstall', $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') );
 
-								$link = 'index.php?option=COM_RSG2&task=config_rawEdit';
-								RsgDebugButton( 'config_rawEdit', $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT') );
+									$link = 'index.php?option=COM_RSG2&task=config_rawEdit';
+									RsgDebugButton( 'config_rawEdit', $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT') );
 
-								//Moved Migration Options: only show when debug is on since there are only test migration options and four Joomla 1.0.x options.
-								/*
-								$link = 'index.php?option=COM_RSG2&rsgOption=maintenance&task=showMigration';
-								RsgDebugButton( 'showMigration', $link, 'dbrestore.png', JText::_('COM_RSG2_MIGRATION_OPTIONS') );
-								*/
-								$link = 'index.php?option=COM_RSG2&task=config_dumpVars';
-								RsgDebugButton( 'config_dumpVars', $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW') );
+									//Moved Migration Options: only show when debug is on since there are only test migration options and four Joomla 1.0.x options.
+									/*
+									$link = 'index.php?option=COM_RSG2&rsgOption=maintenance&task=showMigration';
+									RsgDebugButton( 'showMigration', $link, 'dbrestore.png', JText::_('COM_RSG2_MIGRATION_OPTIONS') );
+									*/
+									$link = 'index.php?option=COM_RSG2&task=config_dumpVars';
+									RsgDebugButton( 'config_dumpVars', $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW') );
 								?>
+								</div>
 							</div>
-						<?php } ?>
+						<?php 
+							} 
+						?>
 					</div>
-				</div>
+				<!--/div-->
 			</div>
 		</div>
 	</div>
