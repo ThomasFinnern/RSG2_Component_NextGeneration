@@ -4,12 +4,17 @@ defined( '_JEXEC' ) or die;
 
 jimport ('joomla.html.html.bootstrap');
 jimport('joomla.application.component.view');
+includes ... 
+jimport(JUri::root(true).'/administrator/components/com_rsg2/helpers/CreditsEnumaration.php');
 
 class Rsg2ViewRsg2 extends JViewLegacy
 {
+	protected $Credits;
+	
 
 	public function display ($tpl = null)
 	{
+		$this->Credits = $CreditsEnumaration;
 	
 		$form = $this->get('Form');
 		// $item = $this->get('Item');
@@ -58,6 +63,34 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		//JToolBarHelper::custom('com_rsg2.Redirect2Images', 'mediamanager.png', 'mediamanager.png', 'COM_RSG2_MENU_IMAGES', false, false);
 	}
 	
+	/**
+	 * Gets a list of the actions that can be performed.
+	 *
+	 * @param	int	$galleryId	The gallery ID.
+	 * @return	JObject
+	 */
+	function getActions($galleryId = 0) {
+		$user	= JFactory::getUser();
+		$result	= new JObject;
+
+		if (empty($galleryId)) {
+			$assetName = 'COM_RSG2';
+		} else {
+			$assetName = 'COM_RSG2.gallery.'.(int) $galleryId;
+		}
+
+		$actions = array(
+			'core.admin', 'core.manage', 'core.create', 'core.delete', 'core.edit', 'core.edit.state', 'core.edit.own'
+		);
+
+		foreach ($actions as $action) {
+			$result->set($action, $user->authorise($action, $assetName));
+		}
+
+		return $result;
+	}
+
+
 	function Redirect2ControlCenter()
 	{
 	

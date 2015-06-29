@@ -44,35 +44,7 @@ function RsgDebugButton($Id, $link, $image, $text ) {
 
 // public static $extension = 'COM_RSG2';
 
-/**
- * Gets a list of the actions that can be performed.
- *
- * @param	int	$galleryId	The gallery ID.
- * @return	JObject
- */
-function getActions($galleryId = 0) {
-	$user	= JFactory::getUser();
-	$result	= new JObject;
-
-	if (empty($galleryId)) {
-		$assetName = 'COM_RSG2';
-	} else {
-		$assetName = 'COM_RSG2.gallery.'.(int) $galleryId;
-	}
-
-	$actions = array(
-		'core.admin', 'core.manage', 'core.create', 'core.delete', 'core.edit', 'core.edit.state', 'core.edit.own'
-	);
-
-	foreach ($actions as $action) {
-		$result->set($action, $user->authorise($action, $assetName));
-	}
-
-	return $result;
-}
-
-
-$canDo = getActions ();
+$canDo = $this->getActions ();
 
 $doc = JFactory::getDocument();
 //$doc->addStyleSheet ("administrator/components/COM_RSG2/admin.rsgallery2.css");
@@ -226,28 +198,11 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 		?>
 
 			<div id='rsg2-credits'>
-				<h3>Core Team - RSGallery2 4.x</h3>
-				<h4>(Joomla 3.x)</h4>
-				<dl>
-					<dt>2015 - </dt>
-						<dd><b>Johan Ravenzwaaij</b></dd>
-						<dd><b>Mirjam Kaizer</b></dd>
-						<dd><b>Thomas Finnern</b></dd>
-				</dl>
-
-				<h3>RSGallery2 3.x (Joomla 1.6/1.7/2.5)</h3>
-				<dl>
-					<dt>2011-2014</dt>
-						<dd><b>Johan Ravenzwaaij</b></dd>
-						<dd><b>Mirjam Kaizer</b></dd>
-				</dl>
-
-				<h3>Translations</h3>
-				<br>
-				....
-				<br>
-				<br>
-				<br>
+			------------------
+		<?php			
+			echo $this->Credits;
+		?>
+			------------------
 			</div>
 			
 		<?php
