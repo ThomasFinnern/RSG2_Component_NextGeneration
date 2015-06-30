@@ -4,8 +4,10 @@ defined( '_JEXEC' ) or die;
 
 jimport ('joomla.html.html.bootstrap');
 jimport('joomla.application.component.view');
-includes ... 
-jimport(JUri::root(true).'/administrator/components/com_rsg2/helpers/CreditsEnumaration.php');
+
+//require (JUri::root(true).'/administrator/components/com_rsg2/helpers/CreditsEnumaration.php');
+//require ('helpers/CreditsEnumaration.php');
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/CreditsEnumaration.php'; 
 
 class Rsg2ViewRsg2 extends JViewLegacy
 {
@@ -14,7 +16,7 @@ class Rsg2ViewRsg2 extends JViewLegacy
 
 	public function display ($tpl = null)
 	{
-		$this->Credits = $CreditsEnumaration;
+		$this->Credits = CreditsEnumaration::CreditsEnumarationText;
 	
 		$form = $this->get('Form');
 		// $item = $this->get('Item');
