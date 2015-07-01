@@ -12,14 +12,34 @@ require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/CreditsEnumarat
 class Rsg2ViewRsg2 extends JViewLegacy
 {
 	protected $Credits;
+	// ToDo: Use other rights instead of core.admin -> IsRoot ?
+	// core.admin is the permission used to control access to 
+	// the global config
+	protected $UserIsRoot;   
 	
-
+	/**
+	 * Checks if user has root status (is re.admin')
+	 *
+	 * @return	bool
+	 */		
+	function CheckUserIsRoot ()
+	{
+		$user = JFactory::getUser();
+		$isroot = $user->authorise('core.admin');
+		return $isroot;
+	}	
+	
+	//------------------------------------------------
 	public function display ($tpl = null)
 	{
+		// List of credits for rsgallery2 developers / translaters
 		$this->Credits = CreditsEnumaration::CreditsEnumarationText;
 	
+		// Check rights of user
+		$this->UserIsRoot = CheckUserIsRoot ();
+				
 		$form = $this->get('Form');
-		// $item = $this->get('Item');
+
 		Rsg2Helper::addSubMenu('rsg2'); 
 		
 		// Check for errors.
@@ -31,14 +51,9 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		
 		// Assign the Data
 		$this->form = $form;
-		// $this->item = $item;
-		
-        // Define tabs options for version of Joomla! 3.1
-        $this->tabsOptionsJ31 = array(
-            "active" => "tab1_j31_id" // It is the ID of the active tab.
-        );
         	
-		$this->addToolbar ();
+		//$this->addToolbar ();
+		JToolBarHelper::title(JText::_('COM_RSG2_MENU_CONTROL_PANEL'), 'config');
 		$this->sidebar = JHtmlSidebar::render ();
 
 		parent::display ($tpl);
@@ -47,30 +62,12 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		$this->setDocument();		
 	}
 
-	protected function addToolbar ()
-	{
-		//JToolBarHelper::TitleText ("Test01");
-		JToolBarHelper::title(JText::_('COM_RSG2_MENU_CONTROL_PANEL'), 'generic.png');
-		//$input = JFactory::getApplication()->input;
-		
-		//$link = 'index.php?option=COM_RSG2&rsgOption=images&task=batchupload';
-
-
-		//JToolBarHelper::custom('com_rsg2.Redirect2ControlCenter', 'config.png', 'config.png', 'COM_RSG2_MENU_CONTROL_PANEL', false, false);
-		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Upload', 'rsg2', 'rsg2', JText::_('COM_RSG2_MENU_BATCH_UPLOAD'), false, false);
-		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Galleries', 'rsg2', 'rsg2', 'COM_RSG2_MENU_GALLERIES', false, false);
-		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Images', 'mediamanager.png', 'mediamanager.png', 'COM_RSG2_MENU_IMAGES', false, false);
-	}
-	
 	/**
 	 * Gets a list of the actions that can be performed.
 	 *
 	 * @param	int	$galleryId	The gallery ID.
 	 * @return	JObject
-	 */
+	 *
 	function getActions($galleryId = 0) {
 		$user	= JFactory::getUser();
 		$result	= new JObject;
@@ -91,7 +88,7 @@ class Rsg2ViewRsg2 extends JViewLegacy
 
 		return $result;
 	}
-
+	*
 
 	function Redirect2ControlCenter()
 	{
@@ -128,19 +125,19 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		$this->setRedirect($link);
 		$this->redirect();
 	}
-		
+	*/	
 	
     /**
      * Method to set up the document properties
      *
      * @return void
-     */
+     *
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
             $document->setTitle(JText::_('COM_RSG2_MENU_CONTROL_PANEL'));
     }
-	
+	*/
 	
 	
 	

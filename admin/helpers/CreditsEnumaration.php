@@ -41,12 +41,12 @@ class CreditsEnumaration
 		<dt>Croatian</dt>
 			<dd><b>Tanja</b></dd>
 		<dt>Czech</dt>
-			<dd><b>David Zirhut</b> <a href='http://www.joomlaportal.cz/'>joomlaportal.za</a></dd>
+			<dd><b>David Zirhut</b>&nbsp;<a href='http://www.joomlaportal.cz/'>joomlaportal.za</a></dd>
 			<dd><b>Felix 'eFix' Lauda</b></dd>
 		<dt>Dutch</dt>
 			<dd><b>Tomislav Ribicic</b></dd>
-			<dd><b>Dani&#235;l Tulp</b> <a href='http://design.danieltulp.nl' target='_blank'></a></dd>
-			<dd><b>Bas</b><a href='http://www.fantasea.nl' target='_blank'>http://www.fantasea.nl</a></dd>
+			<dd><b>Dani&#235;l Tulp</b>&nbsp;<a href='http://design.danieltulp.nl' target='_blank'></a></dd>
+			<dd><b>Bas</b>&nbsp;<a href='http://www.fantasea.nl' target='_blank'>http://www.fantasea.nl</a></dd>
 			<dd><b>Mirjam Kaizer</b></dd>
 		<dt>Finnish</dt>
 			<dd><b>Antti</b></dd>
@@ -54,25 +54,25 @@ class CreditsEnumaration
 		<dt>French</dt>
 			<dd><b>Fabien de Silvestre</b></dd>
 		<dt>German</dt>
-			<dd><b>woelzen</b><a href='http://conseil.silvestre.fr' target='_blank'>http://conseil.silvestre.fr</a></dd>
+			<dd><b>woelzen</b>&nbsp;<a href='http://conseil.silvestre.fr' target='_blank'>http://conseil.silvestre.fr</a></dd>
 			<dd><b>chfrey</b></dd>
 		<dt>Greek</dt>
-			<dd><b>Charis Argyropoulos</b><a href='http://www.symenox.gr' target='_blank'>http://www.symenox.gr</a></dd>
+			<dd><b>Charis Argyropoulos</b>&nbsp;<a href='http://www.symenox.gr' target='_blank'>http://www.symenox.gr</a></dd>
 			<dd><b>George Fakas</b></dd>
 		<dt>Hebrew</dt>
 			<dd><b>Kobi</b></dd>
-			<dd><b>theNoam</b><a href='http://www.theNoam.com/' target='_blank'>http://www.theNoam.com/</a></dd>
+			<dd><b>theNoam</b>&nbsp;<a href='http://www.theNoam.com/' target='_blank'>http://www.theNoam.com/</a></dd>
 		<dt>Hungarian</dt>
-			<dd><b>Jozsef Tamas Herczeg</b> <a href='http://www.soft-trans.hu' target='_blank'>SOFT-TRANS</a></dd>
+			<dd><b>Jozsef Tamas Herczeg</b>&nbsp;<a href='http://www.soft-trans.hu' target='_blank'>SOFT-TRANS</a></dd>
 		<dt>Italian</dt>
-			<dd><b>Michele Monaco</b><a href='http://www.mayavoyage.com' target='_blank'>Maya Voyages</a></dd>
+			<dd><b>Michele Monaco</b>&nbsp;<a href='http://www.mayavoyage.com' target='_blank'>Maya Voyages</a></dd>
 			<dd><b>Marco Galimberti</b>
 			</dd>
 		<dt>Norwegian</dt>
 			<dd><b>Ronny Tjelle</b></dd>
 			<dd><b>Steinar Vikholt</b></dd>
 		<dt>Persian</dt>
-			<dd><b>Joomir</b> <a href='http://www.joomir.com/' target='_blank'>http://www.joomir.com</a></dd>
+			<dd><b>Joomir</b>&nbsp;<a href='http://www.joomir.com/' target='_blank'>http://www.joomir.com</a></dd>
 		<dt>Polish</dt>
 			<dd><b>Zbyszek Rosiek</b></dd>
 		<dt>Russian</dt>
@@ -80,17 +80,17 @@ class CreditsEnumaration
 		<dt>Slovenian</dt>
 			<dd><b>Iztok Osredkar</b></dd>
 		<dt>Spanish</dt>
-			<dd><b>Eb&auml;vs</b> <a href='http://www.ebavs.net/' target='_blank'>eb&auml;vs.net</a></dd>
+			<dd><b>Eb&auml;vs</b>&nbsp;<a href='http://www.ebavs.net/' target='_blank'>eb&auml;vs.net</a></dd>
 		<dt>Traditional Chinese</dt>
-			<dd><b>Sun Yu</b><a href='http://www.meto.com.tw' target='_blank'>Meto</a></dd>
-			<dd><b>Mike Ho</b> <a href='http://www.dogneighbor.com' target='_blank'>http://www.dogneighbor.com</a></dd>
+			<dd><b>Sun Yu</b>&nbsp;<a href='http://www.meto.com.tw' target='_blank'>Meto</a></dd>
+			<dd><b>Mike Ho</b>&nbsp;<a href='http://www.dogneighbor.com' target='_blank'>http://www.dogneighbor.com</a></dd>
 		<dt>Turkish</dt>
 			<dd><b>Pheadrus</b></dd>
 	</dl>
 
 	<h3>Logo</h3>
 	<dl>
-		<dt>Designer</dt> <dd><b>Cory "ccdog" Webb</b> <a href='http://www.corywebb.com/' target='_blank'>CoryWebb.com</a></dd>
+		<dt>Designer</dt> <dd><b>Cory "ccdog" Webb</b>&nbsp;<a href='http://www.corywebb.com/' target='_blank'>CoryWebb.com</a></dd>
 	</dl>
 
 

@@ -44,8 +44,6 @@ function RsgDebugButton($Id, $link, $image, $text ) {
 
 // public static $extension = 'COM_RSG2';
 
-$canDo = $this->getActions ();
-
 $doc = JFactory::getDocument();
 //$doc->addStyleSheet ("administrator/components/COM_RSG2/admin.rsgallery2.css");
 //$doc->addStyleSheet (JURI::root(true)."/administrator/components/COM_RSG2/admin.rsgallery2.css");
@@ -70,7 +68,7 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 		<div class="span8">
 			<div class="row-fluid">
 				<?php
-					if ( $canDo->get('core.admin') ){
+					if ( $this->UserIsRoot ){
 						$link = 'index.php?option=com_rsg2&amp;view=config';
 						RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
 					}
@@ -87,7 +85,7 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 					$link = 'index.php?option=com_rsg2&amp;view=images';
 					RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
 
-					if ( $canDo->get('core.admin') ){
+					if ( $this->UserIsRoot ){
 						/*
 						$link = 'index.php?option=COM_RSG2&task=consolidate_db';
 						RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
@@ -100,7 +98,7 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 					} 
 
 			// if debug is on, display advanced options
-			if( ($Rsg2DebugActive) AND ( $canDo->get('core.admin') ) ){ 
+			if( ($Rsg2DebugActive) AND ( $this->UserIsRoot ) ){ 
 				?>
 			</div>
 			<div class="row-fluid">
