@@ -17,18 +17,6 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	// the global config
 	protected $UserIsRoot;   
 	
-	/**
-	 * Checks if user has root status (is re.admin')
-	 *
-	 * @return	bool
-	 */		
-	function CheckUserIsRoot ()
-	{
-		$user = JFactory::getUser();
-		$isroot = $user->authorise('core.admin');
-		return $isroot;
-	}	
-	
 	//------------------------------------------------
 	public function display ($tpl = null)
 	{
@@ -36,7 +24,7 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		$this->Credits = CreditsEnumaration::CreditsEnumarationText;
 	
 		// Check rights of user
-		$this->UserIsRoot = CheckUserIsRoot ();
+		$this->UserIsRoot = $this->CheckUserIsRoot ();
 				
 		$form = $this->get('Form');
 
@@ -57,11 +45,32 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		$this->sidebar = JHtmlSidebar::render ();
 
 		parent::display ($tpl);
-		
-		// Set the document
-		$this->setDocument();		
 	}
 
+	/**
+	 * Checks if user has root status (is re.admin')
+	 *
+	 * @return	bool
+	 */		
+	function CheckUserIsRoot ()
+	{
+		$user = JFactory::getUser();
+		$isroot = $user->authorise('core.admin');
+		return $isroot;
+	}	
+	
+    /**
+     * Method to set up the document properties
+     *
+     * @return void
+     *
+    protected function setDocument() 
+    {
+            $document = JFactory::getDocument();
+            $document->setTitle(JText::_('COM_RSG2_MENU_CONTROL_PANEL'));
+    }
+	*/
+	
 	/**
 	 * Gets a list of the actions that can be performed.
 	 *
@@ -127,17 +136,6 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	}
 	*/	
 	
-    /**
-     * Method to set up the document properties
-     *
-     * @return void
-     *
-    protected function setDocument() 
-    {
-            $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_MENU_CONTROL_PANEL'));
-    }
-	*/
 	
 	
 	
