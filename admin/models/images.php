@@ -65,6 +65,8 @@ class rsg2ModelImages extends JModelList
      * This function will retrieve the data of the 5 last uploaded images
      */    
 	 
+	List with Name, gallery name, date , user name 
+	 
     static function latestImages($count) {
 		
 		$lastweek  = mktime (0, 0, 0, date("m"),    date("d") - 7, date("Y"));
@@ -82,11 +84,8 @@ class rsg2ModelImages extends JModelList
 			->from($db->quoteName('#__rsgallery2_files'));
 			->where($db->quoteName(`id`).' = '. (int) $id);
 			->order()
-			->setLimit('10');
+			->setLimit('10');		
 
-		
-		
-		
 		$database->setQuery($query);
 		$rows = $database->loadObjectList();
 		

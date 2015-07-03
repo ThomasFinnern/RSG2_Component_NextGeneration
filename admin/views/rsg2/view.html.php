@@ -8,6 +8,7 @@ jimport('joomla.application.component.view');
 //require (JUri::root(true).'/administrator/components/com_rsg2/helpers/CreditsEnumaration.php');
 //require ('helpers/CreditsEnumaration.php');
 require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/CreditsEnumaration.php'; 
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/models/images.php'; 
 
 class Rsg2ViewRsg2 extends JViewLegacy
 {
@@ -15,7 +16,9 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	// ToDo: Use other rights instead of core.admin -> IsRoot ?
 	// core.admin is the permission used to control access to 
 	// the global config
-	protected $UserIsRoot;   
+	protected $UserIsRoot; 
+	protected $LastImages;
+	protected $LastGalleries;
 	
 	//------------------------------------------------
 	public function display ($tpl = null)
@@ -25,6 +28,15 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	
 		// Check rights of user
 		$this->UserIsRoot = $this->CheckUserIsRoot ();
+				
+		// fetch data of last images (within one week ?)
+		$this->Credits = rsg2ModelImages::latestImages(5);
+				
+		// fetch data of last galleries (within one week ?)		
+		// $this->Credits = latestGalleries(5);
+				
+				
+				
 				
 		$form = $this->get('Form');
 

@@ -31,6 +31,24 @@ function RsgButton( $link, $image, $text, $addClass='' ) {
 	<?php
 }
 
+
+yyy
+function LatestImages ($images)
+{
+	foreach ($images as $image) {
+		?>
+		<tr>
+			<td><?php echo $image->name;?></td>
+			<td><?php echo galleryUtils::getCatnameFromId($image->gallery_id);?></td>
+			<td><?php echo $image->date;?></td>
+			<td><?php echo galleryUtils::genericGetUsername($image->userid);?></td>
+		</tr>
+		<?php
+	}
+}
+
+
+
 /**
   * Used by showCP to generate buttons
  * @param $Id
@@ -81,7 +99,10 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 
 					$link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
 					RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
-
+				?>
+			</div>
+			<div class="row-fluid">
+				<?php
 					$link = 'index.php?option=com_rsg2&amp;view=images';
 					RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
 
