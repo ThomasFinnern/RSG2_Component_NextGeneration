@@ -7,8 +7,10 @@ jimport('joomla.application.component.view');
 
 //require (JUri::root(true).'/administrator/components/com_rsg2/helpers/CreditsEnumaration.php');
 //require ('helpers/CreditsEnumaration.php');
-require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/CreditsEnumaration.php'; 
-require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/models/images.php'; 
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/rsg2Common.php';
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/CreditsEnumaration.php';
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/models/images.php';
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/models/galleries.php';
 
 class Rsg2ViewRsg2 extends JViewLegacy
 {
@@ -19,10 +21,13 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	protected $UserIsRoot; 
 	protected $LastImages;
 	protected $LastGalleries;
+	protected $Rsg2Version;
 	
 	//------------------------------------------------
 	public function display ($tpl = null)
 	{
+		//--- get needed data ------------------------------------------
+		
 		// List of credits for rsgallery2 developers / translators
 		$this->Credits = CreditsEnumaration::CreditsEnumarationText;
 	
@@ -34,12 +39,17 @@ class Rsg2ViewRsg2 extends JViewLegacy
         $this->LastImages = rsg2ModelImages::latestImages(5);
 
         //$this->LastGalleries = rsg2ModelGalleries::lastWeekGalleries(5);
-        //$this->LastGalleries = rsg2ModelGalleries::latestGalleries(5);
+        $this->LastGalleries = rsg2ModelGalleries::latestGalleries(5);
 
-				
+		// Get rsgallery2 component version 
+		$this->Rsg2Version = rsg2Common::getRsg2ComponentVersion();
 				
 		$form = $this->get('Form');
 
+		
+		//--- begin to display --------------------------------------------
+		
+		
 		Rsg2Helper::addSubMenu('rsg2'); 
 		
 		// Check for errors.

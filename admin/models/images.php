@@ -2,10 +2,13 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
-// import the Joomla modellist library
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/rsg2Common.php';
+
+// import the Joomla model list library
 jimport('joomla.application.component.modellist');
+
 /**
- * HelloWorldList Model
+ * ImagesList Model
  */
 class rsg2ModelImages extends JModelList
 {
@@ -26,31 +29,6 @@ class rsg2ModelImages extends JModelList
             ->from('#__rsgallery2_files');
 
         return $query;
-    }
-
-    /**
-     * This function will retrieve the user name based on the user id
-     * @param int $uid user id
-     * @return string the username
-     * @todo isn't there a joomla function for this?
-     */
-    static function getUsernameFromId($uid) {  // ToDO: Move to somewhere else
-        // Create a new query object.
-        $db = JFactory::getDBO();
-        $query = $db->getQuery(true);
-
-        //$query = 'SELECT `username` FROM `#__users` WHERE `id` = '. (int) $uid;
-
-        // Query for user with $uid.
-        $query
-            ->select('username')
-            ->from($db->quoteName('#__users'))
-            ->where($db->quoteName('id') .' = ' . (int)$uid);
-
-        $db->setQuery($query);
-        $name = $db->loadResult();
-
-        return $name;
     }
 
     /**
@@ -115,7 +93,7 @@ class rsg2ModelImages extends JModelList
             $ImgInfo['name'] = $row->name;
             $ImgInfo['gallery'] = rsg2ModelImages::getParentGalleryName ($row->gallery_id);
             $ImgInfo['date'] = $row->date;
-            $ImgInfo['user'] = rsg2ModelImages::getUsernameFromId ($row->userid);
+            $ImgInfo['user'] = rsg2Common::getUsernameFromId ($row->userid);
 
             $latest[] = $ImgInfo;
         }
@@ -126,7 +104,6 @@ class rsg2ModelImages extends JModelList
 
     public static function lastWeekImages($limit)
     {
-
         $latest = array();
 
         $lastWeek = mktime(0, 0, 0, date("m"), date("d") - 7, date("Y"));
@@ -159,7 +136,7 @@ class rsg2ModelImages extends JModelList
             $ImgInfo['name'] = $row->name;
             $ImgInfo['gallery'] = rsg2ModelImages::getParentGalleryName ($row->gallery_id);
             $ImgInfo['date'] = $row->date;
-            $ImgInfo['user'] = rsg2ModelImages::getUsernameFromId ($row->userid);
+            $ImgInfo['user'] = rsg2Common::getUsernameFromId ($row->userid);
 
             $latest[] = $ImgInfo;
         }

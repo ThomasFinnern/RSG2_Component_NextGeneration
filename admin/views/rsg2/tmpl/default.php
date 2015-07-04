@@ -41,6 +41,45 @@ function RsgDebugButton($id, $link, $image, $text ) {
     RsgButton( $link, $image, $text, "debugicon");
 }
 
+function DisplayInfoGalleries ($infoGalleries) {
+
+    // exit if no data given
+    if (count($infoGalleries) == 0)
+    {
+        echo JText::_('COM_RSG2_NO_NEW_GALLERIES');
+        return;
+    }
+
+    // Header ----------------------------------
+
+    echo '<table class="table table-striped table-condensed">';
+        echo '    <caption>'.JText::_('COM_RSG2_MOST_RECENTLY_ADDED_GALLERIES').'</caption>';
+        echo '    <thead>';
+        echo '        <tr>';
+            echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
+            echo '            <th>'.JText::_('COM_RSG2_USER').'</th>';
+            echo '            <th>'.JText::_('COM_RSG2_ID').'</th>';
+            echo '        </tr>';
+        echo '    </thead>';
+
+        //--- data ----------------------------------
+
+        echo '    <tbody>';
+
+        foreach ($infoGalleries as $GalleryInfo) {
+
+        echo '        <tr>';
+            echo '            <td>' . $GalleryInfo['name'] . '</td>';
+            echo '            <td>' . $GalleryInfo['user'] . '</td>';
+            echo '            <td>' . $GalleryInfo['id'] . '</td>';
+            echo '        </tr>';
+        echo '    </tbody>';
+        }
+        //--- footer ----------------------------------
+
+        echo '</table>';
+    return;
+}
 
 function DisplayInfoImages ($infoImages) {
 
@@ -53,7 +92,7 @@ function DisplayInfoImages ($infoImages) {
 
     // Header ----------------------------------
 
-    echo '<table class="table-striped">';
+    echo '<table class="table table-striped table-condensed">';
     echo '    <caption>'.JText::_('COM_RSG2_MOST_RECENTLY_ADDED_ITEMS').'</caption>';
     echo '    <thead>';
     echo '        <tr>';
@@ -107,7 +146,7 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 <?php endif;?>
 	
 	<div class="row greybackground">
-		<div class="span8">
+		<div class="span7">
 			<div class="row-fluid">
 				<?php
 					if ( $this->UserIsRoot ){
@@ -187,13 +226,26 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 			</div>
 		</div>
 		
-		<div class="span4">
+		<div class="span5">
 			<div class="row">
 				<div class="rsg2logo">
 					<img src="<?php echo JUri::root(true);?>/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo"/><br>
-					<strong><?php echo JText::_('COM_RSG2_INSTALLED_VERSION');?></strong><br>
-					<strong><?php echo JText::_('COM_RSG2_LICENSE')?>:</strong><br>
-					<a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GNU GPL</a><br>
+
+					<strong><?php echo JText::_('COM_RSG2_INSTALLED_VERSION').': ';?></strong>
+					<a href="" target="_blank" title="<?php echo JText::_('COM_RSG2_VIEW_CHANGE_LOG'); ?>"  ><?php echo $this->Rsg2Version;?></a><br>
+
+					<strong><?php echo JText::_('COM_RSG2_LICENSE')?>:</strong>
+					<a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" 
+					title="<?php echo JText::_('COM_RSG2_GNU_ORG'); ?>" >GNU GPL</a><br>
+					
+					<strong><?php echo JText::_('COM_RSG2_FORUM')?>:</strong>
+					<a href="http://www.rsgallery2.nl/" target="_blank" 
+					title="<?php echo JText::_('COM_RSG2_JUMP_TO_FORUM'); ?>" >www.rsgallery2.nl</a><br>
+
+					<strong><?php echo JText::_('COM_RSG2_DOCUMENTATION')?>:</strong>
+					<a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank" 
+					title="<?php echo JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION'); ?>" >
+					<?php echo JText::_('COM_RSG2_DOCUMENTATION'); ?></a><br>
 				</div>
 				<br>
 			</div>
@@ -203,29 +255,17 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 		<?php
 			echo JHtml::_('bootstrap.startAccordion', 'slide-example', array('active' => 'slide1', 'toggle' => 'false' ));
 			echo JHtml::_('bootstrap.addSlide', 'slide-example', JText::_('COM_RSG2_GALLERIES'), 'slide1');
-		?>
 
-					<strong><?php echo JText::_('COM_RSG2_GALLERY'); ?></strong>
-					<strong><?php echo JText::_('COM_RSG2_USER'); ?></strong>
-					<strong><?php echo JText::_('COM_RSG2_ID'); ?></strong>
+                // info about last uploaded galleries
+                DisplayInfoGalleries ($this->LastGalleries);
 
-				<?php // echo galleryUtils::latestCats();
-					// galleryUtils::latestCats();
-					echo "latest galleries"
-
-                // info about last uploaded imges
-//                DisplayInfoGalleries ($this->LastGalleries);
-
-				?>
-
-		<?php
 			echo JHtml::_('bootstrap.endSlide');
 			echo JHtml::_('bootstrap.endAccordion');
 			
 			echo JHtml::_('bootstrap.startAccordion', 'slide-example2', array('active' => 'slide2'));
 			echo JHtml::_('bootstrap.addSlide', 'slide-example2', JText::_('COM_RSG2_IMAGES'), 'slide2');
 
-                // info about last uploaded imges
+                // info about last uploaded images
                 DisplayInfoImages ($this->LastImages);
 
 			echo JHtml::_('bootstrap.endSlide');
