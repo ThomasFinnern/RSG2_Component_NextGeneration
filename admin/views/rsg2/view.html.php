@@ -23,19 +23,19 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	//------------------------------------------------
 	public function display ($tpl = null)
 	{
-		// List of credits for rsgallery2 developers / translaters
+		// List of credits for rsgallery2 developers / translators
 		$this->Credits = CreditsEnumaration::CreditsEnumarationText;
 	
 		// Check rights of user
 		$this->UserIsRoot = $this->CheckUserIsRoot ();
-				
-		// fetch data of last images (within one week ?)
-		$this->Credits = rsg2ModelImages::latestImages(5);
-				
-		// fetch data of last galleries (within one week ?)		
-		// $this->Credits = latestGalleries(5);
-				
-				
+
+		// fetch data of last galleries (within one week ?)
+        //$this->LastImages = rsg2ModelImages::lastWeekImages(5);
+        $this->LastImages = rsg2ModelImages::latestImages(5);
+
+        //$this->LastGalleries = rsg2ModelGalleries::lastWeekGalleries(5);
+        //$this->LastGalleries = rsg2ModelGalleries::latestGalleries(5);
+
 				
 				
 		$form = $this->get('Form');
@@ -57,6 +57,8 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		$this->sidebar = JHtmlSidebar::render ();
 
 		parent::display ($tpl);
+
+        return;
 	}
 
 	/**

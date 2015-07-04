@@ -31,34 +31,58 @@ function RsgButton( $link, $image, $text, $addClass='' ) {
 	<?php
 }
 
-
-yyy
-function LatestImages ($images)
-{
-	foreach ($images as $image) {
-		?>
-		<tr>
-			<td><?php echo $image->name;?></td>
-			<td><?php echo galleryUtils::getCatnameFromId($image->gallery_id);?></td>
-			<td><?php echo $image->date;?></td>
-			<td><?php echo galleryUtils::genericGetUsername($image->userid);?></td>
-		</tr>
-		<?php
-	}
-}
-
-
-
 /**
-  * Used by showCP to generate buttons
- * @param $Id
+ * Used by showCP to generate buttons
  * @param string $link URL for button link
  * @param string $image Image name for button image
  * @param string $text Text to show in button
-  */
-function RsgDebugButton($Id, $link, $image, $text ) {
-	RsgButton( $link, $image, $text, "debugicon");
-}	
+ */
+function RsgDebugButton($id, $link, $image, $text ) {
+    RsgButton( $link, $image, $text, "debugicon");
+}
+
+
+function DisplayInfoImages ($infoImages) {
+
+    // exit if no data given
+    if (count($infoImages) == 0)
+    {
+        echo JText::_('COM_RSG2_NO_NEW_IMAGES');
+        return;
+    }
+
+    // Header ----------------------------------
+
+    echo '<table class="table-striped">';
+    echo '    <caption>'.JText::_('COM_RSG2_MOST_RECENTLY_ADDED_ITEMS').'</caption>';
+    echo '    <thead>';
+    echo '        <tr>';
+    echo '            <th>'.JText::_('COM_RSG2_FILENAME').'</th>';
+    echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
+    echo '            <th>'.JText::_('COM_RSG2_DATE').'</th>';
+    echo '            <th>'.JText::_('COM_RSG2_USER').'</th>';
+    echo '        </tr>';
+    echo '    </thead>';
+
+    //--- data ----------------------------------
+
+    echo '    <tbody>';
+
+	foreach ($infoImages as $ImgInfo) {
+
+        echo '        <tr>';
+        echo '            <td>' . $ImgInfo['name'] . '</td>';
+        echo '            <td>' . $ImgInfo['gallery'] . '</td>';
+        echo '            <td>' . $ImgInfo['date'] . '</td>';
+        echo '            <td>' . $ImgInfo['user'] . '</td>';
+        echo '        </tr>';
+        echo '    </tbody>';
+    }
+    //--- footer ----------------------------------
+
+    echo '</table>';
+	return;
+}
 
 // public static $extension = 'COM_RSG2';
 
@@ -187,29 +211,23 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 
 				<?php // echo galleryUtils::latestCats();
 					// galleryUtils::latestCats();
-					echo "latest cats"						
+					echo "latest galleries"
+
+                // info about last uploaded imges
+//                DisplayInfoGalleries ($this->LastGalleries);
+
 				?>
 
-				
-				
 		<?php
 			echo JHtml::_('bootstrap.endSlide');
 			echo JHtml::_('bootstrap.endAccordion');
 			
 			echo JHtml::_('bootstrap.startAccordion', 'slide-example2', array('active' => 'slide2'));
 			echo JHtml::_('bootstrap.addSlide', 'slide-example2', JText::_('COM_RSG2_IMAGES'), 'slide2');
-		?>
 
-		<?php echo JText::_('COM_RSG2_MOST_RECENTLY_ADDED_ITEMS'); ?>
-		<strong><?php echo JText::_('COM_RSG2_FILENAME');?></strong>
-					<strong><?php echo JText::_('COM_RSG2_GALLERY');?></strong>
-					<strong><?php echo JText::_('COM_RSG2_DATE'); ?></strong>
-					<strong><?php echo JText::_('COM_RSG2_USER'); ?></strong>
-				<?php 
-				//galleryUtils::latestImages();
-				echo "latest images"						
-				?>
-		<?php
+                // info about last uploaded imges
+                DisplayInfoImages ($this->LastImages);
+
 			echo JHtml::_('bootstrap.endSlide');
 			echo JHtml::_('bootstrap.endAccordion');
 			
