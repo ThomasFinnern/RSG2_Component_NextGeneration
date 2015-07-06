@@ -37,7 +37,7 @@ function RsgButton( $link, $image, $text, $addClass='' ) {
  * @param string $image Image name for button image
  * @param string $text Text to show in button
  */
-function RsgDebugButton($id, $link, $image, $text ) {
+function RsgDebugButton($link, $image, $text ) {
     RsgButton( $link, $image, $text, "debugicon");
 }
 
@@ -53,31 +53,32 @@ function DisplayInfoGalleries ($infoGalleries) {
     // Header ----------------------------------
 
     echo '<table class="table table-striped table-condensed">';
-        echo '    <caption>'.JText::_('COM_RSG2_MOST_RECENTLY_ADDED_GALLERIES').'</caption>';
-        echo '    <thead>';
-        echo '        <tr>';
-            echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
-            echo '            <th>'.JText::_('COM_RSG2_USER').'</th>';
-            echo '            <th>'.JText::_('COM_RSG2_ID').'</th>';
-            echo '        </tr>';
-        echo '    </thead>';
+    echo '    <caption>'.JText::_('COM_RSG2_MOST_RECENTLY_ADDED_GALLERIES').'</caption>';
+    echo '    <thead>';
+    echo '        <tr>';
+    echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
+    echo '            <th>'.JText::_('COM_RSG2_USER').'</th>';
+    echo '            <th>'.JText::_('COM_RSG2_ID').'</th>';
+    echo '        </tr>';
+    echo '    </thead>';
 
         //--- data ----------------------------------
 
-        echo '    <tbody>';
+    echo '    <tbody>';
 
-        foreach ($infoGalleries as $GalleryInfo) {
+    foreach ($infoGalleries as $GalleryInfo) {
 
         echo '        <tr>';
-            echo '            <td>' . $GalleryInfo['name'] . '</td>';
-            echo '            <td>' . $GalleryInfo['user'] . '</td>';
-            echo '            <td>' . $GalleryInfo['id'] . '</td>';
-            echo '        </tr>';
-        echo '    </tbody>';
-        }
-        //--- footer ----------------------------------
+        echo '            <td>' . $GalleryInfo['name'] . '</td>';
+        echo '            <td>' . $GalleryInfo['user'] . '</td>';
+        echo '            <td>' . $GalleryInfo['id'] . '</td>';
+        echo '        </tr>';
+    }
+    echo '    </tbody>';
 
-        echo '</table>';
+    //--- footer ----------------------------------
+    echo '</table>';
+
     return;
 }
 
@@ -115,13 +116,118 @@ function DisplayInfoImages ($infoImages) {
         echo '            <td>' . $ImgInfo['date'] . '</td>';
         echo '            <td>' . $ImgInfo['user'] . '</td>';
         echo '        </tr>';
-        echo '    </tbody>';
     }
+    echo '    </tbody>';
+
+    //--- footer ----------------------------------
+    echo '</table>';
+
+	return;
+}
+
+
+function DisplayInfoRsgallery2 ($Rsg2Version)
+{
+
+    // Logo
+    echo '<div class="row">';
+
+    // Logo
+    echo '<div class="rsg2logo">';
+    echo '  <img src="<?php echo JUri::root(true);?>/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
+    echo '</div>';
+
+    // Header ----------------------------------
+
+    echo '<table class="table table-striped table-condensed">';
+    echo '    <caption>' . JText::_('COM_RSG2_INFO') . '</caption>';
+    echo '    <thead>';
+    echo '        <tr>';
+    //echo '            <th>'.JText::_('COM_RSG2_FILENAME').'</th>';
+    //echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
+    echo '            <th>' . '1' . '</th>';
+    echo '            <th>' . '2' . '</th>';
+    echo '        </tr>';
+    echo '    </thead>';
+
+    //--- data ----------------------------------
+
+    echo '    <tbody>';
+
+    // Installed version
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
+    echo '            <td>';
+    echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . ': >' . $Rsg2Version . '</a>';
+    echo '            </td>';
+    echo '        </tr>';
+
+    // Installed version
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
+    echo '            <td>';
+
+    echo '            </td>';
+    echo '        </tr>';
+
+    // Installed version
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
+    echo '            <td>';
+
+    echo '            </td>';
+    echo '        </tr>';
+
+    // Installed version
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
+    echo '            <td>';
+
+    echo '            </td>';
+    echo '        </tr>';
+
+    /*/ ?
+    echo '        <tr>';
+    echo '            <td>' .  . '</td>';
+    echo '            <td>';
+
+    echo '            </td>';
+    echo '        </tr>';
+    */
+
+    echo '    </tbody>';
+
     //--- footer ----------------------------------
 
     echo '</table>';
-	return;
+    echo '</row>';
+
+    return;
+
 }
+
+/*
+echo '					<strong><?php echo JText::_('COM_RSG2_INSTALLED_VERSION').': ';?></strong>';
+	echo '<a href="" target="_blank" title="<?php echo JText::_('COM_RSG2_VIEW_CHANGE_LOG'); ?>"  ><?php echo $this->Rsg2Version;?></a><br>';
+
+echo '<strong><?php echo JText::_('COM_RSG2_LICENSE')?>:</strong>';
+echo '<a href="http://www.gnu.org/copyleft/gpl.html" target="_blank"
+   title="<?php echo JText::_('COM_RSG2_GNU_ORG'); ?>" >GNU GPL</a><br>';
+
+echo '<strong><?php echo JText::_('COM_RSG2_FORUM')?>:</strong>';
+echo '<a href="http://www.rsgallery2.nl/" target="_blank"';
+   title="<?php echo JText::_('COM_RSG2_JUMP_TO_FORUM'); ?>" >www.rsgallery2.nl</a><br>';
+
+echo '<strong><?php echo JText::_('COM_RSG2_DOCUMENTATION')?>:</strong>';
+echo '<a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
+   title="<?php echo JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION'); ?>" >';
+    echo '    <?php echo JText::_('COM_RSG2_DOCUMENTATION'); ?></a>';
+echo '</div>';
+*/
+
+
+
+
 
 // public static $extension = 'COM_RSG2';
 
@@ -202,21 +308,21 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 					<div class="row">
 						<?php
 							$link = 'index.php?option=COM_RSG2&task=purgeEverything';
-							RsgDebugButton( 'purgeEverything', $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') );
+							RsgDebugButton( $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') );
 
 							$link = 'index.php?option=COM_RSG2&task=reallyUninstall';
-							RsgDebugButton( 'reallyUninstall', $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') );
+							RsgDebugButton( $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') );
 
 							$link = 'index.php?option=COM_RSG2&task=config_rawEdit';
-							RsgDebugButton( 'config_rawEdit', $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT') );
+							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT') );
 
 							//Moved Migration Options: only show when debug is on since there are only test migration options and four Joomla 1.0.x options.
 							/*
 							$link = 'index.php?option=COM_RSG2&rsgOption=maintenance&task=showMigration';
-							RsgDebugButton( 'showMigration', $link, 'dbrestore.png', JText::_('COM_RSG2_MIGRATION_OPTIONS') );
+							RsgDebugButton( $link, 'dbrestore.png', JText::_('COM_RSG2_MIGRATION_OPTIONS') );
 							*/
 							$link = 'index.php?option=COM_RSG2&task=config_dumpVars';
-							RsgDebugButton( 'config_dumpVars', $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW') );
+							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW') );
 						?>
 					</div>
 				</div>
@@ -227,32 +333,12 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 		</div>
 		
 		<div class="span5">
-			<div class="row">
-				<div class="rsg2logo">
-					<img src="<?php echo JUri::root(true);?>/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo"/><br>
-
-					<strong><?php echo JText::_('COM_RSG2_INSTALLED_VERSION').': ';?></strong>
-					<a href="" target="_blank" title="<?php echo JText::_('COM_RSG2_VIEW_CHANGE_LOG'); ?>"  ><?php echo $this->Rsg2Version;?></a><br>
-
-					<strong><?php echo JText::_('COM_RSG2_LICENSE')?>:</strong>
-					<a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" 
-					title="<?php echo JText::_('COM_RSG2_GNU_ORG'); ?>" >GNU GPL</a><br>
-					
-					<strong><?php echo JText::_('COM_RSG2_FORUM')?>:</strong>
-					<a href="http://www.rsgallery2.nl/" target="_blank" 
-					title="<?php echo JText::_('COM_RSG2_JUMP_TO_FORUM'); ?>" >www.rsgallery2.nl</a><br>
-
-					<strong><?php echo JText::_('COM_RSG2_DOCUMENTATION')?>:</strong>
-					<a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank" 
-					title="<?php echo JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION'); ?>" >
-					<?php echo JText::_('COM_RSG2_DOCUMENTATION'); ?></a><br>
-				</div>
-				<br>
-			</div>
+        <?php
+            DisplayInfoRsgallery2 ($this->Rsg2Version);
+        ?>
 
 			<div class="row">
-
-		<?php
+         <?php
 			echo JHtml::_('bootstrap.startAccordion', 'slide-example', array('active' => 'slide1', 'toggle' => 'false' ));
 			echo JHtml::_('bootstrap.addSlide', 'slide-example', JText::_('COM_RSG2_GALLERIES'), 'slide1');
 
