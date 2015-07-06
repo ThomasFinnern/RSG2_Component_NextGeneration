@@ -128,82 +128,79 @@ function DisplayInfoImages ($infoImages) {
 
 function DisplayInfoRsgallery2 ($Rsg2Version)
 {
-
-    // Logo
+    // Rsgallery Info area
     echo '<div class="row">';
 
-    // Logo
-    echo '<div class="rsg2logo">';
-    echo '  <img src="<?php echo JUri::root(true);?>/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
-    echo '</div>';
+        // Logo
 
-    // Header ----------------------------------
+        echo '<div class="rsg2logo">';
+        echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
+        echo '</div>';
 
-    echo '<table class="table table-striped table-condensed">';
-    echo '    <caption>' . JText::_('COM_RSG2_INFO') . '</caption>';
-    echo '    <thead>';
-    echo '        <tr>';
-    //echo '            <th>'.JText::_('COM_RSG2_FILENAME').'</th>';
-    //echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
-    echo '            <th>' . '1' . '</th>';
-    echo '            <th>' . '2' . '</th>';
-    echo '        </tr>';
-    echo '    </thead>';
+        // Header ----------------------------------
 
-    //--- data ----------------------------------
+//    echo '<table class="table table-striped table-condensed">';
+        echo '<table class="table">';
+        echo '    <caption>' . JText::_('COM_RSG2_INFO') . '</caption>';
+        echo '    <thead>';
+        echo '        <tr>';
+        echo '            <th>' . '1' . '</th>';
+        echo '            <th>' . '2' . '</th>';
+        echo '        </tr>';
+        echo '    </thead>';
 
-    echo '    <tbody>';
+        //--- data ----------------------------------
 
-    // Installed version
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
-    echo '            <td>';
-    echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . ': >' . $Rsg2Version . '</a>';
-    echo '            </td>';
-    echo '        </tr>';
+        echo '    <tbody>';
 
-    // Installed version
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
-    echo '            <td>';
+        // Installed version
+        echo '        <tr>';
+        echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
+        echo '            <td>';
+        echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . '": >' . $Rsg2Version . '</a>';
+        echo '            </td>';
+        echo '        </tr>';
 
-    echo '            </td>';
-    echo '        </tr>';
+        // Installed version
+        echo '        <tr>';
+        echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
+        echo '            <td>';
+        echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_GNU_ORG').'" >GNU GPL</a>';
+        echo '            </td>';
+        echo '        </tr>';
 
-    // Installed version
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
-    echo '            <td>';
+        // Installed version
+        echo '        <tr>';
+        echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
+        echo '            <td>';
+        echo '                <a href="http://www.rsgallery2.nl/" target="_blank" '.' title="'.JText::_('COM_RSG2_JUMP_TO_FORUM').'" >www.rsgallery2.nl</a>';
+        echo '            </td>';
+        echo '        </tr>';
 
-    echo '            </td>';
-    echo '        </tr>';
+        // Installed version
+        echo '        <tr>';
+        echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
+        echo '            <td>';
 
-    // Installed version
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
-    echo '            <td>';
+        echo '            </td>';
+        echo '        </tr>';
 
-    echo '            </td>';
-    echo '        </tr>';
+        /*/ ?
+        echo '        <tr>';
+        echo '            <td>' .  . '</td>';
+        echo '            <td>';
 
-    /*/ ?
-    echo '        <tr>';
-    echo '            <td>' .  . '</td>';
-    echo '            <td>';
+        echo '            </td>';
+        echo '        </tr>';
+        */
 
-    echo '            </td>';
-    echo '        </tr>';
-    */
+        echo '    </tbody>';
 
-    echo '    </tbody>';
-
-    //--- footer ----------------------------------
-
-    echo '</table>';
+        //--- footer ----------------------------------
+        echo '</table>';
     echo '</row>';
 
     return;
-
 }
 
 /*
