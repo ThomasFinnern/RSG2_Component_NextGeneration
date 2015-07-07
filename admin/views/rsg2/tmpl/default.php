@@ -140,15 +140,17 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
         // Header ----------------------------------
 
 //    echo '<table class="table table-striped table-condensed">';
-        echo '<table class="table">';
-        echo '    <caption>' . JText::_('COM_RSG2_INFO') . '</caption>';
+//    echo '<table class="table">';
+        echo '<table>';
+//        echo '    <caption>' . JText::_('COM_RSG2_INFO') . '</caption>';
+/*
         echo '    <thead>';
         echo '        <tr>';
-        echo '            <th>' . '1' . '</th>';
-        echo '            <th>' . '2' . '</th>';
+        echo '            <th>' . ' ' . '</th>';
+        echo '            <th>' . 'COM_RSG2_LINK' . '</th>';
         echo '        </tr>';
         echo '    </thead>';
-
+*/
         //--- data ----------------------------------
 
         echo '    <tbody>';
@@ -161,7 +163,7 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
         echo '            </td>';
         echo '        </tr>';
 
-        // Installed version
+        // License
         echo '        <tr>';
         echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
         echo '            <td>';
@@ -169,7 +171,7 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
         echo '            </td>';
         echo '        </tr>';
 
-        // Installed version
+        // Forum
         echo '        <tr>';
         echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
         echo '            <td>';
@@ -177,11 +179,12 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
         echo '            </td>';
         echo '        </tr>';
 
-        // Installed version
+        // Documentation
         echo '        <tr>';
         echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
         echo '            <td>';
-
+        echo '                <a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
+        echo '                    title="'.JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION').'" >'.JText::_('COM_RSG2_DOCUMENTATION').'</a>';
         echo '            </td>';
         echo '        </tr>';
 
@@ -198,85 +201,124 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
 
         //--- footer ----------------------------------
         echo '</table>';
-    echo '</row>';
+    echo '</row><br>';
 
     return;
 }
 
+
+function DisplayInfoRsgallery2Test ($Rsg2Version)
+{
 /*
-echo '					<strong><?php echo JText::_('COM_RSG2_INSTALLED_VERSION').': ';?></strong>';
-	echo '<a href="" target="_blank" title="<?php echo JText::_('COM_RSG2_VIEW_CHANGE_LOG'); ?>"  ><?php echo $this->Rsg2Version;?></a><br>';
-
-echo '<strong><?php echo JText::_('COM_RSG2_LICENSE')?>:</strong>';
-echo '<a href="http://www.gnu.org/copyleft/gpl.html" target="_blank"
-   title="<?php echo JText::_('COM_RSG2_GNU_ORG'); ?>" >GNU GPL</a><br>';
-
-echo '<strong><?php echo JText::_('COM_RSG2_FORUM')?>:</strong>';
-echo '<a href="http://www.rsgallery2.nl/" target="_blank"';
-   title="<?php echo JText::_('COM_RSG2_JUMP_TO_FORUM'); ?>" >www.rsgallery2.nl</a><br>';
-
-echo '<strong><?php echo JText::_('COM_RSG2_DOCUMENTATION')?>:</strong>';
-echo '<a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
-   title="<?php echo JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION'); ?>" >';
-    echo '    <?php echo JText::_('COM_RSG2_DOCUMENTATION'); ?></a>';
-echo '</div>';
+    // Rsgallery Info area
+    echo '<div class="row">';
 */
+    // Logo
+
+    echo '<div class="rsg2logo">';
+    echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
+    echo '</div>';
+/**/
+    echo '<table>';
+    echo '    <tbody>';
+/**/
+/**/
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
+    echo '            <td>';
+    echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . '": >' . $Rsg2Version . '</a>';
+    echo '            </td>';
+    echo '        </tr>';
+/**/
+    // License
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
+    echo '            <td>';
+    echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_GNU_ORG').'" >GNU GPL</a>';
+    echo '            </td>';
+    echo '        </tr>';
+/**/
+/**/
+    // Forum
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
+    echo '            <td>';
+    echo '                <a href="http://www.rsgallery2.nl/" target="_blank" '.' title="'.JText::_('COM_RSG2_JUMP_TO_FORUM').'" >www.rsgallery2.nl</a>';
+    echo '            </td>';
+    echo '        </tr>';
+/**/
+    // Documentation
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
+    echo '            <td>';
+    echo '                <a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
+    echo '                    title="'.JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION').'" >'.JText::_('COM_RSG2_DOCUMENTATION').'</a>';
+    echo '            </td>';
+    echo '        </tr>';
+
+/**/
+    echo '    </tbody>';
+    echo '</table>';
+/**/
+/**
+    echo '</row><br>';
+*/
+    echo '<br>';
+    return;
+}
 
 
+    // public static $extension = 'COM_RSG2';
+
+    $doc = JFactory::getDocument();
+    //$doc->addStyleSheet ("administrator/components/COM_RSG2/admin.rsgallery2.css");
+    //$doc->addStyleSheet (JURI::root(true)."/administrator/components/COM_RSG2/admin.rsgallery2.css");
+    //$doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.01.old.css");
+    $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.css");
 
 
+    ?>
 
-// public static $extension = 'COM_RSG2';
+    <form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=rsg2'); ?>" method="post" name="adminForm" id="adminForm">
 
-$doc = JFactory::getDocument();
-//$doc->addStyleSheet ("administrator/components/COM_RSG2/admin.rsgallery2.css");
-//$doc->addStyleSheet (JURI::root(true)."/administrator/components/COM_RSG2/admin.rsgallery2.css");
-//$doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.01.old.css");
-$doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.css");
+    <?php if (!empty( $this->sidebar)) : ?>
+        <div id="j-sidebar-container" class="span2">
+            <?php echo $this->sidebar; ?>
+        </div>
+        <div id="j-main-container" class="span10">
+    <?php else : ?>
+        <div id="j-main-container">
+    <?php endif;?>
 
+        <div class="row greybackground">
+            <div class="span7">
+                <div class="row-fluid">
+                    <?php
+                        if ( $this->UserIsRoot ){
+                            $link = 'index.php?option=com_rsg2&amp;view=config';
+                            RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
+                        }
 
-?>
+                        $link = 'index.php?option=com_rsg2&amp;view=galleries';
+                        RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
 
-<form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=rsg2'); ?>" method="post" name="adminForm" id="adminForm">
+                        $link = 'index.php?option=com_rsg2&amp;view=uploadBatch';
+                        RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
 
-<?php if (!empty( $this->sidebar)) : ?>
-	<div id="j-sidebar-container" class="span2">
-		<?php echo $this->sidebar; ?>
-	</div>
-	<div id="j-main-container" class="span10">
-<?php else : ?>
-	<div id="j-main-container">
-<?php endif;?>
-	
-	<div class="row greybackground">
-		<div class="span7">
-			<div class="row-fluid">
-				<?php
-					if ( $this->UserIsRoot ){
-						$link = 'index.php?option=com_rsg2&amp;view=config';
-						RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
-					}
+                        $link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
+                        RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
+                    ?>
+                </div>
+                <div class="row-fluid">
+                    <?php
+                        $link = 'index.php?option=com_rsg2&amp;view=images';
+                        RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
 
-					$link = 'index.php?option=com_rsg2&amp;view=galleries';
-					RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
-
-					$link = 'index.php?option=com_rsg2&amp;view=uploadBatch';
-					RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
-
-					$link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
-					RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
-				?>
-			</div>
-			<div class="row-fluid">
-				<?php
-					$link = 'index.php?option=com_rsg2&amp;view=images';
-					RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
-
-					if ( $this->UserIsRoot ){
-						/*
-						$link = 'index.php?option=COM_RSG2&task=consolidate_db';
-						RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
-						*/
+                        if ( $this->UserIsRoot ){
+                            /*
+                            $link = 'index.php?option=COM_RSG2&task=consolidate_db';
+                            RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
+                            */
 						$link = 'index.php?option=COM_RSG2&rsgOption=maintenance';
 						RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
 
@@ -331,7 +373,8 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 		
 		<div class="span5">
         <?php
-            DisplayInfoRsgallery2 ($this->Rsg2Version);
+//            DisplayInfoRsgallery2 ($this->Rsg2Version);
+            DisplayInfoRsgallery2Test ($this->Rsg2Version);
         ?>
 
 			<div class="row">
