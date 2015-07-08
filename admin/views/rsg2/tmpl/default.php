@@ -128,81 +128,65 @@ function DisplayInfoImages ($infoImages) {
 
 function DisplayInfoRsgallery2 ($Rsg2Version)
 {
-    // Rsgallery Info area
-    echo '<div class="row">';
+    /*
+        // Rsgallery Info area
+        echo '<div class="row">';
+    */
+    // Logo
 
-        // Logo
-
-        echo '<div class="rsg2logo">';
-        echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
-        echo '</div>';
-
-        // Header ----------------------------------
-
+    echo '<div class="rsg2logo">';
+    echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
+    echo '</div>';
+    /**/
+    echo '<table class="table table-striped">';
 //    echo '<table class="table table-striped table-condensed">';
 //    echo '<table class="table">';
-        echo '<table>';
-//        echo '    <caption>' . JText::_('COM_RSG2_INFO') . '</caption>';
-/*
-        echo '    <thead>';
-        echo '        <tr>';
-        echo '            <th>' . ' ' . '</th>';
-        echo '            <th>' . 'COM_RSG2_LINK' . '</th>';
-        echo '        </tr>';
-        echo '    </thead>';
-*/
-        //--- data ----------------------------------
+//    echo '<table>';
+    echo '<table>';
+    echo '    <tbody>';
+    /**/
+    /**/
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
+    echo '            <td>';
+    echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . '": >' . $Rsg2Version . '</a>';
+    echo '            </td>';
+    echo '        </tr>';
+    /**/
+    // License
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
+    echo '            <td>';
+    echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_JUMP_TO_GNU_ORG').'" >GNU GPL</a>';
+    echo '            </td>';
+    echo '        </tr>';
+    /**/
+    /**/
+    // Forum
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
+    echo '            <td>';
+    echo '                <a href="http://www.rsgallery2.nl/" target="_blank" '.' title="'.JText::_('COM_RSG2_JUMP_TO_FORUM').'" >www.rsgallery2.nl</a>';
+    echo '            </td>';
+    echo '        </tr>';
+    /**/
+    // Documentation
+    echo '        <tr>';
+    echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
+    echo '            <td>';
+    echo '                <a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
+    echo '                    title="'.JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION').'" >'.JText::_('COM_RSG2_DOCUMENTATION').'</a>';
+    echo '            </td>';
+    echo '        </tr>';
 
-        echo '    <tbody>';
-
-        // Installed version
-        echo '        <tr>';
-        echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
-        echo '            <td>';
-        echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . '": >' . $Rsg2Version . '</a>';
-        echo '            </td>';
-        echo '        </tr>';
-
-        // License
-        echo '        <tr>';
-        echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
-        echo '            <td>';
-        echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_GNU_ORG').'" >GNU GPL</a>';
-        echo '            </td>';
-        echo '        </tr>';
-
-        // Forum
-        echo '        <tr>';
-        echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
-        echo '            <td>';
-        echo '                <a href="http://www.rsgallery2.nl/" target="_blank" '.' title="'.JText::_('COM_RSG2_JUMP_TO_FORUM').'" >www.rsgallery2.nl</a>';
-        echo '            </td>';
-        echo '        </tr>';
-
-        // Documentation
-        echo '        <tr>';
-        echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
-        echo '            <td>';
-        echo '                <a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
-        echo '                    title="'.JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION').'" >'.JText::_('COM_RSG2_DOCUMENTATION').'</a>';
-        echo '            </td>';
-        echo '        </tr>';
-
-        /*/ ?
-        echo '        <tr>';
-        echo '            <td>' .  . '</td>';
-        echo '            <td>';
-
-        echo '            </td>';
-        echo '        </tr>';
-        */
-
-        echo '    </tbody>';
-
-        //--- footer ----------------------------------
-        echo '</table>';
+    /**/
+    echo '    </tbody>';
+    echo '</table>';
+    /**/
+    /**
     echo '</row><br>';
-
+     */
+    echo '<br>';
     return;
 }
 
@@ -219,6 +203,10 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
     echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
     echo '</div>';
 /**/
+    echo '<table class="table table-striped">';
+//    echo '<table class="table table-striped table-condensed">';
+//    echo '<table class="table">';
+//    echo '<table>';
     echo '<table>';
     echo '    <tbody>';
 /**/
@@ -234,7 +222,7 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
     echo '        <tr>';
     echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
     echo '            <td>';
-    echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_GNU_ORG').'" >GNU GPL</a>';
+    echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_JUMP_TO_GNU_ORG').'" >GNU GPL</a>';
     echo '            </td>';
     echo '        </tr>';
 /**/
@@ -373,8 +361,8 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 		
 		<div class="span5">
         <?php
-//            DisplayInfoRsgallery2 ($this->Rsg2Version);
-            DisplayInfoRsgallery2Test ($this->Rsg2Version);
+            DisplayInfoRsgallery2 ($this->Rsg2Version);
+//            DisplayInfoRsgallery2Test ($this->Rsg2Version);
         ?>
 
 			<div class="row">
