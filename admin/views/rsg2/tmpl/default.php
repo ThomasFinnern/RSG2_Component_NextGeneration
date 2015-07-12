@@ -390,11 +390,9 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 		?>
 
 			<div id='rsg2-credits'>
-			------------------
 		<?php			
 			echo $this->Credits;
 		?>
-			------------------
 			</div>
 			
 		<?php
@@ -404,6 +402,8 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 		</div>
 				
 	</div>
+	</div>
+	
     <div>
 		<input type="hidden" name="task" value="" />
 		<?php echo JHtml::_('form.token'); ?>
