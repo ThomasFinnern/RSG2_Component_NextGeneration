@@ -134,15 +134,16 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
     */
     // Logo
 
+    echo '<div class="rsg2logo-container">';
     echo '<div class="rsg2logo">';
     echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
     echo '</div>';
     /**/
-    echo '<table class="table table-striped">';
-//    echo '<table class="table table-striped table-condensed">';
+//    echo '<table class="table table-striped">';
+    echo '<table class="table table-striped table-condensed">';
 //    echo '<table class="table">';
 //    echo '<table>';
-    echo '<table>';
+//    echo '<table>';
     echo '    <tbody>';
     /**/
     /**/
@@ -187,6 +188,7 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
     echo '</row><br>';
      */
     echo '<br>';
+    echo '</div>';
     return;
 }
 
@@ -207,7 +209,7 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 //    echo '<table class="table table-striped table-condensed">';
 //    echo '<table class="table">';
 //    echo '<table>';
-    echo '<table>';
+//    echo '<table>';
     echo '    <tbody>';
 /**/
 /**/

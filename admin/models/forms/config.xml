@@ -11,67 +11,7 @@
 			filter          = ""
 			size            = "60"
 		/>
-		
-		
-		<!--field
-			name			= "Einleitender Text"
-			type			= "text"
-			label           = "COM_RSG2_VERSION"
-		/>
-		
-		<field
-			name			= "Debug"
-			type			= "text"
-			label           = "COM_RSG2_VERSION"
-		/>
-		
-		<field
-			name			= "SEF"
-			type			= "text"
-			label           = "COM_RSG2_VERSION"
-		/>		
-    </fieldset>	
-	
-	<fieldset name ="image">
-		<field
-			name			= "checked_out"
-			type			= "text"
-			label           = ""
-		/>
-
-		<field
-			name			= "checked_out_time"
-			type			= "text"
-			label           = ""
-		/>
-    </fieldset>	
-	
-	<fieldset name ="display">	
-		<field
-			name			= "checked_out"
-			type			= "text"
-			label           = ""
-		/>
-
-		<field
-			name			= "checked_out_time"
-			type			= "text"
-			label           = ""
-		/>
-    </fieldset>	
-	
-	<fieldset name ="mygalleries">	
-		<field
-			name			= "checked_out"
-			type			= "text"
-			label           = ""
-		/>
-
-		<field
-			name			= "checked_out_time"
-			type			= "text"
-			label           = ""
-		/-->
+				
     </fieldset>	
 </form>
 
