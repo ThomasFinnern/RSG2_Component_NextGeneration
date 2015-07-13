@@ -26,8 +26,6 @@ function RsgButton( $link, $image, $text, $addClass='' ) {
 			</div>
 		</div>
 	</div>
-	<!--div class="span1">
-	</div-->
 	<?php
 }
 
@@ -134,6 +132,7 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
     */
     // Logo
 
+    echo '<row>';
     echo '<div class="rsg2logo-container">';
     echo '<div class="rsg2logo">';
     echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
@@ -184,11 +183,11 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
     echo '    </tbody>';
     echo '</table>';
     /**/
-    /**
-    echo '</row><br>';
-     */
-    echo '<br>';
     echo '</div>';
+
+    echo '</row>';
+
+    echo '<br>';
     return;
 }
 
@@ -322,7 +321,7 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 			</div>
 			<div class="row-fluid">
 				<div class="rsg2-cpanelDebug">
-					<div class="row">
+					<div class="row-fluid">
 						<div class="DangerZone">
 							<h3>
 								<?php echo JText::_('COM_RSG2_DANGER_ZONE');?>
@@ -334,7 +333,7 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 							</strong>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row-fluid">
 						<?php
 							$link = 'index.php?option=COM_RSG2&task=purgeEverything';
 							RsgDebugButton( $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') );

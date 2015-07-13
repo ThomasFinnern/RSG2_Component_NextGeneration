@@ -61,5 +61,4 @@ class Rsg2Controller extends JControllerLegacy
 		return $this;
 	}
 
-
 }
