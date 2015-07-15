@@ -191,82 +191,16 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
     return;
 }
 
+// public static $extension = 'COM_RSG2';
 
-function DisplayInfoRsgallery2Test ($Rsg2Version)
-{
-/*
-    // Rsgallery Info area
-    echo '<div class="row">';
-*/
-    // Logo
-
-    echo '<div class="rsg2logo">';
-    echo '  <img src="'.JUri::root(true).'/administrator/components/com_rsgallery2/images/rsg2-logo.png" align="middle" alt="RSGallery2 logo" />';
-    echo '</div>';
-/**/
-    echo '<table class="table table-striped">';
-//    echo '<table class="table table-striped table-condensed">';
-//    echo '<table class="table">';
-//    echo '<table>';
-//    echo '<table>';
-    echo '    <tbody>';
-/**/
-/**/
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
-    echo '            <td>';
-    echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . '": >' . $Rsg2Version . '</a>';
-    echo '            </td>';
-    echo '        </tr>';
-/**/
-    // License
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
-    echo '            <td>';
-    echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_JUMP_TO_GNU_ORG').'" >GNU GPL</a>';
-    echo '            </td>';
-    echo '        </tr>';
-/**/
-/**/
-    // Forum
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
-    echo '            <td>';
-    echo '                <a href="http://www.rsgallery2.nl/" target="_blank" '.' title="'.JText::_('COM_RSG2_JUMP_TO_FORUM').'" >www.rsgallery2.nl</a>';
-    echo '            </td>';
-    echo '        </tr>';
-/**/
-    // Documentation
-    echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
-    echo '            <td>';
-    echo '                <a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
-    echo '                    title="'.JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION').'" >'.JText::_('COM_RSG2_DOCUMENTATION').'</a>';
-    echo '            </td>';
-    echo '        </tr>';
-
-/**/
-    echo '    </tbody>';
-    echo '</table>';
-/**/
-/**
-    echo '</row><br>';
-*/
-    echo '<br>';
-    return;
-}
+$doc = JFactory::getDocument();
+//$doc->addStyleSheet ("administrator/components/COM_RSG2/admin.rsgallery2.css");
+//$doc->addStyleSheet (JURI::root(true)."/administrator/components/COM_RSG2/admin.rsgallery2.css");
+//$doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.01.old.css");
+$doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.css");
 
 
-    // public static $extension = 'COM_RSG2';
-
-    $doc = JFactory::getDocument();
-    //$doc->addStyleSheet ("administrator/components/COM_RSG2/admin.rsgallery2.css");
-    //$doc->addStyleSheet (JURI::root(true)."/administrator/components/COM_RSG2/admin.rsgallery2.css");
-    //$doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.01.old.css");
-    $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/admin.rsg2.css");
-
-
-    ?>
+?>
 
     <form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=rsg2'); ?>" method="post" name="adminForm" id="adminForm">
 
@@ -305,13 +239,13 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 
                         if ( $this->UserIsRoot ){
                             /*
-                            $link = 'index.php?option=COM_RSG2&task=consolidate_db';
+                            $link = 'index.php?option=com_rsg2&task=consolidate_db';
                             RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
                             */
-						$link = 'index.php?option=COM_RSG2&rsgOption=maintenance';
+						$link = 'index.php?option=com_rsg2&view=maintenance';
 						RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
 
-						$link = 'index.php?option=COM_RSG2&rsgOption=installer';
+						$link = 'index.php?option=com_rsg2&rsgOption=installer';
 						RsgButton( $link, 'template.png', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
 					} 
 
@@ -335,21 +269,21 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 					</div>
 					<div class="row-fluid">
 						<?php
-							$link = 'index.php?option=COM_RSG2&task=purgeEverything';
+							$link = 'index.php?option=com_rsg2&task=purgeEverything';
 							RsgDebugButton( $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') );
 
-							$link = 'index.php?option=COM_RSG2&task=reallyUninstall';
+							$link = 'index.php?option=com_rsg2&task=reallyUninstall';
 							RsgDebugButton( $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') );
 
-							$link = 'index.php?option=COM_RSG2&task=config_rawEdit';
+							$link = 'index.php?option=com_rsg2&task=config_rawEdit';
 							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT') );
 
 							//Moved Migration Options: only show when debug is on since there are only test migration options and four Joomla 1.0.x options.
 							/*
-							$link = 'index.php?option=COM_RSG2&rsgOption=maintenance&task=showMigration';
+							$link = 'index.php?option=com_rsg2&rsgOption=maintenance&task=showMigration';
 							RsgDebugButton( $link, 'dbrestore.png', JText::_('COM_RSG2_MIGRATION_OPTIONS') );
 							*/
-							$link = 'index.php?option=COM_RSG2&task=config_dumpVars';
+							$link = 'index.php?option=com_rsg2&task=config_dumpVars';
 							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW') );
 						?>
 					</div>
@@ -363,7 +297,6 @@ function DisplayInfoRsgallery2Test ($Rsg2Version)
 		<div class="span5">
         <?php
             DisplayInfoRsgallery2 ($this->Rsg2Version);
-//            DisplayInfoRsgallery2Test ($this->Rsg2Version);
         ?>
 
 			<div class="row">
