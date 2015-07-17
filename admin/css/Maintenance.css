@@ -31,7 +31,8 @@ div.rsg2-text {
 }
 
 .maint-title {
-	font-weight: bold;
+	/* font-weight: bold; /**/
+	color: black;
 }
 
 .maint-text {
@@ -41,13 +42,10 @@ div.rsg2-text {
 
 #cpanel div.icon-bar   { 
 	margin: 3px; 
-	background-color: white;
-	border-radius: 3px;
-	
-	
 }
 #cpanel div.icon-bar a { 
-	display: block; float: left;
+	display: block; 
+	float: left;
 	height: 75px !important;
 	height: 100px; 
 	width: 448px !important;
@@ -56,6 +54,9 @@ div.rsg2-text {
 	text-decoration : none;
 	border: 1px solid #DDD;
 	padding: 2px 5px 1px 5px;
+	border-radius: 8px; /**/
+	background-color: white; /**/
+	box-shadow: 2px 2px 1px #888888; /**/
 }
 
 #cpanel div.icon-bar a:link    {  
