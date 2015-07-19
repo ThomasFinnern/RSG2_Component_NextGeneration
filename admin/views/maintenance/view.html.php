@@ -7,12 +7,25 @@ jimport('joomla.application.component.view');
 
 //require (JUri::root(true).'/administrator/components/com_rsg2/helpers/CreditsEnumaration.php');
 //require ('helpers/CreditsEnumaration.php');
+require_once JPATH_ADMINISTRATOR . '/components/com_rsg2/helpers/rsg2Common.php';
 
 class Rsg2ViewMaintenance extends JViewLegacy
 {	
+
+	// ToDo: Use other rights instead of core.admin -> IsRoot ?
+	// core.admin is the permission used to control access to 
+	// the global config
+	protected $UserIsRoot; 
+	
+	
 	//------------------------------------------------
 	public function display ($tpl = null)
 	{	
+		//--- get needed data ------------------------------------------
+		
+		// Check rights of user
+		$this->UserIsRoot = $this->CheckUserIsRoot ();
+	
 //		$form = $this->get('Form');
 
 		//--- begin to display --------------------------------------------
@@ -30,7 +43,7 @@ class Rsg2ViewMaintenance extends JViewLegacy
 		// $this->form = $form;
         	
 		//$this->addToolbar ();
-		JToolBarHelper::title(JText::_('COM_RSG2_MENU_CONTROL_PANEL'), 'config');
+		JToolBarHelper::title(JText::_('COM_RSG2_MENU_CONTROL_PANEL'), 'maintenance');
 		$this->sidebar = JHtmlSidebar::render ();
 
 		parent::display ($tpl);
