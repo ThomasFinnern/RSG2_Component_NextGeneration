@@ -10,6 +10,39 @@ global $Rsg2DebugActive;
 $doc = JFactory::getDocument();
 $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/Maintenance.css");
 
+// Purge / delete of database variables should be confirmed 
+$script = " 
+	jQuery(document).ready(function($){ 
+		$('.purgeEverything').on('click', function () { 
+			return confirm('" . JText::_('COM_RSGALLERY2_CONFIRM_PURGE_TABLES_DEL_IMAGES') . "'); 
+		}); 
+
+		$('.purgeEverything').on('click', function () { 
+			return confirm('" . JText::_('COM_RSGALLERY2_CONFIRM_PURGE_TABLES_DEL_IMAGES') . "'); 
+		}); 
+
+		$('.purgeEverything').on('click', function () { 
+			return confirm('" . JText::_('COM_RSGALLERY2_CONFIRM_PURGE_TABLES_DEL_IMAGES') . "'); 
+		}); 
+
+		$('.purgeEverything').on('click', function () { 
+			return confirm('" . JText::_('COM_RSGALLERY2_CONFIRM_PURGE_TABLES_DEL_IMAGES') . "'); 
+		}); 
+
+		$('.purgeEverything').on('click', function () { 
+			return confirm('" . JText::_('COM_RSGALLERY2_CONFIRM_PURGE_TABLES_DEL_IMAGES') . "'); 
+		}); 
+
+		$('.reallyUninstall').on('click', function () { 
+			return confirm('" . JText::_('COM_RSGALLERY2_CONFIRM_DELETE_TABLES_IMAGES')  . "'); 
+		}); 
+	}); 
+"; 
+$doc->addScriptDeclaration($script); 
+
+
+
+
  /**
   * Used by showCP to generate buttons
   * @param string $link URL for button link
@@ -17,10 +50,10 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/Ma
   * @param $title
   * @param string $text Text to show in button
   */
-function quickiconBarOrg( $link, $image, $title, $text = "" ) {
+function quickiconBarOrg( $link, $image, $title, $text = '', $addClass = '' ) {
     ?>
     <div style="float:left;">
-		<div class="rsg2-icon-bar">
+		<div class="rsg2-icon-bar <?php echo $addClass; ?>">
 			<a href="<?php echo $link; ?>">
 				<div class="icon-image">
 					<div class="rsg2-icon">
@@ -38,9 +71,9 @@ function quickiconBarOrg( $link, $image, $title, $text = "" ) {
 <?php
 }
 
-function quickiconBar01( $link, $image, $title, $text = "" ) {
+function quickiconBar01( $link, $image, $title, $text = "", $addClass = '' ) {
     ?>
-		<div class="rsg2-icon-bar">
+		<div class="rsg2-icon-bar <?php echo $addClass; ?>">
 			<a href="<?php echo $link; ?>">
 			
 					<div class="rsg2-icon">
@@ -56,9 +89,9 @@ function quickiconBar01( $link, $image, $title, $text = "" ) {
 <?php
 }
 
-function quickiconBar( $link, $image, $title, $text = "" ) {
+function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
     ?>
-		<div class="rsg2-icon-bar">
+		<div class="rsg2-icon-bar <?php echo $addClass; ?>">
 			<a href="<?php echo $link; ?>">
 			
 					<div class="rsg2-icon">
@@ -99,26 +132,29 @@ function quickiconBar( $link, $image, $title, $text = "" ) {
 							</div>
 					
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=consolidateDB';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.consolidateDB';
 							quickiconBar( $link, 'blockdevice.png',
-								JText::_('COM_RSG2_MAINT_CONSOLDB'), JText::_('COM_RSG2_MAINT_CONSOLDB_TXT') );
+								JText::_('COM_RSG2_MAINT_CONSOLDB'), JText::_('COM_RSG2_MAINT_CONSOLDB_TXT'),
+									'consolidateDB');
 						
 						?>
 						<?php
-							$link =  'index.php?option=com_rsg2&amp;task=regenerateThumbs';
+							$link =  'index.php?option=com_rsg2&amp;task=maintenance.regenerateThumbs';
 							quickiconBar( $link, 'menu.png',
-								JText::_('COM_RSG2_MAINT_REGEN'), JText::_('COM_RSG2_MAINT_REGEN_TXT') );
+								JText::_('COM_RSG2_MAINT_REGEN'), JText::_('COM_RSG2_MAINT_REGEN_TXT'),
+									'regenerateThumbs');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=optimizeDB';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.optimizeDB';
 							quickiconBar( $link, 'db_optimize.png', JText::_('COM_RSG2_MAINT_OPTDB'),
-								JText::_('COM_RSG2_MAINT_OPTDB_TXT') );
+								JText::_('COM_RSG2_MAINT_OPTDB_TXT'),
+									'optimizeDB');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=config_dumpVars';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.config_dumpVars';
 							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW'),
-									JText::_('COM_RSG2_CONFIG_MINUS_VIEW_TXT'));
-							
+									JText::_('COM_RSG2_CONFIG_MINUS_VIEW_TXT'),
+									'config_dumpVars');
 						?>
 						</div>
 					</div>
@@ -143,19 +179,22 @@ function quickiconBar( $link, $image, $title, $text = "" ) {
 							</div>
 
 						<?php
-							$link = 'index.php?option=com_rsgallery2&amp;task=config_rawEdit';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.config_rawEdit';
 							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT'),
-									JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT_TXT')  );
+									JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT_TXT'),
+									'config_rawEdit');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsgallery2&amp;task=purgeEverything';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.purgeEverything';
 							quickiconBar( $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') ,
-									JText::_('COM_RSG2_PURGEDELETE_EVERYTHING_TXT') );
+									JText::_('COM_RSG2_PURGEDELETE_EVERYTHING_TXT'),
+									'purgeEverything');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsgallery2&amp;task=reallyUninstall';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.reallyUninstall';
 							quickiconBar( $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') ,
-									JText::_('COM_RSG2_C_REALLY_UNINSTALL_TXT') );
+									JText::_('COM_RSG2_C_REALLY_UNINSTALL_TXT'),
+									'reallyUninstall');
 						?>
 						</div>
 					</div>
