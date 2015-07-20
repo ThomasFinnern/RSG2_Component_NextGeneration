@@ -71,11 +71,11 @@ function quickiconBarOrg( $link, $image, $title, $text = '', $addClass = '' ) {
 
 function quickiconBar01( $link, $image, $title, $text = "", $addClass = '' ) {
     ?>
-		<div class="rsg2-icon-bar <?php echo $addClass; ?>">
-			<a href="<?php echo $link; ?>">
+		<div class="rsg2-icon-bar">
+			<a href="<?php echo $link; ?>" class="<?php echo $addClass; ?>" >
 			
 					<div class="rsg2-icon">
-						<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>						
+						<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>
 					</div>
 					<span class="rsg2-text">
 						<span class="maint-title"><?php echo $title;?></span>
@@ -92,13 +92,13 @@ function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
 		<div class="rsg2-icon-bar">
 			<a href="<?php echo $link; ?>" class="<?php echo $addClass; ?>" >
 			
-					<div class="rsg2-icon">
-						<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>
-					</div>
-					<span class="rsg2-text">
+				<figure class="rsg2-icon">
+					<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>
+					<figcaption class="rsg2-text">
 						<span class="maint-title"><?php echo $title;?></span>
 						<span class="maint-text"><?php echo $text;?></span>
-					</span>
+					</figcaption>
+				</figure>
 				
 			</a>
 		</div>
