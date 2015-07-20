@@ -20,7 +20,11 @@ class Rsg2ControllerMaintenance extends JControllerAdmin
 	function consolidateDB()
 	{
 		echo 'consolidateDB';
-	}
+//        JFactory::getApplication()->enqueueMessage('consolidateDB', 'Notice');
+//        $this->setRedirect('index.php?option=com_rsg2&amp;view=maintenance', 'consolidateDB', 'Notice');
+        $this->setRedirect('index.php?option=com_rsg2&view=maintenance', 'consolidateDB', 'Notice');
+
+    }
 	function regenerateThumbs()
 	{
 		echo 'regenerateThumbs';
