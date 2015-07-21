@@ -63,17 +63,21 @@
 }
 
 
-
 .rsg2-icon-bar a:link    {
 	color : #808080;  
 }
 .rsg2-icon-bar a:hover   {
-	color : #333; 
+	color : #333;  /**/
+/*    color: #08c; /**/
 	background-color: #f1e8e6;  
 	border: 1px solid #c24733;
 	padding: 3px 4px 0px 6px; 
 }
 
+.rsg2-icon-bar a:active  {  
+	color : #808080;  
+	background-color: blue;  
+}
 
 
 
