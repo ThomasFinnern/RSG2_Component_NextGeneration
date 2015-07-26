@@ -13,5 +13,4 @@ class JFormFieldRsgImageView extends JFormFieldText {
 		return (string) $this->element['name'];
 	}
 	
-	
 }

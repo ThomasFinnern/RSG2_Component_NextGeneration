@@ -39,6 +39,12 @@ class JFormFieldParentGalleryList extends JFormFieldList {
 		catch (RuntimeException $e)
 		{
 			JError::raiseWarning(500, $e->getMessage());
+
+            // toDo: Check out catch with enqueueMessage($e->getMessage());
+            JFactory::getApplication()->enqueueMessage($e->getMessage());
+
+            return false;
+
 		}
 		
 		// Merge any additional options in the XML definition.

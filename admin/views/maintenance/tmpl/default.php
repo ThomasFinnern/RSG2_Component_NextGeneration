@@ -148,10 +148,10 @@ function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
 									'optimizeDB');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=maintenance.config_dumpVars';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.viewConfigPlain';
 							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW'),
 									JText::_('COM_RSG2_CONFIG_MINUS_VIEW_TXT'),
-									'config_dumpVars');
+									'viewConfigPlain');
 						?>
 						</div>
 					</div>
@@ -176,22 +176,22 @@ function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
 							</div>
 
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=maintenance.config_rawEdit';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.editConfigRaw';
 							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT'),
 									JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT_TXT'),
-									'config_rawEdit');
+									'editConfigRaw');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=maintenance.purgeEverything';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.purgeImagesAndData';
 							quickiconBar( $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') ,
 									JText::_('COM_RSG2_PURGEDELETE_EVERYTHING_TXT'),
-									'purgeEverything');
+									'purgeImagesAndData');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=maintenance.reallyUninstall';
+							$link = 'index.php?option=com_rsg2&amp;task=maintenance.removeImagesAndData';
 							quickiconBar( $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') ,
 									JText::_('COM_RSG2_C_REALLY_UNINSTALL_TXT'),
-									'reallyUninstall');
+									'removeImagesAndData');
 						?>
 						</div>
 					</div>
