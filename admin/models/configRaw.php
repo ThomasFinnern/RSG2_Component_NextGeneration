@@ -67,14 +67,27 @@ class rsg2ModelConfig extends  JModelAdmin
         $table->title = htmlspecialchars_decode ($table->title, ENT_Quotes);
     }
     */
-	protected function getListQuery
+	protected function getListQuery ()
 	{
 		$db = $this->getDbo();
-		$query = $db->getQuery (true);
-		$query->select ();
-		
-		
-		
-		
-	}
+		$query = $db->getQuery (true)
+            ->select ('*');
+            ->from($db->quoteName('#__rsgallery2_config'));
+
+        $db->setQuery($query);
+        $db->execute();
+
+        https://docs.joomla.org/Selecting_data_using_JDatabase#loadAssocList.28.29
+
+        $results = $db->loadObjectList();
+
+        $db->setQuery($query);
+        $row = $db->loadAssocList('id', 'username');
+        print_r($row);
+
+        $db->loadAssocList('catid', 0);
+
+
+
+    }
 }
