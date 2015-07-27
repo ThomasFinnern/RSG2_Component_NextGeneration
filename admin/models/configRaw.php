@@ -71,23 +71,25 @@ class rsg2ModelConfig extends  JModelAdmin
 	{
 		$db = $this->getDbo();
 		$query = $db->getQuery (true)
-            ->select ('*');
+            ->select ('*')
             ->from($db->quoteName('#__rsgallery2_config'));
 
         $db->setQuery($query);
         $db->execute();
 
+		$row = $db->loadAssocList('name', 'value');
+
+
+		$result = $db->loadObjectList();
+		foreach($result as $key=>$value){
+			echo $value->content_id;
+		}
         https://docs.joomla.org/Selecting_data_using_JDatabase#loadAssocList.28.29
 
         $results = $db->loadObjectList();
 
         $db->setQuery($query);
-        $row = $db->loadAssocList('id', 'username');
         print_r($row);
-
-        $db->loadAssocList('catid', 0);
-
-
 
     }
 }
