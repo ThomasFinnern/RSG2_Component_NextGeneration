@@ -16,6 +16,17 @@ class rsg2ModelMaintenance extends  JModelAdmin
     {
         $msg = "RemoveAllTables: ";
 
+        $msg = $msg . PurgeTable ('#__rsgallery2_acl', COM_RSG2_PURGED_TABLE_RSGALLERY2_ACL);
+
+        $msg = $msg . PurgeTable ('#__rsgallery2_files', COM_RSG2_PURGED_IMAGE_ENTRIES_FROM_DATABASE);
+
+        $msg = $msg . PurgeTable ('#__rsgallery2_cats', COM_RSG2_PURGED_TABLE_RSGALLERY2_CATS);
+
+        $msg = $msg . PurgeTable ('#__rsgallery2_galleries', COM_RSG2_PURGED_GALLERIES_FROM_DATABASE);
+
+        $msg = $msg . PurgeTable ('#__rsgallery2_config', COM_RSG2_PURGED_CONFIG_FROM_DATABASE);
+
+        $msg = $msg . PurgeTable ('#__rsgallery2_comments', COM_RSG2_PURGED_TABLE_RSGALLERY2_COMMENTS);
 
 
         return msg;
@@ -30,7 +41,7 @@ class rsg2ModelMaintenance extends  JModelAdmin
 		$msg = "RemoveAllTables: ";
 		
 		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_acl', JText::_('COM_RSG2_DROPED_TABLE___RSGALLERY2_ACL') );
-		$msg = $msg . DropTable ('#__rsgallery2_acl', COM_RSG2_DROPED_TABLE___RSGALLERY2_ACL);
+		$msg = $msg . DropTable ('#__rsgallery2_acl', ToDo: COM_RSG2_DROPED_TABLE___RSGALLERY2_ACL);
 		
 		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_files', JText::_('COM_RSG2DROPED_TABLE___RSGALLERY2_FILES') );
 		$msg = $msg . DropTable ('#__rsgallery2_files', COM_RSG2DROPED_TABLE___RSGALLERY2_FILES);
@@ -42,7 +53,7 @@ class rsg2ModelMaintenance extends  JModelAdmin
 		$msg = $msg . DropTable ('#__rsgallery2_galleries', COM_RSG2DROPED_TABLE___RSGALLERY2_GALLERIES);
 		
 		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_config', JText::_('COM_RSG2DROPED_TABLE___RSGALLERY2_CONFIG') );
-		$msg = $msg . DropTable ('#__rsgallery2_galleries', COM_RSG2DROPED_TABLE___RSGALLERY2_CONFIG);
+		$msg = $msg . DropTable ('#__rsgallery2_config', COM_RSG2DROPED_TABLE___RSGALLERY2_CONFIG);
 		
 		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_comments', JText::_('COM_RSG2DROPED_TABLE___RSGALLERY2_COMMENTS') );
 		$msg = $msg . DropTable ('#__rsgallery2_comments', COM_RSG2DROPED_TABLE___RSGALLERY2_COMMENTS);
@@ -57,9 +68,37 @@ class rsg2ModelMaintenance extends  JModelAdmin
      * @param string $successMsg
      * @return string bool success or error message
      */
-	private function DropTable ($TableId, $successMsg)
-	{
-		$msg = "Drop table failure: ";
+    private function PurgeTable ($TableId, $successMsg)
+    {
+        // ToDo: Throws .... \Jdatabaseexception ....
+
+        $msg = "Purge table failure: ";
+
+        $db = JFactory::getDbo();
+        $db->truncateTable($TableId);
+        $db->execute();
+
+        if($db->getErrorMsg()){
+            $msf = $msg . $db->getErrorMsg();
+        }
+        else{
+            $msg = $successMsg;
+        }
+
+        return $msg;
+    }
+
+    /**
+     * Removes one table from RSG2
+     * @param string $TableId
+     * @param string $successMsg
+     * @return string bool success or error message
+     */
+    private function DropTable ($TableId, $successMsg)
+    {
+        // ToDo: Throws .... \Jdatabaseexception ....
+
+        $msg = "Drop table failure: ";
 
         $db = JFactory::getDbo();
         $db->dropTable($TableId, true);
@@ -72,7 +111,7 @@ class rsg2ModelMaintenance extends  JModelAdmin
             $msg = $successMsg;
         }
 
-		return $msg;
-	}
+        return $msg;
+    }
 
 }

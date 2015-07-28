@@ -166,7 +166,7 @@ class Rsg2ControllerMaintenance extends JControllerAdmin
 			$msg = $msg . JText::_('COM_RSGALLERY2_USED_RM_MINUS_R_TO_ATTEMPT_TO_REMOVE_JPATH_SITE_IMAGES_RSGALLERY');
 
             // ToDO: use model to delete data
-            // load model ->
+            // load model -> drop data
 
 
             // call remove
