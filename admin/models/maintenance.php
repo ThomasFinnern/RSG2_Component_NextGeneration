@@ -7,27 +7,22 @@ jimport('joomla.application.component.modeladmin');
 /**
  * 
  */
-class rsg2ModelMaintenance extends  JModelAdmin
+class rsg2ModelMaintenance extends  JModelList
 {
 //    protected $text_prefix = 'COM_RSG2';
 
 
+//    protected function removeImageReferences ()
     protected function removeImageReferences ()
     {
-        $msg = "RemoveAllTables: ";
+        $msg = "RemoveImageReferences: ";
 
         $msg = $msg . PurgeTable ('#__rsgallery2_acl', COM_RSG2_PURGED_TABLE_RSGALLERY2_ACL);
-
         $msg = $msg . PurgeTable ('#__rsgallery2_files', COM_RSG2_PURGED_IMAGE_ENTRIES_FROM_DATABASE);
-
         $msg = $msg . PurgeTable ('#__rsgallery2_cats', COM_RSG2_PURGED_TABLE_RSGALLERY2_CATS);
-
         $msg = $msg . PurgeTable ('#__rsgallery2_galleries', COM_RSG2_PURGED_GALLERIES_FROM_DATABASE);
-
-        $msg = $msg . PurgeTable ('#__rsgallery2_config', COM_RSG2_PURGED_CONFIG_FROM_DATABASE);
-
+        $msg = $msg . PurgeTable ('#__rsgallery2_config', COM_RSG2_PURGED_TABLE_RSGALLERY2_CONFIG);
         $msg = $msg . PurgeTable ('#__rsgallery2_comments', COM_RSG2_PURGED_TABLE_RSGALLERY2_COMMENTS);
-
 
         return msg;
     }
@@ -40,22 +35,11 @@ class rsg2ModelMaintenance extends  JModelAdmin
     { 
 		$msg = "RemoveAllTables: ";
 		
-		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_acl', JText::_('COM_RSG2_DROPED_TABLE___RSGALLERY2_ACL') );
-		$msg = $msg . DropTable ('#__rsgallery2_acl', ToDo: COM_RSG2_DROPED_TABLE___RSGALLERY2_ACL);
-		
-		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_files', JText::_('COM_RSG2DROPED_TABLE___RSGALLERY2_FILES') );
+		$msg = $msg . DropTable ('#__rsgallery2_acl', COM_RSG2_DROPED_TABLE___RSGALLERY2_ACL);
 		$msg = $msg . DropTable ('#__rsgallery2_files', COM_RSG2DROPED_TABLE___RSGALLERY2_FILES);
-		
-		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_cats', JText::_('COM_RSG2_DROPED_TABLE___RSGALLERY2_CATS') );
 		$msg = $msg . DropTable ('#__rsgallery2_cats', COM_RSG2_DROPED_TABLE___RSGALLERY2_CATS);
-		
-		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_galleries', JText::_('COM_RSG2DROPED_TABLE___RSGALLERY2_GALLERIES') );
 		$msg = $msg . DropTable ('#__rsgallery2_galleries', COM_RSG2DROPED_TABLE___RSGALLERY2_GALLERIES);
-		
-		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_config', JText::_('COM_RSG2DROPED_TABLE___RSGALLERY2_CONFIG') );
 		$msg = $msg . DropTable ('#__rsgallery2_config', COM_RSG2DROPED_TABLE___RSGALLERY2_CONFIG);
-		
-		//processAdminSqlQueryVerbosely( 'DROP TABLE IF EXISTS #__rsgallery2_comments', JText::_('COM_RSG2DROPED_TABLE___RSGALLERY2_COMMENTS') );
 		$msg = $msg . DropTable ('#__rsgallery2_comments', COM_RSG2DROPED_TABLE___RSGALLERY2_COMMENTS);
 				
 		return msg;
