@@ -7,7 +7,7 @@ jimport('joomla.application.component.modeladmin');
 /**
  * 
  */
-class rsg2ModelConfig extends  JModelAdmin
+class rsg2ModelConfig extends  JModelList
 {
     protected $text_prefix = 'COM_RSG2';
 
@@ -79,7 +79,7 @@ class rsg2ModelConfig extends  JModelAdmin
 
 		$row = $db->loadAssocList('name', 'value');
 
-
+/*
 		$result = $db->loadObjectList();
 		foreach($result as $key=>$value){
 			echo $value->content_id;
@@ -90,6 +90,6 @@ class rsg2ModelConfig extends  JModelAdmin
 
         $db->setQuery($query);
         print_r($row);
-
+*/
     }
 }
