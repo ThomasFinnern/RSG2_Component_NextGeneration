@@ -3,13 +3,13 @@
 defined('_JEXEC') or die('Restricted access');
 
 // import Joomla modelform library
-jimport('joomla.application.component.modeladmin');
+jimport('joomla.application.component.modellist');
 /**
  * 
  */
 class rsg2ModelConfig extends  JModelList
 {
-    protected $text_prefix = 'COM_RSG2';
+//    protected $text_prefix = 'COM_RSG2';
 
 	/**
 	 * Returns a reference to a Table object, always creating it.
@@ -19,10 +19,11 @@ class rsg2ModelConfig extends  JModelList
 	 * @param array $config   Configuration array for model. Optional.
 	 * @return mixed     JTable  A database object
 	 */
-	public function getTable($type = 'config', $prefix = 'rsg2Table', $config = array())
+/*	public function getTable($type = 'config', $prefix = 'rsg2Table', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
+*/
 	/**
 	 * Method to get the record form.
 	 *
@@ -74,6 +75,9 @@ class rsg2ModelConfig extends  JModelList
             ->select ('*')
             ->from($db->quoteName('#__rsgallery2_config'));
 
+        return $query;
+
+/*
         $db->setQuery($query);
         $db->execute();
 

@@ -7,17 +7,13 @@ jimport('joomla.application.component.view');
 
 class Rsg2ViewConfigRaw extends JViewLegacy
 {
-	protected $item;
-	protected $form;
+	protected $items;
+//	protected $form;
 	
 	public function display ($tpl = null)
 	{
-		$this->form = $this->get('Form');
+		$this->items = $this->get('Items');
 		
-		
-		
-		
-//		Rsg2Helper::addSubMenu('configRaw'); 
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 
@@ -45,7 +41,7 @@ class Rsg2ViewConfigRaw extends JViewLegacy
 
 	protected function addToolbar ()
 	{
-        JToolBarHelper::title(JText::_('COM_RSG2_CONFIGURATION'), 'generic.png');
+        JToolBarHelper::title(JText::_('COM_RSG2_CONFIGURATION_RAW_VIEW'), 'generic.png');
 
         // Disable main menu
         JFactory::getApplication()->input ->set ('hidemainmenu', true);
@@ -56,11 +52,11 @@ class Rsg2ViewConfigRaw extends JViewLegacy
         JToolBarHelper::spacer();
 		*/
 	
-		JToolBarHelper::apply('config.apply', 'JTOOLBAR_APPLY');
-        JToolBarHelper::save('config.save', 'JTOOLBAR_SAVE');
+//		JToolBarHelper::apply('config.apply', 'JTOOLBAR_APPLY');
+//        JToolBarHelper::save('config.save', 'JTOOLBAR_SAVE');
         //JToolBarHelper::save2copy('config.save2copy');
         //JToolBarHelper::save2new('config.save2new');
-		JToolBarHelper::cancel('config.cancel', 'JTOOLBAR_CANCEL');
+//		JToolBarHelper::cancel('config.cancel', 'JTOOLBAR_CANCEL');
 	}
 
 	/*
