@@ -26,7 +26,7 @@ defined( '_JEXEC' ) or die; ?>
 				<div class="span6">
 					<div class="row-fluid form-horizontal-desktop">
 						<div class="adminformlist">
-							<!--?php foreach($this->form->getFieldset('general') as $field):-->
+							<!--?php foreach($this->form->getFieldset('general') as $field): ?-->
 							<!--?php foreach($this->form->getFieldset() as $field):
 							?-->
 								<!--div class="control-group">
@@ -38,11 +38,12 @@ defined( '_JEXEC' ) or die; ?>
 									<!--/div-->
 								<!--/div-->
 							<!--?php endforeach; ?-->
-							
-							
-							
-							
-							
+
+                            <?php foreach($this->items as $item):
+                                print_r ($item);  ?>
+                                <br>
+                            <?php endforeach; ?>
+
 						</div>
 					</div>
 				</div>

@@ -148,7 +148,8 @@ function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
 									'optimizeDB');
 						?>
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=maintenance.viewConfigPlain';
+                            $link = 'index.php?option=com_rsg2&amp;view=configRaw';
+							// $link = 'index.php?option=com_rsg2&amp;task=maintenance.viewConfigPlain';
 							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW'),
 									JText::_('COM_RSG2_CONFIG_MINUS_VIEW_TXT'),
 									'viewConfigPlain');

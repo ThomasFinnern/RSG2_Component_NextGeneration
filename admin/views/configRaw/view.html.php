@@ -13,7 +13,6 @@ class Rsg2ViewConfigRaw extends JViewLegacy
 	public function display ($tpl = null)
 	{
 		$this->items = $this->get('Items');
-		
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 

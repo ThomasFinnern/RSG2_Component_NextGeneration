@@ -7,7 +7,7 @@ jimport('joomla.application.component.modellist');
 /**
  * 
  */
-class rsg2ModelConfig extends  JModelList
+class rsg2ModelConfigRaw extends  JModelList
 {
 //    protected $text_prefix = 'COM_RSG2';
 
