@@ -73,7 +73,8 @@ class rsg2ModelConfigRaw extends  JModelList
 		$db = $this->getDbo();
 		$query = $db->getQuery (true)
             ->select ('*')
-            ->from($db->quoteName('#__rsgallery2_config'));
+            ->from($db->quoteName('#__rsgallery2_config'))
+			->order('name');
 
         return $query;
 

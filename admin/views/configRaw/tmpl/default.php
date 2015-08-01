@@ -1,8 +1,6 @@
 <?php // no direct access
 defined( '_JEXEC' ) or die; ?>
-<?php echo 'content rsg2: config raw ....<br>'; ?>
 
-<!-- ?php echo $this->loadTemplate('config'); ? -->
 <?php JHtml::_('behavior.tooltip');?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=rsg2'); ?>" method="post" name="adminForm" id="adminForm">
@@ -18,37 +16,29 @@ defined( '_JEXEC' ) or die; ?>
 	
 		<div class="clearfix"> </div>
 
-		<div class="span8">
-			
-			<span class="description hasTip" title="Test">?</span>
-			
-			<div class="row-fluid">
-				<div class="span6">
-					<div class="row-fluid form-horizontal-desktop">
-						<div class="adminformlist">
-							<!--?php foreach($this->form->getFieldset('general') as $field): ?-->
-							<!--?php foreach($this->form->getFieldset() as $field):
-							?-->
-								<!--div class="control-group">
-										<div class="control-label"-->
-											<!--?php echo $field->label; ?-->
-									<!--/div-->
-									<!--div class="controls"-->
-										<!--?php echo $field->input; ?-->
-									<!--/div-->
-								<!--/div-->
-							<!--?php endforeach; ?-->
+		<h3>
+			<?php echo JText::_('COM_RSG2_CONFIGURATION_VARIABLES');?>
+		</h3>
 
-                            <?php foreach($this->items as $item):
-                                print_r ($item);  ?>
-                                <br>
-                            <?php endforeach; ?>
-
-						</div>
+		<div class="subheader">
+			<strong>
+				<?php echo JText::_('COM_RSG2_CONFIG_MINUS_VIEW_TXT');?>
+			</strong>
+		</div>
+		<br>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="row-fluid form-horizontal-desktop">
+					<div class="adminformlist">
+					<?php
+						foreach($this->items as $item):
+							echo $item->name . "= '" . $item->value . "'". "<br>";
+						endforeach;
+					?>
 					</div>
 				</div>
 			</div>
-						
+		</div>
 	</div>
     <div>
 		<input type="hidden" name="task" value="" />

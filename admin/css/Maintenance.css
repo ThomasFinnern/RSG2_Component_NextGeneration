@@ -33,7 +33,7 @@
 	box-shadow: 2px 2px 1px #888888; /**/
 }
 
-.rsg2-icon
+.rsg2-icon {
 	float:left;
 	margin: 10px ;
 
@@ -59,7 +59,7 @@
 
 .maint-text {
 	/* font-size: smaller; /**/
-	color: true;
+	color: blue;
 }
 
 

@@ -66,6 +66,16 @@ class Rsg2Helper
 			'index.php?option=com_rsg2&view=summarytreeview',
 			$vName == 'summarytreeview'
 		);
+
+		if($vName=='configRaw')
+		{
+			JHtmlSidebar::addEntry(
+				JText::_('COM_RSG2_MAINTENANCE'),
+				'index.php?option=com_rsg2&view=summarytreeview',
+				false
+			);
+
+		}
 				
 /*		
 		JHtmlSidebar::addEntry(

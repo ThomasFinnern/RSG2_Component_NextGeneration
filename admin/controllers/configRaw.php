@@ -18,6 +18,19 @@ jimport('joomla.application.component.controllerform');
 
 class Rsg2ControllerConfigRaw extends JControllerForm
 {
-	
+
+	public function cancel($key = null) {
+		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
+
+		$link = 'index.php?option=com_rsg2&view=maintenance';
+		$this->setRedirect($link);
+
+		return true;
+	}
+
+
+
+
+
 }
 

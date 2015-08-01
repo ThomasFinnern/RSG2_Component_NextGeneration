@@ -14,6 +14,10 @@ class Rsg2ViewConfigRaw extends JViewLegacy
 	{
 		$this->items = $this->get('Items');
 
+		//--- begin to display --------------------------------------------
+
+		Rsg2Helper::addSubMenu('configRaw');
+
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 
 		{
@@ -55,7 +59,8 @@ class Rsg2ViewConfigRaw extends JViewLegacy
 //        JToolBarHelper::save('config.save', 'JTOOLBAR_SAVE');
         //JToolBarHelper::save2copy('config.save2copy');
         //JToolBarHelper::save2new('config.save2new');
-//		JToolBarHelper::cancel('config.cancel', 'JTOOLBAR_CANCEL');
+		//JToolBarHelper::cancel('config.cancel', 'JTOOLBAR_CANCEL');
+		JToolBarHelper::cancel('configRaw.cancel');
 	}
 
 	/*
