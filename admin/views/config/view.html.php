@@ -9,9 +9,14 @@ class Rsg2ViewConfig extends JViewLegacy
 {
 	protected $item;
 	protected $form;
+
+	protected $cfgItems;
 	
 	public function display ($tpl = null)
 	{
+		$model      = $this->getModel();
+		$this->cfgItems = $model->loadConfigData();
+
 		$this->form = $this->get('Form');
 		Rsg2Helper::addSubMenu('config'); 
 
@@ -22,10 +27,10 @@ class Rsg2ViewConfig extends JViewLegacy
 				return false;
 		}
 
-        // Define tabs options for version of Joomla! 3.1
-        $this->tabsOptionsJ31 = array(
-            "active" => "tab1_j31_id" // It is the ID of the active tab.
-        );
+//        // Define tabs options for version of Joomla! 3.1
+//        $this->tabsOptionsJ31 = array(
+//            "active" => "tab1_j31_id" // It is the ID of the active tab.
+//        );
         
         $this->addToolbar ();
 		$this->sidebar = JHtmlSidebar::render ();

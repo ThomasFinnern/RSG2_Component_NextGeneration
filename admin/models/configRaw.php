@@ -71,11 +71,18 @@ class rsg2ModelConfigRaw extends  JModelList
 	protected function getListQuery ()
 	{
 		$db = $this->getDbo();
+
 		$query = $db->getQuery (true)
             ->select ('*')
             ->from($db->quoteName('#__rsgallery2_config'))
 			->order('name');
 
+/*
+		$query = $db->getQuery (true)
+			->select ('name, value')
+			->from($db->quoteName('#__rsgallery2_config'))
+			->order('name');
+*/
         return $query;
 
 /*

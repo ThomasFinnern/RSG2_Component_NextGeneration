@@ -68,4 +68,26 @@ class rsg2ModelConfig extends  JModelAdmin
     }
     */
 
+
+	public function loadConfigData()
+	{
+		$db = $this->getDbo();
+		$query = $db->getQuery (true)
+			->select ('name, value')
+			->from($db->quoteName('#__rsgallery2_config'))
+			->order('name');
+
+		$db->setQuery($query);
+		$db->execute();
+
+		$rows = $db->loadAssocList('name', 'value');
+
+		return $rows;
+	}
+
+
+
+
+
+
 }
