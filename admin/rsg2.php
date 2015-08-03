@@ -60,7 +60,7 @@ if($Rsg2DebugActive)
     // show active task
     $DebTxt = "==> base.rsg2.php".$Delim ."----------".$Delim;
 	if (strlen ($task)) {
-        $DebTxt = $DebTxt . "\$task: $task" . $Delim;
+        $DebTxt = $DebTxt . "\$task: '$task''" . $Delim;
     }
 	if (strlen ($option)) {
         $DebTxt = $DebTxt . "\$option: $option".$Delim;
@@ -82,7 +82,11 @@ if($Rsg2DebugActive)
     }
 
     JLog::add($DebTxt); //, JLog::DEBUG);
+
 }
+
+
+echo '<br>Main RSG2 <br><br><br>';
 
 
 

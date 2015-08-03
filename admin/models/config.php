@@ -69,7 +69,7 @@ class rsg2ModelConfig extends  JModelAdmin
     */
 
 
-	public function loadConfigData()
+	public function getConfigVariables()
 	{
 		$db = $this->getDbo();
 		$query = $db->getQuery (true)

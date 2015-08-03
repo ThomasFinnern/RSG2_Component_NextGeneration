@@ -29,6 +29,42 @@ class Rsg2Controller extends JControllerLegacy
 	public function display($cachable = false, $urlparams = false)
 	{
 
+        echo '<br>Main Controller <br><br><br>';
+
+        // Load config model
+        //$CfgModel = JModelLegacy::getInstance($type, $prefix = '', $config = array())
+        $CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
+        echo ("CfgModel='");
+        print_r ($CfgModel);
+        echo "'<br>";
+        $ConfigItems = $CfgModel->ConfigVariables ();
+
+
+
+
+        You are trying to use the model part of an MVC as a thing to render. You should use the MVC system - using a controller to gathering the model and the view, and then you can render the model with the attached view, via the controller.
+
+    So you use something like (I've not tested this - you will need to correct it).
+$filter=array('id' => $i->query['id']);
+$options=array('filter_fields' => $filter,'ignore_request' => true);
+
+$ctl = new ContentModelController();
+$view = $ctl->getView( 'Article');
+$model = $ctl->getModel( 'Article','',$options);
+
+you may need to set params from application, eg..
+$model->setState('params', JApplication::getInstance('site')->getParams());
+
+
+        foreach($ConfigItems as $cfgItem):
+
+            print_r ($this->cfgItems[$cfgItem->name]);
+            echo "<br>";
+
+        endforeach;
+
+        echo '<br>Main Controller next parts<br><br><br>';
+
 		require_once JPATH_COMPONENT.'/helpers/rsg2.php';
 /*
 		$view   = $this->input->get('view', 'rsg2');
