@@ -33,32 +33,19 @@ class Rsg2Controller extends JControllerLegacy
 
         // Load config model
         //$CfgModel = JModelLegacy::getInstance($type, $prefix = '', $config = array())
-        $CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
-        echo ("CfgModel='");
-        print_r ($CfgModel);
-        echo "'<br>";
-        $ConfigItems = $CfgModel->ConfigVariables ();
+        //$CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
+        $CfgModel = JModelLegacy::getInstance('Config', 'rsg2Model');
+        $ConfigItems = $CfgModel->getConfigVariables ();
 
+//        print_r (array_keys($ConfigItems));
 
+        echo "Items: <br>";
 
-
-        You are trying to use the model part of an MVC as a thing to render. You should use the MVC system - using a controller to gathering the model and the view, and then you can render the model with the attached view, via the controller.
-
-    So you use something like (I've not tested this - you will need to correct it).
-$filter=array('id' => $i->query['id']);
-$options=array('filter_fields' => $filter,'ignore_request' => true);
-
-$ctl = new ContentModelController();
-$view = $ctl->getView( 'Article');
-$model = $ctl->getModel( 'Article','',$options);
-
-you may need to set params from application, eg..
-$model->setState('params', JApplication::getInstance('site')->getParams());
-
-
-        foreach($ConfigItems as $cfgItem):
-
-            print_r ($this->cfgItems[$cfgItem->name]);
+        foreach(array_keys($ConfigItems) as $cfgKey):
+            echo 'Name: '; // . $cfgItem->name;
+            print_r ($cfgKey);
+            echo ' Value: '; // . $cfgItem->value;
+            print_r ($ConfigItems[$cfgKey]);
             echo "<br>";
 
         endforeach;
