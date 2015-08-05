@@ -73,9 +73,9 @@ class rsg2ModelConfig extends  JModelAdmin
 	{
 		$db = $this->getDbo();
 		$query = $db->getQuery (true)
-			->select ('name, value')
+			->select ($db->quoteName(array('name', 'value')))
 			->from($db->quoteName('#__rsgallery2_config'))
-			->order('name');
+			->order('name ASC');
 
 		$db->setQuery($query);
 		$db->execute();
@@ -85,9 +85,25 @@ class rsg2ModelConfig extends  JModelAdmin
 		return $rows;
 	}
 
+    /**
+     * Tells if debug is activated on user config
+     * @return bool
+     */
+    public function getDebugActive()
+    {
+        $IsDebugActive = false;
 
+        $db = $this->getDbo();
+        $query = $db->getQuery (true)
+            ->select ($db->quoteName('value'))
+            ->where ($db->quoteName('name') . ' = debug');
+        $db->setQuery($query);
 
+        $DebugActive = $db->loadResult();
 
+        $IsDebugActive = $DebugActive == '1';
 
+        return $IsDebugActive;
+    }
 
 }

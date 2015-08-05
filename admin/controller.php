@@ -1,9 +1,40 @@
 <?php
 defined('_JEXEC') or die;
 
+//echo '<br>Main Controller <br><br><br>';
+
+/*
+// Load config model
+//$CfgModel = JModelLegacy::getInstance($type, $prefix = '', $config = array())
+//$CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
+$CfgModel = JModelLegacy::getInstance('Config', 'rsg2Model');
+$ConfigItems = $CfgModel->getConfigVariables ();
+
+//        print_r (array_keys($ConfigItems));
+
+echo "Items: <br>";
+
+foreach(array_keys($ConfigItems) as $cfgKey):
+    echo 'Name: '; // . $cfgItem->name;
+    print_r ($cfgKey);
+    echo ' Value: '; // . $cfgItem->value;
+    print_r ($ConfigItems[$cfgKey]);
+    echo "<br>";
+
+endforeach;
+
+echo '<br>Main Controller next parts<br><br><br>';
+*/
+/**
+ * bool
+ */
 global $Rsg2DebugActive;
 
-$Rsg2DebugActive = true; // ToDo: $rsgConfig->get('debug');
+// $Rsg2DebugActive = $CfgModel->getDebugActive();            // true; // ToDo: $rsgConfig->get('debug');
+echo ' Rsg2DebugActive: '; // . $cfgItem->value;
+print_r ($Rsg2DebugActive);
+echo "<br>";
+
 if ($Rsg2DebugActive)
 {
 	// Include the JLog class.
@@ -31,9 +62,9 @@ class Rsg2Controller extends JControllerLegacy
 
         echo '<br>Main Controller <br><br><br>';
 
-        // Load config model
-        //$CfgModel = JModelLegacy::getInstance($type, $prefix = '', $config = array())
-        //$CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
+// Load config model
+//$CfgModel = JModelLegacy::getInstance($type, $prefix = '', $config = array())
+//$CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
         $CfgModel = JModelLegacy::getInstance('Config', 'rsg2Model');
         $ConfigItems = $CfgModel->getConfigVariables ();
 
@@ -52,7 +83,14 @@ class Rsg2Controller extends JControllerLegacy
 
         echo '<br>Main Controller next parts<br><br><br>';
 
-		require_once JPATH_COMPONENT.'/helpers/rsg2.php';
+        $Rsg2DebugActive = $CfgModel->getDebugActive();            // true; // ToDo: $rsgConfig->get('debug');
+        echo ' Rsg2DebugActive: '; // . $cfgItem->value;
+        print_r ($Rsg2DebugActive);
+        echo "<br>";
+
+
+
+        require_once JPATH_COMPONENT.'/helpers/rsg2.php';
 /*
 		$view   = $this->input->get('view', 'rsg2');
 		JLog::add('  base.controller.view: ', json_encode($view));
