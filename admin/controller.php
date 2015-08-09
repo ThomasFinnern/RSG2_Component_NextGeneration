@@ -1,10 +1,12 @@
 <?php
 defined('_JEXEC') or die;
 
-//echo '<br>Main Controller <br><br><br>';
+
+// $Rsg2DebugActive = rsg2ModelConfig::getDebugActive();
 
 /*
 // Load config model
+global $CfgModel;
 //$CfgModel = JModelLegacy::getInstance($type, $prefix = '', $config = array())
 //$CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
 $CfgModel = JModelLegacy::getInstance('Config', 'rsg2Model');
@@ -25,31 +27,19 @@ endforeach;
 
 echo '<br>Main Controller next parts<br><br><br>';
 */
-/**
- * bool
- */
-global $Rsg2DebugActive;
-
-// $Rsg2DebugActive = $CfgModel->getDebugActive();            // true; // ToDo: $rsgConfig->get('debug');
+/*
+$Rsg2DebugActive = $CfgModel->getDebugActive();            // true; // ToDo: $rsgConfig->get('debug');
 echo ' Rsg2DebugActive: '; // . $cfgItem->value;
 print_r ($Rsg2DebugActive);
 echo "<br>";
-
-if ($Rsg2DebugActive)
-{
-	// Include the JLog class.
-	jimport('joomla.log.log');
-
-	// identify active file
-	JLog::add('==> base.controller.php ');
-}
+*/
 
 // import Joomla controller library
 jimport('joomla.application.component.controller');
  
 class Rsg2Controller extends JControllerLegacy
 {
-    // protected $default_view = 'rsg2s';
+	// protected $default_view = 'rsg2s';
     
     /**
      * display task
@@ -59,19 +49,26 @@ class Rsg2Controller extends JControllerLegacy
      */
 	public function display($cachable = false, $urlparams = false)
 	{
+		/**
+		 * bool
+		 */
+		global $Rsg2DebugActive;
 
-        echo '<br>Main Controller <br><br><br>';
+		if ($Rsg2DebugActive)
+		{
+			// identify active file
+			JLog::add('==> base.controller.php ');
+		}
 
-// Load config model
-//$CfgModel = JModelLegacy::getInstance($type, $prefix = '', $config = array())
-//$CfgModel = JModelLegacy::getInstance('Config', 'com_rsg2', array('ignore_request' => true));
-        $CfgModel = JModelLegacy::getInstance('Config', 'rsg2Model');
-        $ConfigItems = $CfgModel->getConfigVariables ();
+/*
+		// Load config model
+		$CfgModel = JModelLegacy::getInstance('Config', 'rsg2Model');
+		$ConfigItems = $CfgModel->getConfigVariables ();
 
 //        print_r (array_keys($ConfigItems));
 
         echo "Items: <br>";
-
+/*
         foreach(array_keys($ConfigItems) as $cfgKey):
             echo 'Name: '; // . $cfgItem->name;
             print_r ($cfgKey);
@@ -80,14 +77,7 @@ class Rsg2Controller extends JControllerLegacy
             echo "<br>";
 
         endforeach;
-
-        echo '<br>Main Controller next parts<br><br><br>';
-
-        $Rsg2DebugActive = $CfgModel->getDebugActive();            // true; // ToDo: $rsgConfig->get('debug');
-        echo ' Rsg2DebugActive: '; // . $cfgItem->value;
-        print_r ($Rsg2DebugActive);
-        echo "<br>";
-
+*/
 
 
         require_once JPATH_COMPONENT.'/helpers/rsg2.php';
@@ -102,7 +92,7 @@ class Rsg2Controller extends JControllerLegacy
 		JLog::add('  base.controller.id: ', json_encode($id));
 */
 		$task = $this->input->get('task');
-		// if($Rsg2DebugActive)
+		if($Rsg2DebugActive)
 		{
 			JLog::add('  base.controller.task: ', json_encode($task));
 		}

@@ -9,7 +9,24 @@
 */
 defined('_JEXEC') or die;
 
-$Rsg2DebugActive = false; // ToDo: $rsgConfig->get('debug');
+/**
+ * bool
+ */
+global $Rsg2DebugActive;
+//Access check
+/**
+ * bool
+ */
+global $canAdmin;
+/**
+ * bool
+ */
+global $canManage;
+
+// Set debug active from user configuration
+require_once JPATH_COMPONENT.'/models/config.php';
+$Rsg2DebugActive = rsg2ModelConfig::getDebugActive();
+
 if ($Rsg2DebugActive)
 {
 	// Include the JLog class.
@@ -36,7 +53,6 @@ if ($Rsg2DebugActive)
 	JLog::add('Start rsgallery2.php in admin: debug active in RSGallery2'); //, JLog::DEBUG);
 }
 
-
 // import joomla controller library
 jimport('joomla.application.component.controller');
  
@@ -44,50 +60,51 @@ jimport('joomla.application.component.controller');
 $canAdmin	= JFactory::getUser()->authorise('core.admin',	'com_rsg2');
 $canManage	= JFactory::getUser()->authorise('core.manage',	'com_rsg2');
 if (!$canManage) {
-	return JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
+	$this->app->enqueueMessage(JText::_('JERROR_ALERTNOAUTHOR'));
+	$this->app->redirect('index.php');
+	return;
 }
 
 $controller	= JControllerLegacy::getInstance('Rsg2');
 $input = JFactory::getApplication()->input; 
 $task = $input->get('task');
-$controller->execute($task);
-$controller->redirect();
 
 if($Rsg2DebugActive)
 {
 	//$Delim = "\n";
 	$Delim = " ";
-    // show active task
-    $DebTxt = "==> base.rsg2.php".$Delim ."----------".$Delim;
+	// show active task
+	$DebTxt = "==> base.rsg2.php".$Delim ."----------".$Delim;
+
 	if (strlen ($task)) {
-        $DebTxt = $DebTxt . "\$task: '$task''" . $Delim;
-    }
+		$DebTxt = $DebTxt . "\$task: '$task''" . $Delim;
+	}
+/*
 	if (strlen ($option)) {
-        $DebTxt = $DebTxt . "\$option: $option".$Delim;
-    }
+		$DebTxt = $DebTxt . "\$option: $option".$Delim;
+	}
 	if (strlen ($catid)) {
-        $DebTxt = $DebTxt . "\$catid: $catid".$Delim;
-    }
+		$DebTxt = $DebTxt . "\$catid: $catid".$Delim;
+	}
 	if (strlen ($firstCid)) {
-        $DebTxt = $DebTxt . "\$firstCid: $firstCid".$Delim;
-    }
+		$DebTxt = $DebTxt . "\$firstCid: $firstCid".$Delim;
+	}
 	if (strlen ($id)) {
-        $DebTxt = $DebTxt . "\$id: $id".$Delim;
-    }
+		$DebTxt = $DebTxt . "\$id: $id".$Delim;
+	}
 	if (strlen ($rsgOption)) {
-        $DebTxt = $DebTxt . "\$rsgOption: $rsgOption".$Delim;
-    }
+		$DebTxt = $DebTxt . "\$rsgOption: $rsgOption".$Delim;
+	}
 	if (strlen ($view)) {
-        $DebTxt = $DebTxt . "\$rsgOption: $view".$Delim;
-    }
+		$DebTxt = $DebTxt . "\$rsgOption: $view".$Delim;
+	}
+*/
 
-    JLog::add($DebTxt); //, JLog::DEBUG);
-
+	JLog::add($DebTxt); //, JLog::DEBUG);
 }
 
+$controller->execute($task);
+$controller->redirect();
 
-echo '<br>Main RSG2 <br><br><br>';
-
-
-
+// echo '<br>After every output <br><br><br>';
 

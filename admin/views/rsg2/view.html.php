@@ -22,7 +22,10 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	protected $LastImages;
 	protected $LastGalleries;
 	protected $Rsg2Version;
-	
+
+	protected $form;
+	protected $sidebar;
+
 	//------------------------------------------------
 	public function display ($tpl = null)
 	{
@@ -50,7 +53,12 @@ class Rsg2ViewRsg2 extends JViewLegacy
 		//--- begin to display --------------------------------------------
 		
 		
-		Rsg2Helper::addSubMenu('rsg2'); 
+		Rsg2Helper::addSubMenu('rsg2');
+
+		// Options button.
+		if ($this->UserIsRoot) {
+			JToolBarHelper::preferences('com_rsg2');
+		}
 		
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 
@@ -79,8 +87,8 @@ class Rsg2ViewRsg2 extends JViewLegacy
 	function CheckUserIsRoot ()
 	{
 		$user = JFactory::getUser();
-		$isroot = $user->authorise('core.admin');
-		return $isroot;
+		$isRoot = $user->authorise('core.admin');
+		return $isRoot;
 	}	
 	
     /**

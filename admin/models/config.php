@@ -89,21 +89,20 @@ class rsg2ModelConfig extends  JModelAdmin
      * Tells if debug is activated on user config
      * @return bool
      */
-    public function getDebugActive()
+    public static function getDebugActive()
     {
         $IsDebugActive = false;
 
-        $db = $this->getDbo();
+        $db =  JFactory::getDbo();
         $query = $db->getQuery (true)
-            ->select ($db->quoteName('value'))
-            ->where ($db->quoteName('name') . ' = debug');
+			->select ($db->quoteName('value'))
+			->from($db->quoteName('#__rsgallery2_config'))
+			->where($db->quoteName('name')." = ".$db->quote('debug'));
         $db->setQuery($query);
 
-        $DebugActive = $db->loadResult();
+		$IsDebugActive  = $db->loadResult();
 
-        $IsDebugActive = $DebugActive == '1';
-
-        return $IsDebugActive;
+		return $IsDebugActive;
     }
 
 }

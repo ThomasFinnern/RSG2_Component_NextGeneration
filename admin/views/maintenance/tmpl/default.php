@@ -45,61 +45,22 @@ $doc->addScriptDeclaration($script);
   * Used by showCP to generate buttons
   * @param string $link URL for button link
   * @param string $image Image name for button image
-  * @param $title
-  * @param string $text Text to show in button
+  * @param string $title Command title
+  * @param string $text Command explaining text
+  * @param string $addClass
   */
-function quickiconBarOrg( $link, $image, $title, $text = '', $addClass = '' ) {
-    ?>
-    <div style="float:left;">
-		<div class="rsg2-icon-bar <?php echo $addClass; ?>">
-			<a href="<?php echo $link; ?>">
-				<div class="icon-image">
-					<div class="rsg2-icon">
-						<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>						
-					</div>
-					<div class="rsg2-text">
-						<span class="maint-title"><?php echo $title;?></span>
-						<span class="maint-text"><?php echo $text;?></span>
-					</div>
-				</div>
-			</a>
-		</div>
-    </div>
-    <!--div class='rsg2-clr'>&nbsp;</div-->
-<?php
-}
-
-function quickiconBar01( $link, $image, $title, $text = "", $addClass = '' ) {
-    ?>
-		<div class="rsg2-icon-bar">
-			<a href="<?php echo $link; ?>" class="<?php echo $addClass; ?>" >
-			
-					<div class="rsg2-icon">
-						<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>
-					</div>
-					<span class="rsg2-text">
-						<span class="maint-title"><?php echo $title;?></span>
-						<span class="maint-text"><?php echo $text;?></span>
-					</span>
-				
-			</a>
-		</div>
-<?php
-}
-
 function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
     ?>
 		<div class="rsg2-icon-bar">
 			<a href="<?php echo $link; ?>" class="<?php echo $addClass; ?>" >
-			
 				<figure class="rsg2-icon">
 					<?php echo JHtml::image('administrator/components/COM_RSG2/images/'.$image, $text); ?>
 					<figcaption class="rsg2-text">
 						<span class="maint-title"><?php echo $title;?></span>
+						<br>
 						<span class="maint-text"><?php echo $text;?></span>
 					</figcaption>
 				</figure>
-				
 			</a>
 		</div>
 <?php
@@ -128,7 +89,18 @@ function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
 									<?php echo JText::_('COM_RSG2_REPAIR');?>
 								</h3>
 							</div>
-					
+							<div class='icons-panel-info'>
+								<strong>
+									<?php echo JText::_('COM_RSG2_FUNCTIONS_MAY_CHANGE_DATA');?>
+								</strong>
+							</div>
+						<?php
+							$link = 'index.php?option=com_rsg2&amp;view=configRaw';
+							// $link = 'index.php?option=com_rsg2&amp;task=maintenance.viewConfigPlain';
+							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW'),
+								JText::_('COM_RSG2_CONFIG_MINUS_VIEW_TXT').'                        ',
+								'viewConfigPlain');
+							?>
 						<?php
 							$link = 'index.php?option=com_rsg2&amp;task=maintenance.consolidateDB';
 							quickiconBar( $link, 'blockdevice.png',
@@ -146,13 +118,6 @@ function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
 							quickiconBar( $link, 'db_optimize.png', JText::_('COM_RSG2_MAINT_OPTDB'),
 								JText::_('COM_RSG2_MAINT_OPTDB_TXT'),
 									'optimizeDB');
-						?>
-						<?php
-                            $link = 'index.php?option=com_rsg2&amp;view=configRaw';
-							// $link = 'index.php?option=com_rsg2&amp;task=maintenance.viewConfigPlain';
-							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW'),
-									JText::_('COM_RSG2_CONFIG_MINUS_VIEW_TXT'),
-									'viewConfigPlain');
 						?>
 						</div>
 					</div>

@@ -3,6 +3,7 @@ defined('_JEXEC') or die;
 
 class Rsg2Helper
 {
+/*
 	public static function getActions($categoryId = 0)
 	{
 		$user	= JFactory::getUser();
@@ -28,6 +29,7 @@ class Rsg2Helper
 
 		return $result;
 	}
+*/
 
 	public static function addSubmenu($vName = 'rsg2')
 	{
