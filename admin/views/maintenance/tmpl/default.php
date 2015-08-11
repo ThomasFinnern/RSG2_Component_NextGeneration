@@ -142,7 +142,8 @@ function quickiconBar( $link, $image, $title, $text = "", $addClass = '' ) {
 							</div>
 
 						<?php
-							$link = 'index.php?option=com_rsg2&amp;task=maintenance.editConfigRaw';
+                            //$link = 'index.php?option=com_rsg2&amp;view=configRawEdit';
+                            $link = 'index.php?option=com_rsg2&amp;view=configRaw&amp;layout=edit';
 							quickiconBar( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT'),
 									JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT_TXT'),
 									'editConfigRaw');
