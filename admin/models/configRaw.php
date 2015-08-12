@@ -3,11 +3,12 @@
 defined('_JEXEC') or die('Restricted access');
 
 // import Joomla modelform library
-jimport('joomla.application.component.modellist');
+//jimport('joomla.application.component.modellist');
+jimport('joomla.application.component.modeladmin');
 /**
  * 
  */
-class rsg2ModelConfigRaw extends  JModelList
+class rsg2ModelConfigRaw extends  JModelForm // JModelList
 {
 //    protected $text_prefix = 'COM_RSG2';
 
@@ -19,11 +20,11 @@ class rsg2ModelConfigRaw extends  JModelList
 	 * @param array $config   Configuration array for model. Optional.
 	 * @return mixed     JTable  A database object
 	 */
-/*	public function getTable($type = 'config', $prefix = 'rsg2Table', $config = array())
+	public function getTable($type = 'config', $prefix = 'rsg2Table', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
-*/
+
 	/**
 	 * Method to get the record form.
 	 *
@@ -31,12 +32,12 @@ class rsg2ModelConfigRaw extends  JModelList
 	 * @param       boolean $loadData       True if the form is to load its own data (default case), false if not.
 	 * @return      mixed   A JForm object on success, false on failure
 	 * @since       2.5
-	 *
+	 */
 	public function getForm($data = array(), $loadData = true) 
 	{
 		$options = array('control' => 'jform', 'load_data' => $loadData);
 		// Get the form.
-		$form = $this->loadForm('config', 'config', $options);
+		$form = $this->loadForm('com_rsg2.config', 'configRaw', $options);
 		if (empty($form)) 
 		{
 			return false;
@@ -48,12 +49,18 @@ class rsg2ModelConfigRaw extends  JModelList
 	 *
 	 * @return      mixed   The data for the form.
 	 * @since       2.5
-	 *
+	 */
 	protected function loadFormData() 
 	{
 		// Check the session for previously entered form data.
 		$app = JFactory::getApplication();
-		$data = $app->getUserState('com_rsg2.edit.gallery.data', array());
+//		$data = $app->getUserState('com_rsg2.edit.gallery.data', array());
+		// Check the session for previously entered form data.
+		$data = JFactory::getApplication()->getUserState('com_helloworld.edit.helloworld.data', array());
+		
+		// Load form data
+        $data = $this->getItem();
+		$data = // getListQuery 
 		if (empty($data)) 
 		{
 			$data = $this->getItem();

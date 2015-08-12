@@ -8,11 +8,12 @@ jimport('joomla.application.component.view');
 class Rsg2ViewConfigRaw extends JViewLegacy
 {
 	protected $items;
-//	protected $form;
+	protected $form;
 	
 	public function display ($tpl = null)
 	{
-		$this->items = $this->get('Items');
+        $this->items = $this->get('Items');
+        $this->form = $this->get('Form');
 
 		//--- begin to display --------------------------------------------
 
