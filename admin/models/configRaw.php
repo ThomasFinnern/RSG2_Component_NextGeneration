@@ -1,3 +1,7 @@
+
+http://stackoverflow.com/questions/18817338/changing-layout-of-view-in-joomla-2-5
+
+
 <?php
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
