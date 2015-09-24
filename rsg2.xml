@@ -2,12 +2,12 @@
 <extension type="component" version="3.0" method="upgrade">
 	<name>com_rsg2</name>
 	<author>RSGallery2 Team</author>
-	<creationDate>Jul 2014</creationDate>
+	<creationDate>July 2014</creationDate>
 	<copyright>(c) 2014 RSGallery2 Team</copyright>
 	<license>This component is released under the GNU/GPL License</license>
 	<authorEmail>team@rsgallery2.nl</authorEmail>
 	<authorUrl>http://www.rsgallery2.nl</authorUrl>
-	<version>1.0.1.0009</version>
+	<version>1.0.2</version>
 	<description>COM_RSG2_XML_DESCRIPTION</description>
 
 	<scriptfile>install.rsg2.php</scriptfile>
@@ -95,12 +95,10 @@
 
 
 	<updateservers>
-		<!-- Note: No spaces or line breaks allowed between the server tags -->
-		<!-- 
-	<server type="extension" priority="1" name="RSGallery2 Update Site">http://.../update/rsgallery2.xml</server>
-	on http://joomlacode.org/gf/project/embedchessboard/scmsvn/?action=browse&path=%2Ftrunk%2Fjoomla-1.6%2Fembedchessboard.xml&view=markup
-	it says
-	<server type="extension" priority="1" name="EmbedChessboard update site">http://anonymous:doesnotmatter@joomlacode.org/svn/embedchessboard/trunk/joomla-1.6-update</server>
-	-->
+		 <!--updateservers>
+			<server type="collection">http://example.com/list.xml</server>
+			<server type="extension" priority="2" name="My Extension's Updates">http://example.com/extension.xml</server>
+		 </updateservers -->		
+		<server type="extension" priority="2" name="SGallery2 updates">http://127.0.0.1/JoomlaUpdateServer/RSG2_component_update.xml</server>
 	</updateservers>  
 </extension>

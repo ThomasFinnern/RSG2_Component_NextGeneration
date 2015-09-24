@@ -1,0 +1,18 @@
+<updates>
+	<update>
+		<name>RSGallery2 component update</name>
+		<description>Update for component rsgallery2 v1.0.2</description>
+		<element>com_rsg2</element>
+		<type>component</type>
+		<version>1.0.2</version>
+		<downloads>
+			<downloadurl type="upgrade" format="zip">http://127.0.0.1/JoomlaUpdateServer/RSG2_Component_Version_1_0_2.zip</downloadurl>
+		</downloads>
+		<maintainer>team@rsgallery2.nl</maintainer>
+		<maintainerurl>rsgallery2.nl</maintainerurl>
+		<targetplatform name="joomla" version="3.*"/>
+		<client>1</client>
+		<infourl>rsgallery2.nl</infourl> 
+		
+	</update>
+</updates>
