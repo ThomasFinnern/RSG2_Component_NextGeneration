@@ -30,6 +30,32 @@ function RsgButton( $link, $image, $text, $addClass='' ) {
 }
 
 /**
+  * Used by showCP to generate buttons.  
+  * Uses icomoon font to display the main icon of the button
+  * @param string $link URL for button link
+  * @param string $imageClass Class name for icomoon image
+  * @param string $text Text to show in button
+  */
+static function RsgIconMoonButton( $link, $imageClass, $text ) {
+	?>
+    <div style="float:left;">
+		<div class="iconMoon">
+			<a href="<?php echo $link; ?>">
+				<div class="iconMoonImage">
+				
+					<!--span class="<?php echo $imageClass ?>" style="font-size:40px;"> </span-->
+					<span class="<?php echo $imageClass ?>" style="font-size:40px;"></span>
+					<!-- i class="icon-search"  style="font-size:24px;></i -->
+					
+				</div>
+				<?php echo $text; ?>
+			</a>
+		</div>
+    </div>
+    <?php
+}
+
+/**
  * Used by showCP to generate buttons
  * @param string $link URL for button link
  * @param string $image Image name for button image
@@ -37,6 +63,16 @@ function RsgButton( $link, $image, $text, $addClass='' ) {
  */
 function RsgDebugButton($link, $image, $text ) {
     RsgButton( $link, $image, $text, "debugicon");
+}
+
+/**
+ * Used by showCP to generate buttons
+ * @param string $link URL for button link
+ * @param string $image Image name for button image
+ * @param string $text Text to show in button
+ */
+function RsgIconMoonDebugButton($link, $image, $text ) {
+    RsgIconMoonButton( $link, $image, $text, "debugicon");
 }
 
 function DisplayInfoGalleries ($infoGalleries) {
@@ -219,34 +255,42 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
                     <?php
                         if ( $this->UserIsRoot ){
                             $link = 'index.php?option=com_rsg2&amp;view=config';
-                            RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
+                            //RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
+                            RsgButton( $link, 'icon-cog clsProperties',  JText::_('COM_RSG2_CONFIGURATION') );
                         }
 
                         $link = 'index.php?option=com_rsg2&amp;view=galleries';
-                        RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
+                        //RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
+                        RsgButton( $link, 'icon-images clsGalleries', JText::_('COM_RSG2_MANAGE_GALLERIES') );
 
                         $link = 'index.php?option=com_rsg2&amp;view=uploadBatch';
-                        RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
+                        //RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
+                        RsgButton( $link, 'icon-upload clsBatchUpload', JText::_('COM_RSG2_BATCH_UPLOAD') );
 
                         $link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
-                        RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
+                        //RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
+                        RsgButton( $link, 'icon-upload clsUpload', JText::_('COM_RSG2_UPLOAD') );
                     ?>
                 </div>
                 <div class="row-fluid">
                     <?php
                         $link = 'index.php?option=com_rsg2&amp;view=images';
-                        RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
+                        //RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
+                        RsgButton( $link, 'icon-image clsImages', JText::_('COM_RSG2_MANAGE_IMAGES') );
 
                         if ( $this->UserIsRoot ){
                             /*
                             $link = 'index.php?option=com_rsg2&task=consolidate_db';
+                            //RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
                             RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
                             */
 						$link = 'index.php?option=com_rsg2&view=maintenance';
-						RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
+						//RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
+						RsgButton( $link, 'icon-screwdriver clsMaintenance', JText::_('COM_RSG2_MAINTENANCE'));
 
 						$link = 'index.php?option=com_rsg2&rsgOption=installer';
-						RsgButton( $link, 'template.png', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
+						//RsgButton( $link, 'template.png', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
+						RsgButton( $link, 'icon-scissors clsTemplate', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
 					} 
 
 			// if debug is on, display advanced options

@@ -59,8 +59,8 @@ class Rsg2ViewMaintenance extends JViewLegacy
 	function CheckUserIsRoot ()
 	{
 		$user = JFactory::getUser();
-		$isroot = $user->authorise('core.admin');
-		return $isroot;
+		$canAdmin = $user->authorise('core.admin');
+		return $canAdmin;
 	}	
 	
     /**
