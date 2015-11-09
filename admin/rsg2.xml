@@ -45,8 +45,8 @@
 				link="option=com_rsg2&amp;view=uploadSingle">COM_RSG2_MENU_UPLOAD</menu>
 			<menu view="COM_RSG2_MENU_GALLERIES" 
 				link="option=com_rsg2&amp;view=galleries">COM_RSG2_MENU_GALLERIES</menu>
-			<menu view="COM_RSG2_MENU_ITEMS" 
-				link="option=com_rsg2&amp;view=images">COM_RSG2_MENU_ITEMS</menu>
+			<menu view="COM_RSG2_MENU_IMAGES" 
+				link="option=com_rsg2&amp;view=images">COM_RSG2_MENU_IMAGES</menu>
 			<menu view="COM_RSG2_SUMMARY_TREE_VIEW" 
 				link="option=com_rsg2&amp;view=summarytreeview">COM_RSG2_SUMMARY_TREE_VIEW</menu>
 		</submenu>
