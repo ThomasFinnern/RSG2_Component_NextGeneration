@@ -14,7 +14,8 @@ global $Rsg2DebugActive;
   */
 function RsgButton( $link, $image, $text, $addClass='' ) {
 	?>
-	<div class="span2 ">
+	<!--div class="span2 "-->
+    <div style="float:left;">
 		<div class="rsg2_icon_container">
 			<div class="rsg2icon<?php echo ' '.$addClass; ?>">
 				<a href="<?php echo $link; ?>">
@@ -38,19 +39,19 @@ function RsgButton( $link, $image, $text, $addClass='' ) {
   */
 function RsgIconMoonButton( $link, $imageClass, $text, $addClass='') {
 	?>
-	<div class="span2 ">
-		<div class="rsg2_icon_container">
+	<!--div class="span2 "-->
+    <div style="float:left;">
+		<div class="iconMoon">
 			<a href="<?php echo $link; ?>">
 				<div class="iconMoonImage<?php echo ' '.$addClass; ?>">
-					<a href="<?php echo $link; ?>">
-				
+
 					<!--span class="<?php echo $imageClass ?>" style="font-size:40px;"> </span-->
 					<span class="<?php echo $imageClass ?>" style="font-size:40px;"></span>
 					<!-- i class="icon-search"  style="font-size:24px;></i -->
 					
-					<?php echo $text; ?>
-				</a>
-			</div>
+				</div>
+				<?php echo $text; ?>
+			</a>
 		</div>
 	</div>
     <?php
