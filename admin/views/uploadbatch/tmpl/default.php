@@ -1,5 +1,5 @@
 <?php // no direct access
-defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
+defined( '_JEXEC' ) or die(); ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_rsg2&view=uploadbatch'); ?>" method="post" name="adminForm" id="adminForm">
 
