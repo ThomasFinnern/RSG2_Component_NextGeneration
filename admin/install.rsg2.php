@@ -19,6 +19,11 @@ if(!defined('DS')){
 //require_once (JPATH_BASE.DS.'includes'.DS.'defines.php' );
 
 // Include the JLog class.
+// ToDo: USE: To check whether the Website is in the debug mode, test the JDEBUG variable:
+if(JDEBUG)
+{
+	//whatever debugging code you want to run
+}
 jimport('joomla.log.log');
 
 // Get the date for log file name
@@ -159,7 +164,7 @@ class com_rsg2InstallerScript
 			if($SchemaVersionCount != 1)
 			{
 				JLog::add('Create RSG2 version in __schemas: ', JLog::DEBUG);
-				
+
 				//	UPDATE #__schemas SET version_id = 'NEWVERSION' WHERE extension_id = 700	
 				$query->clear();
 				$query->insert($db->quoteName('#__schemas'));
@@ -205,13 +210,13 @@ class com_rsg2InstallerScript
 		JLog::add('install', JLog::DEBUG);
 
 		// require_once( JPATH_SITE . '/administrator/components/com_rsg2/includes/install.class.php' );
-				
+	
 		JLog::add('freshInstall', JLog::DEBUG);
-
+				
 		//Initialize install
 		$rsgInstall = new rsgInstall();		
 		$rsgInstall->freshInstall();
-
+		
 		echo '<p>' . JText::_('COM_RSG2_INSTALL_TEXT') . '</p>';
 		JLog::add('Before redirect', JLog::DEBUG);
 		
@@ -272,8 +277,8 @@ class com_rsg2InstallerScript
 			$result = print_r( $result, true );
 			$rsgInstall->writeInstallMsg( JText::_('COM_RSG2_FAILURE')."\n<br><pre>$result\n</pre>", 'error');
 		}
-
 		
+
 		JLog::add('view update text', JLog::DEBUG);
 		echo '<p>' . JText::_('COM_RSG2_UPDATE_TEXT') . '</p>';
 
@@ -298,7 +303,7 @@ class com_rsg2InstallerScript
 	{
 		JLog::add('postflight', JLog::DEBUG);
 		echo '<p>' . JText::_('COM_RSG2_POSTFLIGHT_' . strtoupper($type) . '_TEXT') . '</p>';
-		
+
         if ( $type == 'update' ) {
 			JLog::add('-> post update', JLog::DEBUG);
 			
@@ -341,7 +346,7 @@ class com_rsg2InstallerScript
      */
 	function getParam( $name ) {
 		$db = JFactory::getDbo();
-			$db->setQuery('SELECT manifest_cache FROM #__extensions WHERE name = "com_rsg2"');
+		$db->setQuery('SELECT manifest_cache FROM #__extensions WHERE name = "com_rsg2"');
 		$manifest = json_decode( $db->loadResult(), true );
 		return $manifest[ $name ];
 	}
