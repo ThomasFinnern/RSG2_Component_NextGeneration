@@ -82,19 +82,19 @@ function DisplayInfoGalleries ($infoGalleries) {
     // exit if no data given
     if (count($infoGalleries) == 0)
     {
-        echo JText::_('COM_RSG2_NO_NEW_GALLERIES');
+        echo JText::_('COM_RSGALLERY2_NO_NEW_GALLERIES');
         return;
     }
 
     // Header ----------------------------------
 
     echo '<table class="table table-striped table-condensed">';
-    echo '    <caption>'.JText::_('COM_RSG2_MOST_RECENTLY_ADDED_GALLERIES').'</caption>';
+    echo '    <caption>'.JText::_('COM_RSGALLERY2_MOST_RECENTLY_ADDED_GALLERIES').'</caption>';
     echo '    <thead>';
     echo '        <tr>';
-    echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
-    echo '            <th>'.JText::_('COM_RSG2_USER').'</th>';
-    echo '            <th>'.JText::_('COM_RSG2_ID').'</th>';
+    echo '            <th>'.JText::_('COM_RSGALLERY2_GALLERY').'</th>';
+    echo '            <th>'.JText::_('COM_RSGALLERY2_USER').'</th>';
+    echo '            <th>'.JText::_('COM_RSGALLERY2_ID').'</th>';
     echo '        </tr>';
     echo '    </thead>';
 
@@ -123,20 +123,20 @@ function DisplayInfoImages ($infoImages) {
     // exit if no data given
     if (count($infoImages) == 0)
     {
-        echo JText::_('COM_RSG2_NO_NEW_IMAGES');
+        echo JText::_('COM_RSGALLERY2_NO_NEW_IMAGES');
         return;
     }
 
     // Header ----------------------------------
 
     echo '<table class="table table-striped table-condensed">';
-    echo '    <caption>'.JText::_('COM_RSG2_MOST_RECENTLY_ADDED_ITEMS').'</caption>';
+    echo '    <caption>'.JText::_('COM_RSGALLERY2_MOST_RECENTLY_ADDED_ITEMS').'</caption>';
     echo '    <thead>';
     echo '        <tr>';
-    echo '            <th>'.JText::_('COM_RSG2_FILENAME').'</th>';
-    echo '            <th>'.JText::_('COM_RSG2_GALLERY').'</th>';
-    echo '            <th>'.JText::_('COM_RSG2_DATE').'</th>';
-    echo '            <th>'.JText::_('COM_RSG2_USER').'</th>';
+    echo '            <th>'.JText::_('COM_RSGALLERY2_FILENAME').'</th>';
+    echo '            <th>'.JText::_('COM_RSGALLERY2_GALLERY').'</th>';
+    echo '            <th>'.JText::_('COM_RSGALLERY2_DATE').'</th>';
+    echo '            <th>'.JText::_('COM_RSGALLERY2_USER').'</th>';
     echo '        </tr>';
     echo '    </thead>';
 
@@ -185,35 +185,35 @@ function DisplayInfoRsgallery2 ($Rsg2Version)
     /**/
     /**/
     echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_INSTALLED_VERSION') . ': ' . '</td>';
+    echo '            <td>' . JText::_('COM_RSGALLERY2_INSTALLED_VERSION') . ': ' . '</td>';
     echo '            <td>';
-    echo '                <a href="" target="_blank" title="' . JText::_('COM_RSG2_VIEW_CHANGE_LOG') . '": >' . $Rsg2Version . '</a>';
+    echo '                <a href="" target="_blank" title="' . JText::_('COM_RSGALLERY2_VIEW_CHANGE_LOG') . '": >' . $Rsg2Version . '</a>';
     echo '            </td>';
     echo '        </tr>';
     /**/
     // License
     echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_LICENSE') . ': ' . '</td>';
+    echo '            <td>' . JText::_('COM_RSGALLERY2_LICENSE') . ': ' . '</td>';
     echo '            <td>';
-    echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSG2_JUMP_TO_GNU_ORG').'" >GNU GPL</a>';
+    echo '               <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" title="'.JText::_('COM_RSGALLERY2_JUMP_TO_GNU_ORG').'" >GNU GPL</a>';
     echo '            </td>';
     echo '        </tr>';
     /**/
     /**/
     // Forum
     echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_FORUM') . '</td>';
+    echo '            <td>' . JText::_('COM_RSGALLERY2_FORUM') . '</td>';
     echo '            <td>';
-    echo '                <a href="http://www.rsgallery2.nl/" target="_blank" '.' title="'.JText::_('COM_RSG2_JUMP_TO_FORUM').'" >www.rsgallery2.nl</a>';
+    echo '                <a href="http://www.rsgallery2.nl/" target="_blank" '.' title="'.JText::_('COM_RSGALLERY2_JUMP_TO_FORUM').'" >www.rsgallery2.nl</a>';
     echo '            </td>';
     echo '        </tr>';
     /**/
     // Documentation
     echo '        <tr>';
-    echo '            <td>' . JText::_('COM_RSG2_DOCUMENTATION') . '</td>';
+    echo '            <td>' . JText::_('COM_RSGALLERY2_DOCUMENTATION') . '</td>';
     echo '            <td>';
     echo '                <a href="http://joomlacode.org/gf/project/rsgallery2/frs/?action=FrsReleaseBrowse&frs_package_id=6273" target="_blank"';
-    echo '                    title="'.JText::_('COM_RSG2_JUMP_TO_DOCUMENTATION').'" >'.JText::_('COM_RSG2_DOCUMENTATION').'</a>';
+    echo '                    title="'.JText::_('COM_RSGALLERY2_JUMP_TO_DOCUMENTATION').'" >'.JText::_('COM_RSGALLERY2_DOCUMENTATION').'</a>';
     echo '            </td>';
     echo '        </tr>';
 
@@ -257,39 +257,39 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
                     <?php
                         if ( $this->UserIsRoot ){
                             $link = 'index.php?option=com_rsg2&amp;view=config';
-                            //RsgButton( $link, 'config.png',  JText::_('COM_RSG2_CONFIGURATION') );
-                            RsgIconMoonButton( $link, 'icon-cog clsProperties',  JText::_('COM_RSG2_CONFIGURATION') );
+                            //RsgButton( $link, 'config.png',  JText::_('COM_RSGALLERY2_CONFIGURATION') );
+                            RsgIconMoonButton( $link, 'icon-cog clsProperties',  JText::_('COM_RSGALLERY2_CONFIGURATION') );
                         }
 
                         $link = 'index.php?option=com_rsg2&amp;view=galleries';
-                        //RsgButton( $link, 'categories.png', JText::_('COM_RSG2_MANAGE_GALLERIES') );
-                        RsgIconMoonButton( $link, 'icon-images clsGalleries', JText::_('COM_RSG2_MANAGE_GALLERIES') );
+                        //RsgButton( $link, 'categories.png', JText::_('COM_RSGALLERY2_MANAGE_GALLERIES') );
+                        RsgIconMoonButton( $link, 'icon-images clsGalleries', JText::_('COM_RSGALLERY2_MANAGE_GALLERIES') );
 
                         $link = 'index.php?option=com_rsg2&amp;view=uploadBatch';
-                        //RsgButton( $link, 'upload_zip.png', JText::_('COM_RSG2_BATCH_UPLOAD') );
-                        RsgIconMoonButton( $link, 'icon-upload clsBatchUpload', JText::_('COM_RSG2_BATCH_UPLOAD') );
+                        //RsgButton( $link, 'upload_zip.png', JText::_('COM_RSGALLERY2_BATCH_UPLOAD') );
+                        RsgIconMoonButton( $link, 'icon-upload clsBatchUpload', JText::_('COM_RSGALLERY2_BATCH_UPLOAD') );
 
                         $link = 'index.php?option=com_rsg2&amp;view=uploadSingle';
-                        //RsgButton( $link, 'upload.png', JText::_('COM_RSG2_UPLOAD') );
-                        RsgIconMoonButton( $link, 'icon-upload clsUpload', JText::_('COM_RSG2_UPLOAD') );
+                        //RsgButton( $link, 'upload.png', JText::_('COM_RSGALLERY2_UPLOAD') );
+                        RsgIconMoonButton( $link, 'icon-upload clsUpload', JText::_('COM_RSGALLERY2_UPLOAD') );
 /**/
                         $link = 'index.php?option=com_rsg2&amp;view=images';
-                        //RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
-                        RsgIconMoonButton( $link, 'icon-image clsImages', JText::_('COM_RSG2_MANAGE_IMAGES') );
+                        //RsgButton( $link, 'mediamanager.png', JText::_('COM_RSGALLERY2_MANAGE_IMAGES') );
+                        RsgIconMoonButton( $link, 'icon-image clsImages', JText::_('COM_RSGALLERY2_MANAGE_IMAGES') );
 /**/					
                         if ( $this->UserIsRoot ){
                             /*
                             $link = 'index.php?option=com_rsg2&task=consolidate_db';
-                            //RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
-                            RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
+                            //RsgButton( $link, 'dbrestore.png', JText::_('COM_RSGALLERY2_CONSOLIDATE_DATABASE') );
+                            RsgButton( $link, 'dbrestore.png', JText::_('COM_RSGALLERY2_CONSOLIDATE_DATABASE') );
                             */
 							$link = 'index.php?option=com_rsg2&view=maintenance';
-							//RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
-							RsgIconMoonButton( $link, 'icon-screwdriver clsMaintenance', JText::_('COM_RSG2_MAINTENANCE'));
+							//RsgButton( $link, 'maintenance.png', JText::_('COM_RSGALLERY2_MAINTENANCE'));
+							RsgIconMoonButton( $link, 'icon-screwdriver clsMaintenance', JText::_('COM_RSGALLERY2_MAINTENANCE'));
 
 							$link = 'index.php?option=com_rsg2&rsgOption=installer';
-							//RsgButton( $link, 'template.png', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
-							RsgIconMoonButton( $link, 'icon-scissors clsTemplate', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
+							//RsgButton( $link, 'template.png', JText::_('COM_RSGALLERY2_TEMPLATE_MANAGER'));
+							RsgIconMoonButton( $link, 'icon-scissors clsTemplate', JText::_('COM_RSGALLERY2_TEMPLATE_MANAGER'));
 						}
 /**/
                     ?>
@@ -297,22 +297,22 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
                 <div class="row-fluid">
                     <?php
 /*                        $link = 'index.php?option=com_rsg2&amp;view=images';
-                        //RsgButton( $link, 'mediamanager.png', JText::_('COM_RSG2_MANAGE_IMAGES') );
-                        RsgIconMoonButton( $link, 'icon-image clsImages', JText::_('COM_RSG2_MANAGE_IMAGES') );
+                        //RsgButton( $link, 'mediamanager.png', JText::_('COM_RSGALLERY2_MANAGE_IMAGES') );
+                        RsgIconMoonButton( $link, 'icon-image clsImages', JText::_('COM_RSGALLERY2_MANAGE_IMAGES') );
 */
                         if ( $this->UserIsRoot ){
                             /*
                             $link = 'index.php?option=com_rsg2&task=consolidate_db';
-                            //RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
-                            RsgButton( $link, 'dbrestore.png', JText::_('COM_RSG2_CONSOLIDATE_DATABASE') );
+                            //RsgButton( $link, 'dbrestore.png', JText::_('COM_RSGALLERY2_CONSOLIDATE_DATABASE') );
+                            RsgButton( $link, 'dbrestore.png', JText::_('COM_RSGALLERY2_CONSOLIDATE_DATABASE') );
                             *
 							$link = 'index.php?option=com_rsg2&view=maintenance';
-							//RsgButton( $link, 'maintenance.png', JText::_('COM_RSG2_MAINTENANCE'));
-							RsgIconMoonButton( $link, 'icon-screwdriver clsMaintenance', JText::_('COM_RSG2_MAINTENANCE'));
+							//RsgButton( $link, 'maintenance.png', JText::_('COM_RSGALLERY2_MAINTENANCE'));
+							RsgIconMoonButton( $link, 'icon-screwdriver clsMaintenance', JText::_('COM_RSGALLERY2_MAINTENANCE'));
 
 							$link = 'index.php?option=com_rsg2&rsgOption=installer';
-							//RsgButton( $link, 'template.png', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
-							RsgIconMoonButton( $link, 'icon-scissors clsTemplate', JText::_('COM_RSG2_TEMPLATE_MANAGER'));
+							//RsgButton( $link, 'template.png', JText::_('COM_RSGALLERY2_TEMPLATE_MANAGER'));
+							RsgIconMoonButton( $link, 'icon-scissors clsTemplate', JText::_('COM_RSGALLERY2_TEMPLATE_MANAGER'));
 /**/						
 						} 
 					
@@ -326,33 +326,33 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 					<div class="row-fluid">
 						<div class="DangerZone">
 							<h3>
-								<?php echo JText::_('COM_RSG2_DANGER_ZONE');?>
+								<?php echo JText::_('COM_RSGALLERY2_DANGER_ZONE');?>
 							</h3>
 						</div>
 						<div class='rsg2-DebugHeader'>
 							<strong>
-								<?php echo JText::_('COM_RSG2_C_DEBUG_ON');?>
+								<?php echo JText::_('COM_RSGALLERY2_C_DEBUG_ON');?>
 							</strong>
 						</div>
 					</div>
 					<div class="row-fluid">
 						<?php
 							$link = 'index.php?option=com_rsg2&task=purgeEverything';
-							RsgDebugButton( $link, 'media_DelItems.png', JText::_('COM_RSG2_PURGEDELETE_EVERYTHING') );
+							RsgDebugButton( $link, 'media_DelItems.png', JText::_('COM_RSGALLERY2_PURGEDELETE_EVERYTHING') );
 
 							$link = 'index.php?option=com_rsg2&task=reallyUninstall';
-							RsgDebugButton( $link, 'db_DelItems.png', JText::_('COM_RSG2_C_REALLY_UNINSTALL') );
+							RsgDebugButton( $link, 'db_DelItems.png', JText::_('COM_RSGALLERY2_C_REALLY_UNINSTALL') );
 
 							$link = 'index.php?option=com_rsg2&task=config_rawEdit';
-							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT') );
+							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSGALLERY2_CONFIG_MINUS_RAW_EDIT') );
 
 							//Moved Migration Options: only show when debug is on since there are only test migration options and four Joomla 1.0.x options.
 							/*
 							$link = 'index.php?option=com_rsg2&rsgOption=maintenance&task=showMigration';
-							RsgDebugButton( $link, 'dbrestore.png', JText::_('COM_RSG2_MIGRATION_OPTIONS') );
+							RsgDebugButton( $link, 'dbrestore.png', JText::_('COM_RSGALLERY2_MIGRATION_OPTIONS') );
 							*/
 							$link = 'index.php?option=com_rsg2&task=config_dumpVars';
-							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSG2_CONFIG_MINUS_VIEW') );
+							RsgDebugButton( $link, 'menu.png', JText::_('COM_RSGALLERY2_CONFIG_MINUS_VIEW') );
 						?>
 					</div>
 				</div>
@@ -370,7 +370,7 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 			<div class="row">
          <?php
 			echo JHtml::_('bootstrap.startAccordion', 'slide-example', array('active' => 'slide1', 'toggle' => 'false' ));
-			echo JHtml::_('bootstrap.addSlide', 'slide-example', JText::_('COM_RSG2_GALLERIES'), 'slide1');
+			echo JHtml::_('bootstrap.addSlide', 'slide-example', JText::_('COM_RSGALLERY2_GALLERIES'), 'slide1');
 
                 // info about last uploaded galleries
                 DisplayInfoGalleries ($this->LastGalleries);
@@ -379,7 +379,7 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 			echo JHtml::_('bootstrap.endAccordion');
 			
 			echo JHtml::_('bootstrap.startAccordion', 'slide-example2', array('active' => 'slide2'));
-			echo JHtml::_('bootstrap.addSlide', 'slide-example2', JText::_('COM_RSG2_IMAGES'), 'slide2');
+			echo JHtml::_('bootstrap.addSlide', 'slide-example2', JText::_('COM_RSGALLERY2_IMAGES'), 'slide2');
 
                 // info about last uploaded images
                 DisplayInfoImages ($this->LastImages);
@@ -388,7 +388,7 @@ $doc->addStyleSheet (JURI::root(true)."/administrator/components/com_rsg2/css/ad
 			echo JHtml::_('bootstrap.endAccordion');
 			
 			echo JHtml::_('bootstrap.startAccordion', 'slide-example3', array('active' => 'slide1'));
-			echo JHtml::_('bootstrap.addSlide', 'slide-example3', JText::_('COM_RSG2_CREDITS'), 'slide3');
+			echo JHtml::_('bootstrap.addSlide', 'slide-example3', JText::_('COM_RSGALLERY2_CREDITS'), 'slide3');
 		?>
 
 			<div id='rsg2-credits'>

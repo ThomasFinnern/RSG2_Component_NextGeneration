@@ -43,7 +43,7 @@ class Rsg2ViewMaintenance extends JViewLegacy
 		// $this->form = $form;
         	
 		//$this->addToolbar ();
-		JToolBarHelper::title(JText::_('COM_RSG2_MENU_CONTROL_PANEL'), 'maintenance');
+		JToolBarHelper::title(JText::_('COM_RSGALLERY2_MENU_CONTROL_PANEL'), 'maintenance');
 		$this->sidebar = JHtmlSidebar::render ();
 
 		parent::display ($tpl);
@@ -71,7 +71,7 @@ class Rsg2ViewMaintenance extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_MENU_CONTROL_PANEL'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_MENU_CONTROL_PANEL'));
     }
 	*/
 	

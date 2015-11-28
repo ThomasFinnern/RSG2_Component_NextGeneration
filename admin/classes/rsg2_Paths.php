@@ -164,7 +164,7 @@ class rsg2_Paths
 			if (JFolder::exists($dir)) {
 				// Dir already exists, next
 				// ToDo: raise message 
-				// $this->writeInstallMsg(JText::sprintf('COM_RSG2_ALREADY_EXISTS', $dir),"ok");
+				// $this->writeInstallMsg(JText::sprintf('COM_RSGALLERY2_ALREADY_EXISTS', $dir),"ok");
 				if($Rsg2DebugActive)
 				{
 					JLog::Add (' - Directory existed: ' . $dir);	
@@ -173,7 +173,7 @@ class rsg2_Paths
 			else {
 				// if(@mkdir(JPATH_SITE.$dir, 0777)) {
 				if(JFolder::create ($dir, 0777)) {
-					// $this->writeInstallMsg(JText::sprintf('COM_RSG2_FOLDER_IS_CREATED', $dir),"ok");
+					// $this->writeInstallMsg(JText::sprintf('COM_RSGALLERY2_FOLDER_IS_CREATED', $dir),"ok");
 					// ToDO: raise message 
 					if($Rsg2DebugActive)
 					{
@@ -183,7 +183,7 @@ class rsg2_Paths
 				}
 				else {
 					// ToDO: raise message 
-					//$this->writeInstallMsg(JText::sprintf('COM_RSG2_FOLDER_COULD_NOT_BE_CREATED', $dir),"error");
+					//$this->writeInstallMsg(JText::sprintf('COM_RSGALLERY2_FOLDER_COULD_NOT_BE_CREATED', $dir),"error");
 					if($Rsg2DebugActive)
 					{
 						JLog::Add ('Error creating directory: ' . $dir);	

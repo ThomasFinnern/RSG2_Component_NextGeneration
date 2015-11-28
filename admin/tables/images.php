@@ -84,7 +84,7 @@ class rsg2TableImages extends JTable {
 
 		/** check for valid name */
 		if (trim( $this->title ) == '') {
-			$this->_error = JText::_('COM_RSG2_PLEASE_PROVIDE_A_VALID_IMAGE_TITLE');
+			$this->_error = JText::_('COM_RSGALLERY2_PLEASE_PROVIDE_A_VALID_IMAGE_TITLE');
 			return false;
 		}
 

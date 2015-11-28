@@ -34,37 +34,39 @@ class Rsg2Helper
 	public static function addSubmenu($vName = 'rsg2')
 	{
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSG2_MENU_CONTROL_PANEL'),
+			JText::_('COM_RSGALLERY2_MENU_CONTROL_PANEL'),
 			'index.php?option=com_rsg2&view=rsg2',
 			$vName == 'rsg2'
 		);
 		
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSG2_MENU_GALLERIES'),
+			JText::_('COM_RSGALLERY2_MENU_GALLERIES'),
 			'index.php?option=com_rsg2&view=galleries',
 			$vName == 'galleries'
 		);
 		
+		/*
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSG2_MENU_BATCH_UPLOAD'),
+			JText::_('COM_RSGALLERY2_MENU_BATCH_UPLOAD'),
 			'index.php?option=com_rsg2&view=uploadBatch',
 			$vName == 'uploadBatch'
 		);
+		*/
 		
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSG2_MENU_UPLOAD'),
-			'index.php?option=com_rsg2&view=uploadSingle',
+			JText::_('COM_RSGALLERY2_MENU_UPLOAD'),
+			'index.php?option=com_rsg2&view=upload',
 			$vName == 'uploadSingle'
 		);
 		
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSG2_MENU_IMAGES'),
+			JText::_('COM_RSGALLERY2_MENU_IMAGES'),
 			'index.php?option=com_rsg2&view=images',
 			$vName == 'images'
 		);
 		
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSG2_SUMMARY_TREE_VIEW'),
+			JText::_('COM_RSGALLERY2_SUMMARY_TREE_VIEW'),
 			'index.php?option=com_rsg2&view=summarytreeview',
 			$vName == 'summarytreeview'
 		);
@@ -72,7 +74,7 @@ class Rsg2Helper
 		if($vName=='configRaw')
 		{
 			JHtmlSidebar::addEntry(
-				JText::_('COM_RSG2_MAINTENANCE'),
+				JText::_('COM_RSGALLERY2_MAINTENANCE'),
 				'index.php?option=com_rsg2&view=summarytreeview',
 				false
 			);
@@ -81,14 +83,14 @@ class Rsg2Helper
 				
 /*		
 		JHtmlSidebar::addEntry(
-			JText::_('com_rsg2_SUBMENU_CATEGORIES'),
+			JText::_('COM_RSGALLERY2_SUBMENU_CATEGORIES'),
 			'index.php?option=com_categories&extension=com_rsg2',
 			$vName == 'categories'
 		);
 
 /*		
 		JHtmlSidebar::addEntry(
-			JText::_('com_rsg2_SUBMENU_CATEGORIES'),
+			JText::_('COM_RSGALLERY2_SUBMENU_CATEGORIES'),
 			'index.php?option=com_categories&extension=com_rsg2',
 			$vName == 'categories'
 		);
@@ -101,12 +103,12 @@ class Rsg2Helper
 		}
 /*		
 		JHtmlSidebar::addEntry(
-			JText::_('com_rsg2_SUBMENU_PREVIEW'),
+			JText::_('COM_RSGALLERY2_SUBMENU_PREVIEW'),
 			'index.php?option=com_rsg2&view=preview',
 			$vName == 'preview'
 		);
 		JHtmlSidebar::addEntry(
-			JText::_('com_rsg2_SUBMENU_PREVIEW'),
+			JText::_('COM_RSGALLERY2_SUBMENU_PREVIEW'),
 			'index.php?option=com_rsg2&view=preview',
 			$vName == 'preview'
 		);

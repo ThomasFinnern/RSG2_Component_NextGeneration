@@ -53,7 +53,7 @@ class rsg2ModelImages extends JModelList
 
         // http://docs.joomla.org/Selecting_data_using_JDatabase
         $name = $db->loadResult();
-        $name = $name ? $name : JText::_('COM_RSG2_GALLERY_ID_ERROR');
+        $name = $name ? $name : JText::_('COM_RSGALLERY2_GALLERY_ID_ERROR');
 
         return $name;
     }

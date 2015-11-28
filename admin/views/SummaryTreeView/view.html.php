@@ -69,7 +69,7 @@ class Rsg2ViewSummaryTreeView extends JViewLegacy
 	protected function addToolBar ()
 	{
 
-		JToolBarHelper::title(JText::_('COM_RSG2COM_RSG2_SUMMARY_TREE_VIEW'), 'generic.png');
+		JToolBarHelper::title(JText::_('COM_RSG2COM_RSGALLERY2_SUMMARY_TREE_VIEW'), 'generic.png');
 /*
         //Reflect number of items in title!
 //		JToolBarHelper::title(JText::_('Total: ').($total?' <span style="font-size: 0.5em; vertical-align: middle;">('.$total.')</span>':''), 'helloworld');
@@ -148,7 +148,7 @@ default:
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_SUMMARY_TREE_VIEW'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_SUMMARY_TREE_VIEW'));
     }
 	
 }

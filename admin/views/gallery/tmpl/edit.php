@@ -25,7 +25,7 @@ JHtml::_('behavior.formvalidator');
         <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'edit')); ?>
 
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'edit',
-            empty($this->item->id) ? JText::_('COM_RSG2_NEW', true) : JText::_('COM_RSG2_EDIT', true)); ?>
+            empty($this->item->id) ? JText::_('COM_RSGALLERY2_NEW', true) : JText::_('COM_RSGALLERY2_EDIT', true)); ?>
         <div class="row-fluid">
             <div class="span10">
                 <div class="row-fluid form-horizontal-desktop">
@@ -47,7 +47,7 @@ JHtml::_('behavior.formvalidator');
             <!--div class="span3">
                 <div class="row-fluid form-horizontal-desktop">
                     <div class="adminformlist">
-						<h4><?php echo JText::_('COM_RSG2_ITEM_PREVIEW')?></h4>
+						<h4><?php echo JText::_('COM_RSGALLERY2_ITEM_PREVIEW')?></h4>
                         <?php foreach($this->form->getFieldset('gallery_2nd_col') as $field):
 						?>
 							<div class="control-group">
@@ -61,19 +61,19 @@ JHtml::_('behavior.formvalidator');
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <h4><?php echo JText::_('COM_RSG2_ITEM_PREVIEW')?></h4>
+                <h4><?php echo JText::_('COM_RSGALLERY2_ITEM_PREVIEW')?></h4>
                         ToDo: Item preview<br>
 
-                <h4><?php echo JText::_('COM_RSG2_PARAMETERS')?></h4>
+                <h4><?php echo JText::_('COM_RSGALLERY2_PARAMETERS')?></h4>
                         ToDo: paramter not known<br>
 
-                <h4><?php echo JText::_('COM_RSG2_LINKS_TO_IMAGE')?></h4>
+                <h4><?php echo JText::_('COM_RSGALLERY2_LINKS_TO_IMAGE')?></h4>
                         ToDo: Links
             </div-->
         </div>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
 
-        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'misc', JText::_('COM_RSG2_PERMISSIONS', true)); ?>
+        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'misc', JText::_('COM_RSGALLERY2_PERMISSIONS', true)); ?>
         <div class="row-fluid form-horizontal-desktop">
             <div class="form-vertical">
                 <?php echo $this->form->renderField('misc'); ?>

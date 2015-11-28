@@ -45,9 +45,9 @@ class Rsg2ViewGallery extends JViewLegacy
 		// Toolbar
 		$item=$this->item;
 		if($item->id == 0) {
-            $TitleText = JText::_('COM_RSG2_CREATE_GALLERY'); // COM_RSG2_NEW'
+            $TitleText = JText::_('COM_RSGALLERY2_CREATE_GALLERY'); // COM_RSGALLERY2_NEW'
 		} else {
-            $TitleText = JText::_('COM_RSG2_EDIT_GALLERY');
+            $TitleText = JText::_('COM_RSGALLERY2_EDIT_GALLERY');
 		}
 
         JToolBarHelper::title($TitleText, 'generic.png');
@@ -102,7 +102,7 @@ class Rsg2ViewGallery extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_MENU_GALLERY'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_MENU_GALLERY'));
     }
 	
 }

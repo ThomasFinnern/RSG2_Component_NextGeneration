@@ -2,7 +2,7 @@
 
 defined( '_JEXEC' ) or die;
 
-jimport ('joomla.html.html.bootstrap');
+//jimport ('joomla.html.html.bootstrap');
 jimport('joomla.application.component.view');
 
 class Rsg2ViewConfig extends JViewLegacy
@@ -38,14 +38,14 @@ class Rsg2ViewConfig extends JViewLegacy
 		parent::display ($tpl);
 		
 		// Set the document
-		$this->setDocument();		
+		// $this->setDocument();		
 
         return;
 	}
 
 	protected function addToolbar ()
 	{
-        JToolBarHelper::title(JText::_('COM_RSG2_CONFIGURATION'), 'generic.png');
+        JToolBarHelper::title(JText::_('COM_RSGALLERY2_CONFIGURATION'), 'generic.png');
 
         // Disable main menu
         JFactory::getApplication()->input ->set ('hidemainmenu', true);
@@ -95,7 +95,7 @@ class Rsg2ViewConfig extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_CONFIGURATION'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_CONFIGURATION'));
     }
 	
 }

@@ -2,9 +2,10 @@
 
 defined( '_JEXEC' ) or die;
 	
+jimport ('joomla.html.html.bootstrap');
 jimport('joomla.application.component.view');
 
-class Rsgallery2ViewUpload extends JViewLegacy
+class Rsg2ViewUpload extends JViewLegacy
 {
 	protected $form;
 	
@@ -21,8 +22,18 @@ class Rsgallery2ViewUpload extends JViewLegacy
 	
 	public function display ($tpl = null)
 	{
-		$form = $this->get('Form');
-		var_dump($form);
+		$this->form = $this->get('Form');
+		var_dump($this->form);
+		Rsg2Helper::addSubMenu('upload'); 
+
+		// $this->item = $item;
+
+		// Check for errors.
+		if (count($errors = $this->get('Errors'))) 
+		{
+				JError::raiseError(500, implode('<br />', $errors));
+				return false;
+		}
 
 		// $item = $this->get('Item');
 //		Rsg2Helper::addSubMenu('uploadSingle'); 
@@ -38,9 +49,6 @@ class Rsgallery2ViewUpload extends JViewLegacy
 			return false;
 		}
 		
-		// Assign the Data
-		$this->form = $form;
-		// $this->item = $item;
 	
 		$this->addToolbar ();
 		$this->sidebar = JHtmlSidebar::render ();
@@ -56,19 +64,19 @@ class Rsgallery2ViewUpload extends JViewLegacy
 		JToolBarHelper::title(JText::_('COM_RSGALLERY2_SUBMENU_UPLOAD'), 'generic.png');
 
 		//JToolBarHelper::TitleText ("Test01");
-//		JToolBarHelper::title(JText::_('COM_RSG2_MENU_UPLOAD'), 'generic.png');
+//		JToolBarHelper::title(JText::_('COM_RSGALLERY2_MENU_UPLOAD'), 'generic.png');
 		//$input = JFactory::getApplication()->input;
 		
 		//$link = 'index.php?option=COM_RSG2&rsgOption=images&task=batchupload';
 
 
-		//JToolBarHelper::custom('com_rsg2.Redirect2ControlCenter', 'config.png', 'config.png', 'COM_RSG2_MENU_CONTROL_PANEL', false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2ControlCenter', 'config.png', 'config.png', 'COM_RSGALLERY2_MENU_CONTROL_PANEL', false, false);
 		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Upload', 'rsg2', 'rsg2', JText::_('COM_RSG2_MENU_BATCH_UPLOAD'), false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2Upload', 'rsg2', 'rsg2', JText::_('COM_RSGALLERY2_MENU_BATCH_UPLOAD'), false, false);
 		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Galleries', 'rsg2', 'rsg2', 'COM_RSG2_MENU_GALLERIES', false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2Galleries', 'rsg2', 'rsg2', 'COM_RSGALLERY2_MENU_GALLERIES', false, false);
 		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Images', 'mediamanager.png', 'mediamanager.png', 'COM_RSG2_MENU_IMAGES', false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2Images', 'mediamanager.png', 'mediamanager.png', 'COM_RSGALLERY2_MENU_IMAGES', false, false);
 	}
 	
     /**

@@ -26,12 +26,12 @@ JHtml::_('behavior.tooltip');
 		<div class="clearfix"> </div>
 
 		<h3>
-			<?php echo JText::_('COM_RSG2_CONFIGURATION_VARIABLES');?>
+			<?php echo JText::_('COM_RSGALLERY2_CONFIGURATION_VARIABLES');?>
 		</h3>
 
 		<div class="subheader">
 			<strong>
-				<?php echo JText::_('COM_RSG2_CONFIG_MINUS_RAW_EDIT_TXT');?>
+				<?php echo JText::_('COM_RSGALLERY2_CONFIG_MINUS_RAW_EDIT_TXT');?>
 			</strong>
 		</div>
 		<br>

@@ -54,29 +54,29 @@ $saveOrder	= $listOrder == 'a.ordering';
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
 					<th class="Name">
-						<?php echo JText::_('COM_RSG2_NAME')?>
+						<?php echo JText::_('COM_RSGALLERY2_NAME')?>
 					</th>
 					<th width="5%">
-						<?php echo JText::_('COM_RSG2_PUBLISHED')?>
+						<?php echo JText::_('COM_RSGALLERY2_PUBLISHED')?>
 					</th>
 					<th width="5%">
 						<?php echo JText::_('JGRID_HEADING_ACCESS')?>
 					</th>
 					<th width="5%">
-						<?php echo JText::_('COM_RSG2_REORDER')?>
+						<?php echo JText::_('COM_RSGALLERY2_REORDER')?>
 					</th>
 					<th width="2%">
-						<?php echo JText::_('COM_RSG2_ORDER')?>
+						<?php echo JText::_('COM_RSGALLERY2_ORDER')?>
 					</th>
 					<th width="2%">
 						rows
 						<!-- ?php echo JHtml::_('grid.order',  $this->items->itemCount()); ? -->
 					</th>
 					<th width="5%">
-						<?php echo JText::_('COM_RSG2_ITEMS')?>
+						<?php echo JText::_('COM_RSGALLERY2_ITEMS')?>
 					</th>
 					<th width="5%">
-						<?php echo JText::_('COM_RSG2_HITS')?>
+						<?php echo JText::_('COM_RSGALLERY2_HITS')?>
 					</th>
 					<!--th width="20" style="min-width:55px" class="nowrap center">
 						1:<?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
@@ -85,7 +85,7 @@ $saveOrder	= $listOrder == 'a.ordering';
 						2:<?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
 					</th>
 					<th width="25%" class="nowrap hidden-phone">
-						3:<?php echo JHtml::_('grid.sort', 'COM_RSG2_HEADING_COMPANY', 'a.company', $listDirn, $listOrder); ?>
+						3:<?php echo JHtml::_('grid.sort', 'COM_RSGALLERY2_HEADING_COMPANY', 'a.company', $listDirn, $listOrder); ?>
 					</th>
 					<th width="10" class="nowrap center hidden-phone">
 						4:<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
@@ -116,9 +116,9 @@ $saveOrder	= $listOrder == 'a.ordering';
 						<a href="<?php echo $edit_gallery_link; ?>" name="Edit Gallery">
 							<?php echo $this->escape($item->name); ?>
 						</a>
-						<img src="<?php echo 'templates/hathor/images/j_arrow.png';?>" style="margin: 0px 20px" alt="<?php echo JText::_('COM_RSG2_IMAGES'); ?>" />						
+						<img src="<?php echo 'templates/hathor/images/j_arrow.png';?>" style="margin: 0px 20px" alt="<?php echo JText::_('COM_RSGALLERY2_IMAGES'); ?>" />						
 						<a href="<?php echo JRoute::_($imgages_link); ?>" name="view Imagges of gallery">
-						   <?php echo JText::_('COM_RSG2_IMAGES'); ?>
+						   <?php echo JText::_('COM_RSGALLERY2_IMAGES'); ?>
 						</a>
 					</td>
 				    <td align="center">

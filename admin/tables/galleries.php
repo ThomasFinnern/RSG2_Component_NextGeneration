@@ -103,7 +103,7 @@ class rsg2TableGalleries extends JTable {
         $mitems     = array();
         //Only add Top gallery as a choice is galleries may be created there or if the current parent is the Top gallery
         if ((JFactory::getUser()->authorise('core.create', 'com_rsg2')) OR ($row->parent == 0)) {
-            $mitems[]   = JHtml::_('select.option', '0', JText::_('COM_RSG2_TOP_GALLERY') );
+            $mitems[]   = JHtml::_('select.option', '0', JText::_('COM_RSGALLERY2_TOP_GALLERY') );
         }
 
         foreach ( $list as $item ) {

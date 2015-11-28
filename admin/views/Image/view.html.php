@@ -37,16 +37,16 @@ class Rsg2ViewImage extends JViewLegacy
 
 	protected function addToolbar ()
 	{
-        JToolBarHelper::title(JText::_('COM_RSG2_EDIT_IMAGE'), 'generic.png');
+        JToolBarHelper::title(JText::_('COM_RSGALLERY2_EDIT_IMAGE'), 'generic.png');
 
         // Disable main menu
         JFactory::getApplication()->input ->set ('hidemainmenu', true);
 
         // Title		
 		if($this->item->id > 0) {
-			JToolBarHelper::title(JText::_('COM_RSG2_EDIT_IMAGE', 'generic.png' ));
+			JToolBarHelper::title(JText::_('COM_RSGALLERY2_EDIT_IMAGE', 'generic.png' ));
 		} else {
-			JToolBarHelper::title(JText::_('COM_RSG2_CREATE_IMAGE'), 'generic.png' );
+			JToolBarHelper::title(JText::_('COM_RSGALLERY2_CREATE_IMAGE'), 'generic.png' );
 		}		
 		
 		/*
@@ -99,7 +99,7 @@ class Rsg2ViewImage extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_IMAGE'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_IMAGE'));
     }
 	
 }

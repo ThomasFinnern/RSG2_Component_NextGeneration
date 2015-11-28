@@ -48,7 +48,7 @@ class Rsg2ViewImages extends JViewLegacy
          */
 	protected function addToolBar ()
 	{
-		JToolBarHelper::title(JText::_('COM_RSG2_MANAGE_IMAGES'), 'generic.png');
+		JToolBarHelper::title(JText::_('COM_RSGALLERY2_MANAGE_IMAGES'), 'generic.png');
 
         //Reflect number of items in title!
 //		JToolBarHelper::title(JText::_('Total: ').($total?' <span style="font-size: 0.5em; vertical-align: middle;">('.$total.')</span>':''), 'helloworld');
@@ -98,7 +98,7 @@ class Rsg2ViewImages extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_IMAGES'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_IMAGES'));
     }
 		
 }

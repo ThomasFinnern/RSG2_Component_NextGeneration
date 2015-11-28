@@ -17,12 +17,12 @@ class rsg2ModelMaintenance extends  JModelList
     {
         $msg = "RemoveImageReferences: ";
 
-        $msg = $msg . PurgeTable ('#__rsgallery2_acl', COM_RSG2_PURGED_TABLE_RSGALLERY2_ACL);
-        $msg = $msg . PurgeTable ('#__rsgallery2_files', COM_RSG2_PURGED_IMAGE_ENTRIES_FROM_DATABASE);
-        $msg = $msg . PurgeTable ('#__rsgallery2_cats', COM_RSG2_PURGED_TABLE_RSGALLERY2_CATS);
-        $msg = $msg . PurgeTable ('#__rsgallery2_galleries', COM_RSG2_PURGED_GALLERIES_FROM_DATABASE);
-        $msg = $msg . PurgeTable ('#__rsgallery2_config', COM_RSG2_PURGED_TABLE_RSGALLERY2_CONFIG);
-        $msg = $msg . PurgeTable ('#__rsgallery2_comments', COM_RSG2_PURGED_TABLE_RSGALLERY2_COMMENTS);
+        $msg = $msg . PurgeTable ('#__rsgallery2_acl', COM_RSGALLERY2_PURGED_TABLE_RSGALLERY2_ACL);
+        $msg = $msg . PurgeTable ('#__rsgallery2_files', COM_RSGALLERY2_PURGED_IMAGE_ENTRIES_FROM_DATABASE);
+        $msg = $msg . PurgeTable ('#__rsgallery2_cats', COM_RSGALLERY2_PURGED_TABLE_RSGALLERY2_CATS);
+        $msg = $msg . PurgeTable ('#__rsgallery2_galleries', COM_RSGALLERY2_PURGED_GALLERIES_FROM_DATABASE);
+        $msg = $msg . PurgeTable ('#__rsgallery2_config', COM_RSGALLERY2_PURGED_TABLE_RSGALLERY2_CONFIG);
+        $msg = $msg . PurgeTable ('#__rsgallery2_comments', COM_RSGALLERY2_PURGED_TABLE_RSGALLERY2_COMMENTS);
 
         return msg;
     }
@@ -35,9 +35,9 @@ class rsg2ModelMaintenance extends  JModelList
     { 
 		$msg = "RemoveAllTables: ";
 		
-		$msg = $msg . DropTable ('#__rsgallery2_acl', COM_RSG2_DROPED_TABLE___RSGALLERY2_ACL);
+		$msg = $msg . DropTable ('#__rsgallery2_acl', COM_RSGALLERY2_DROPED_TABLE___RSGALLERY2_ACL);
 		$msg = $msg . DropTable ('#__rsgallery2_files', COM_RSG2DROPED_TABLE___RSGALLERY2_FILES);
-		$msg = $msg . DropTable ('#__rsgallery2_cats', COM_RSG2_DROPED_TABLE___RSGALLERY2_CATS);
+		$msg = $msg . DropTable ('#__rsgallery2_cats', COM_RSGALLERY2_DROPED_TABLE___RSGALLERY2_CATS);
 		$msg = $msg . DropTable ('#__rsgallery2_galleries', COM_RSG2DROPED_TABLE___RSGALLERY2_GALLERIES);
 		$msg = $msg . DropTable ('#__rsgallery2_config', COM_RSG2DROPED_TABLE___RSGALLERY2_CONFIG);
 		$msg = $msg . DropTable ('#__rsgallery2_comments', COM_RSG2DROPED_TABLE___RSGALLERY2_COMMENTS);

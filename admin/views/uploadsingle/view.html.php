@@ -38,19 +38,19 @@ class Rsg2ViewUploadSingle extends JViewLegacy
 	protected function addToolbar ()
 	{
 		//JToolBarHelper::TitleText ("Test01");
-		JToolBarHelper::title(JText::_('COM_RSG2_MENU_UPLOAD'), 'generic.png');
+		JToolBarHelper::title(JText::_('COM_RSGALLERY2_MENU_UPLOAD'), 'generic.png');
 		//$input = JFactory::getApplication()->input;
 		
 		//$link = 'index.php?option=COM_RSG2&rsgOption=images&task=batchupload';
 
 
-		//JToolBarHelper::custom('com_rsg2.Redirect2ControlCenter', 'config.png', 'config.png', 'COM_RSG2_MENU_CONTROL_PANEL', false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2ControlCenter', 'config.png', 'config.png', 'COM_RSGALLERY2_MENU_CONTROL_PANEL', false, false);
 		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Upload', 'rsg2', 'rsg2', JText::_('COM_RSG2_MENU_BATCH_UPLOAD'), false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2Upload', 'rsg2', 'rsg2', JText::_('COM_RSGALLERY2_MENU_BATCH_UPLOAD'), false, false);
 		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Galleries', 'rsg2', 'rsg2', 'COM_RSG2_MENU_GALLERIES', false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2Galleries', 'rsg2', 'rsg2', 'COM_RSGALLERY2_MENU_GALLERIES', false, false);
 		
-		//JToolBarHelper::custom('com_rsg2.Redirect2Images', 'mediamanager.png', 'mediamanager.png', 'COM_RSG2_MENU_IMAGES', false, false);
+		//JToolBarHelper::custom('com_rsg2.Redirect2Images', 'mediamanager.png', 'mediamanager.png', 'COM_RSGALLERY2_MENU_IMAGES', false, false);
 	}
 	
     /**
@@ -61,6 +61,6 @@ class Rsg2ViewUploadSingle extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_MENU_UPLOAD'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_MENU_UPLOAD'));
     }
 }

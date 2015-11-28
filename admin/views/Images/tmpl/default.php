@@ -54,29 +54,29 @@ $saveOrder	= $listOrder == 'a.ordering';
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
 					<th class="title">
-						<?php echo JText::_('COM_RSG2_TITLE_FILENAME')?>
+						<?php echo JText::_('COM_RSGALLERY2_TITLE_FILENAME')?>
 					</th>
 			        <th width="5%">
-						<?php echo JText::_('COM_RSG2_PUBLISHED')?>
+						<?php echo JText::_('COM_RSGALLERY2_PUBLISHED')?>
 					</th>
 			        <th width="5%">
-	                    <?php echo JText::_('COM_RSG2_REORDER')?>
+	                    <?php echo JText::_('COM_RSGALLERY2_REORDER')?>
                     </th>
 			        <th width="2%">
-	                    <?php echo JText::_('COM_RSG2_ORDER')?>
+	                    <?php echo JText::_('COM_RSGALLERY2_ORDER')?>
                     </th>
 			        <th width="2%">
 						rows
 				        <!-- ?php echo JHtml::_('grid.order',  $item); ? -->
 			        </th>
 			        <th width="15%" align="left">
-	                    <?php echo JText::_('COM_RSG2_GALLERY')?>
+	                    <?php echo JText::_('COM_RSGALLERY2_GALLERY')?>
                     </th>
 			        <th width="5%">
-	                    <?php echo JText::_('COM_RSG2_HITS')?>
+	                    <?php echo JText::_('COM_RSGALLERY2_HITS')?>
                     </th>
 			        <th width="">
-	                    <?php echo JText::_('COM_RSG2_DATE__TIME')?>
+	                    <?php echo JText::_('COM_RSGALLERY2_DATE__TIME')?>
                     </th>
 				</tr>
 			</thead>
@@ -108,7 +108,7 @@ $saveOrder	= $listOrder == 'a.ordering';
 							<?php echo $this->escape($item->title); ?>
 							<?php echo ' (' . $this->escape($item->name) . ')'; ?>
 						</a>
-						<!--img src="<?php echo 'templates/hathor/images/j_arrow.png';?>" style="margin: 0px 20px" alt="<?php echo JText::_('COM_RSG2_IMAGES'); ?>" / -->
+						<!--img src="<?php echo 'templates/hathor/images/j_arrow.png';?>" style="margin: 0px 20px" alt="<?php echo JText::_('COM_RSGALLERY2_IMAGES'); ?>" / -->
 						<!--a href="<?php echo JRoute::_($edit_gallery_link); ?>" name="view Images of gallery" -->
 							<!--?php echo $this->escape($item->); ?-->
 						<!-- /a -->
@@ -138,7 +138,7 @@ $saveOrder	= $listOrder == 'a.ordering';
 						<?php echo $item->hits; ?>
 					</td>
 					<td align="left">
-						<?php echo JHTML::Date($item->date, JText::_('COM_RSG2_DATE_FORMAT_WITH_TIME'));?>
+						<?php echo JHTML::Date($item->date, JText::_('COM_RSGALLERY2_DATE_FORMAT_WITH_TIME'));?>
 					</td>
 				</tr>
 				<?php endforeach; ?>

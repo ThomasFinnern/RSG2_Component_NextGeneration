@@ -45,7 +45,7 @@ class Rsg2ViewConfigRaw extends JViewLegacy
 
 	protected function addToolbar ()
 	{
-        JToolBarHelper::title(JText::_('COM_RSG2_CONFIGURATION_RAW_VIEW'), 'generic.png');
+        JToolBarHelper::title(JText::_('COM_RSGALLERY2_CONFIGURATION_RAW_VIEW'), 'generic.png');
 
         // Disable main menu
         JFactory::getApplication()->input ->set ('hidemainmenu', true);
@@ -96,7 +96,7 @@ class Rsg2ViewConfigRaw extends JViewLegacy
     protected function setDocument() 
     {
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_RSG2_CONFIGURATION'));
+            $document->setTitle(JText::_('COM_RSGALLERY2_CONFIGURATION'));
     }
 	
 }

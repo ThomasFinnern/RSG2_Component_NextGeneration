@@ -29,7 +29,7 @@ defined( '_JEXEC' ) or die; ?>
 			
 			
 			<?php // Open the first tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab1_j31_id', JText::_('COM_RSG2_GENERAL')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab1_j31_id', JText::_('COM_RSGALLERY2_GENERAL')); ?>
 			
 			<div class="row-fluid">
 				<div class="span6">
@@ -57,7 +57,7 @@ defined( '_JEXEC' ) or die; ?>
 			
 			
 			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab2_j31_id', JText::_('COM_RSG2_IMAGES')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab2_j31_id', JText::_('COM_RSGALLERY2_IMAGES')); ?>
 
 			<!--?php echo $this->loadTemplate('images');?-->
 			<div class="row-fluid">
@@ -84,7 +84,7 @@ defined( '_JEXEC' ) or die; ?>
 			<?php echo JHtml::_('bootstrap.endTab');?>
 			
 			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab3_j31_id', JText::_('COM_RSG2_DISPLAY')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab3_j31_id', JText::_('COM_RSGALLERY2_DISPLAY')); ?>
 			<!--?php echo $this->loadTemplate('view');?-->
 			<div class="row-fluid">
 				<div class="span6">
@@ -110,7 +110,7 @@ defined( '_JEXEC' ) or die; ?>
 			<?php echo JHtml::_('bootstrap.endTab');?>
 			
 			<?php // The second tab ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab4_j31_id', JText::_('COM_RSG2_MY_GALLERIES')); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab4_j31_id', JText::_('COM_RSGALLERY2_MY_GALLERIES')); ?>
 			<!--?php echo $this->loadTemplate('mygalleries');?-->
 			<div class="row-fluid">
 				<div class="span6">
