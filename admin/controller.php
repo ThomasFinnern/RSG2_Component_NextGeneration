@@ -1,6 +1,10 @@
 <?php
 defined('_JEXEC') or die;
 
+/**
+ *  @param bool
+ */
+global $Rsg2DebugActive;
 
 // $Rsg2DebugActive = rsg2ModelConfig::getDebugActive();
 
@@ -49,10 +53,6 @@ class Rsg2Controller extends JControllerLegacy
      */
 	public function display($cachable = false, $urlparams = false)
 	{
-		/**
-		 * bool
-		 */
-		global $Rsg2DebugActive;
 
 		if ($Rsg2DebugActive)
 		{
@@ -91,9 +91,9 @@ class Rsg2Controller extends JControllerLegacy
 		$id     = $this->input->getInt('id');
 		JLog::add('  base.controller.id: ', json_encode($id));
 */
-		$task = $this->input->get('task');
 		if($Rsg2DebugActive)
 		{
+			$task = $this->input->get('task');
 			JLog::add('  base.controller.task: ', json_encode($task));
 		}
 		
