@@ -39,24 +39,38 @@ class rsg2Common
 			SimpleXML: $xml = simplexml_load_string($file);
 			$array = (array)$xml;
 		*/
-		
+
+/* working */
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
 	
 		$query->select('manifest_cache');
 		$query->from($db->quoteName('#__extensions'));
 		//$query->where('name = "com_rsgallery2"');
-		$query->where('element = "com_rsgallery2"');
+		//$query->where('element = "com_rsgallery2"');
+		$query->where('element = "com_rsg2"');
 		$db->setQuery($query);
 
+		// Array ( 
+		//	[name] => com_rsg2 
+		//	[type] => component 
+		//	[creationDate] => July 2014 
+		//	[author] => RSGallery2 Team 
+		//	[copyright] => (c) 2014 RSGallery2 Team 
+		//	[authorEmail] => team@rsgallery2.nl 
+		//	[authorUrl] => http://www.rsgallery2.nl 
+		//	[version] => 1.0.2 
+		//	[description] => COM_RSGALLERY2_XML_DESCRIPTION 
+		//	[group] => 
+		//	[filename] => rsg2 
+		//) 
+		
 		$manifest = json_decode($db->loadResult(), true);
+
+//		print_r($manifest);	
+		
 		$Version = $manifest['version'];	
 		
-		return $Version;
+		return $Version;		
     }
-
-	
-	
-	
-	
 }
