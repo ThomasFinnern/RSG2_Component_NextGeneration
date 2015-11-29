@@ -33,39 +33,38 @@ class Rsg2Helper
 
 	public static function addSubmenu($vName = 'rsg2')
 	{
+		//Control Panel
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSGALLERY2_MENU_CONTROL_PANEL'),
+			'<span class="icon-home-2" >  </span>'.
+			JText::_('COM_RSGALLERY2_SUBMENU_CONTROL_PANEL'),
 			'index.php?option=com_rsg2&view=rsg2',
 			$vName == 'rsg2'
 		);
-		
+	    //Galleries	
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSGALLERY2_MENU_GALLERIES'),
+			'<span class="icon-images" >  </span>'.
+			JText::_('COM_RSGALLERY2_SUBMENU_GALLERIES'),
 			'index.php?option=com_rsg2&view=galleries',
 			$vName == 'galleries'
 		);
-		
-		/*
+		//Upload		
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSGALLERY2_MENU_BATCH_UPLOAD'),
-			'index.php?option=com_rsg2&view=uploadBatch',
-			$vName == 'uploadBatch'
-		);
-		*/
-		
-		JHtmlSidebar::addEntry(
-			JText::_('COM_RSGALLERY2_MENU_UPLOAD'),
+			'<span class="icon-upload" > </span>'.
+			JText::_('COM_RSGALLERY2_SUBMENU_UPLOAD'),
 			'index.php?option=com_rsg2&view=upload',
-			$vName == 'uploadSingle'
+			$vName == 'upload'
 		);
-		
+
+		//Items /images
 		JHtmlSidebar::addEntry(
-			JText::_('COM_RSGALLERY2_MENU_IMAGES'),
+			'<span class="icon-image" >  </span>'.
+			JText::_('COM_RSGALLERY2_SUBMENU_IMAGES'),
 			'index.php?option=com_rsg2&view=images',
 			$vName == 'images'
 		);
-		
-		JHtmlSidebar::addEntry(
+		// summary tree view		
+		JHtmlSidebar::addEntry(		
+			'<span class="icon-tree-2" >  </span>'.
 			JText::_('COM_RSGALLERY2_SUMMARY_TREE_VIEW'),
 			'index.php?option=com_rsg2&view=summarytreeview',
 			$vName == 'summarytreeview'
@@ -73,6 +72,7 @@ class Rsg2Helper
 
 		if($vName=='configRaw')
 		{
+			'<span class="icon-tools" >  </span>'.
 			JHtmlSidebar::addEntry(
 				JText::_('COM_RSGALLERY2_MAINTENANCE'),
 				'index.php?option=com_rsg2&view=summarytreeview',

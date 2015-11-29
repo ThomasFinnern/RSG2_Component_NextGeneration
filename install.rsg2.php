@@ -111,7 +111,7 @@ class com_rsg2InstallerScript
 
 			// ??? Install options ?
 
-			echo '<br/>' . JText::_('COM_RSG2_PREFLIGHT_UPDATE_TEXT') . ' ' . $rel;		
+			echo '<br/>' . JText::_('COM_RSGALLERY2_PREFLIGHT_UPDATE_TEXT') . ' ' . $rel;		
         }
         else 
 		{ // $type == 'install'
@@ -124,7 +124,7 @@ class com_rsg2InstallerScript
 			
 			// ??? Install options ?
 
-			echo '<br/>' . JText::_('COM_RSG2_PREFLIGHT_INSTALL_TEXT') . ' ' . $rel;		
+			echo '<br/>' . JText::_('COM_RSGALLERY2_PREFLIGHT_INSTALL_TEXT') . ' ' . $rel;		
 		}
 
  		JLog::add('exit preflight');
@@ -152,8 +152,8 @@ class com_rsg2InstallerScript
 //		RemoveManualInstallationParts ();
 				
 		JLog::add('freshInstall');
-        //echo '<h2>'.JText::_('COM_RSG2_FRESH_INSTALL').'</h2>';
-        echo '<b>'.JText::_('COM_RSG2_FRESH_INSTALL').'</b>';
+        //echo '<h2>'.JText::_('COM_RSGALLERY2_FRESH_INSTALL').'</h2>';
+        echo '<b>'.JText::_('COM_RSGALLERY2_FRESH_INSTALL').'</b>';
 
 		//--- Create new directories -----------------------------
 		
@@ -188,7 +188,7 @@ class com_rsg2InstallerScript
 		
 
 		JLog::add('view update text');
-		echo '<p>' . JText::_('COM_RSG2_UPDATE_TEXT') . '</p>';
+		echo '<p>' . JText::_('COM_RSGALLERY2_UPDATE_TEXT') . '</p>';
 
 		JLog::add('exit update');
 	}
@@ -206,18 +206,18 @@ class com_rsg2InstallerScript
 	function postflight($type, $parent)
 	{
 		JLog::add('postflight');
-		echo '<p>' . JText::_('COM_RSG2_POSTFLIGHT_' . strtoupper($type) . '_TEXT') . '</p>';
+		echo '<p>' . JText::_('COM_RSGALLERY2_POSTFLIGHT_' . strtoupper($type) . '_TEXT') . '</p>';
 
         if ( $type == 'update' ) {
 			JLog::add('-> post update');
 			
-			$this->installComplete(JText::_('COM_RSG2_UPGRADE_SUCCESS'));
+			$this->installComplete(JText::_('COM_RSGALLERY2_UPGRADE_SUCCESS'));
         }
         else 
 		{ // $type == 'install'
 			JLog::add('-> post freshInstall');
 			
-			$this->installComplete(JText::_('COM_RSG2_INSTALLATION_OF_RSGALLERY_IS_COMPLETED'));
+			$this->installComplete(JText::_('COM_RSGALLERY2_INSTALLATION_OF_RSGALLERY_IS_COMPLETED'));
 		}
  
 		JLog::add('exit postflight');
@@ -234,7 +234,7 @@ class com_rsg2InstallerScript
 	function uninstall($parent)
 	{
 		JLog::add('uninstall');
-		echo '<p>' . JText::_('COM_RSG2_UNINSTALL_TEXT') . '</p>';
+		echo '<p>' . JText::_('COM_RSGALLERY2_UNINSTALL_TEXT') . '</p>';
 		JLog::add('exit uninstall');
 	}
 
@@ -292,7 +292,7 @@ class com_rsg2InstallerScript
     function installComplete($msg = null){
 		if($msg == null) 
 		{
-			$msg = JText::_('COM_RSG2_INSTALLATION_OF_RSGALLERY_IS_COMPLETED', $this->newRelease);
+			$msg = JText::_('COM_RSGALLERY2_INSTALLATION_OF_RSGALLERY_IS_COMPLETED', $this->newRelease);
 		}
 		// $icon = preg_replace('#\.[^.]*$#', '', $icon);
 		// $icon = preg_replace('#\.[^.]*$#', '', JUri::base().'components/com_rsg2/images/icon-48-config.png');
@@ -307,12 +307,12 @@ class com_rsg2InstallerScript
 					<td colspan="2">
 						<div align="center">
 							<h2><?php echo $msg; ?></h2> 
-							<?php echo JText::_('COM_RSG2_INSTALL_STATUS_MSGS'); ?>
+							<?php echo JText::_('COM_RSGALLERY2_INSTALL_STATUS_MSGS'); ?>
 							<br>
 							<a href="index.php?option=com_rsg2">
-								<img src="<?php echo $icon;?>" alt=" <?php echo JText::_('COM_RSG2_CONTROL_PANEL') ?>" width="48" height="48" border="0">
+								<img src="<?php echo $icon;?>" alt=" <?php echo JText::_('COM_RSGALLERY2_CONTROL_PANEL') ?>" width="48" height="48" border="0">
 								<h2>
-									<?php echo JText::_('COM_RSG2_CONTROL_PANEL'); ?>
+									<?php echo JText::_('COM_RSGALLERY2_CONTROL_PANEL'); ?>
 								</h2>
 							</a>
 						</div>
