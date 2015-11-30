@@ -71,6 +71,6 @@ class rsg2Common
 		
 		$Version = $manifest['version'];	
 		
-		return $Version;		
+		return $Version;	
     }
 }
