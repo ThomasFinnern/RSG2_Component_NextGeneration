@@ -76,7 +76,8 @@ class rsg2ModelGalleries extends JModelList
         $query
             ->select('*')
             ->from($db->quoteName('#__rsgallery2_galleries'))
-            ->order($db->quoteName('id') . ' DESC');
+//            ->order($db->quoteName('id') . ' DESC');
+			->order('ordering ASC');
 
         // $limit > 0 will limit the number of lines returned
         if ($limit && (int) $limit > 0)
@@ -123,7 +124,8 @@ class rsg2ModelGalleries extends JModelList
             ->select('*')
             ->from($db->quoteName('#__rsgallery2_galleries'))
             ->where($db->quoteName('date') . '> = ' . $db->quoteName($lastWeek))
-            ->order($db->quoteName('id') . ' DESC');
+//            ->order($db->quoteName('id') . ' DESC');
+			->order('ordering ASC');
 
         // $limit > 0 will limit the number of lines returned
         if ($limit && (int) $limit > 0)
