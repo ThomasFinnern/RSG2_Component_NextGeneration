@@ -1,13 +1,6 @@
 <?php
 defined('_JEXEC') or die;
 
-/**
- *  @param bool
- */
-global $Rsg2DebugActive;
-
-// $Rsg2DebugActive = rsg2ModelConfig::getDebugActive();
-
 /*
 // Load config model
 global $CfgModel;
@@ -53,6 +46,10 @@ class Rsg2Controller extends JControllerLegacy
      */
 	public function display($cachable = false, $urlparams = false)
 	{
+		/**
+		 * bool
+		 */
+		global $Rsg2DebugActive;
 
 		if ($Rsg2DebugActive)
 		{

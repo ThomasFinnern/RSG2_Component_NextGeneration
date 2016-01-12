@@ -3,7 +3,7 @@
 * This file contains the install routine for RSG2
 * @version $Id: install.rsg2.php 1011 2011-01-26 15:36:02Z mirjam $
 * @package Rsg2
-* @copyright (C) 2003 - 2015 RSG2
+* @copyright (C) 2003 - 2016 RSG2
 * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
 * RSGallery is Free Software
 */
@@ -16,7 +16,7 @@ if(!defined('DS')){
 }
 
 // /includes/defines.php
-//require_once (JPATH_BASE.DS.'includes'.DS.'defines.php' );
+require_once (JPATH_BASE.'/includes/defines.php' );
 
 // Include the JLog class.
 // ToDo: USE: To check whether the Website is in the debug mode, test the JDEBUG variable:

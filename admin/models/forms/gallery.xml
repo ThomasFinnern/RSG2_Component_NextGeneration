@@ -115,7 +115,7 @@
 		<field
 			name			= "published"
 			type			= "radio"
-			class="btn-group btn-group-yesno"
+			class           = "btn-group btn-group-yesno"
 			label           = "COM_RSGALLERY2_PUBLISHED"
 			default			= "1" 
 			description     = ""
