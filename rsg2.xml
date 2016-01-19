@@ -111,10 +111,12 @@
 
 
 	<updateservers>
-		 <!--updateservers>
-			<server type="collection">http://example.com/list.xml</server>
-			<server type="extension" priority="2" name="My Extension's Updates">http://example.com/extension.xml</server>
-		 </updateservers -->		
-		<server type="extension" priority="2" name="RSGallery2 updates">http://127.0.0.1/JoomlaUpdateServer/RSG2_component_update.xml</server>
+		<server type="extension" priority="1" name="Github RSGallery2 component updates">http://releases.rsgallery2.org/RSG2_next_component_update.xml</server>
+		<test01>https://github.com/RSGallery2/RSGallery2_Project/blob/85b72724a5ae20f083e33a933a5005d9f72dde47/UpdateServer/RSG2_component_update.xml</test01>
+		<test02>http://127.0.0.1/JoomlaUpdateServer/RSG2_component_update.xml</test02>
+		<test03>https://github.com/RSGallery2/RSGallery2_Project/blob/master/UpdateServer/RSG2_component_update.xml</test03>
+		<test04>http://releases.rsgallery2.org/RSG2_component_update.xml</test04>
+		<test05></test05>
+		<test06></test06>
 	</updateservers>  
 </extension>
